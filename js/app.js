@@ -19,13 +19,15 @@
     sessions: []
   };
 
-  // Compile Entity Glossary for Dynamic Auto-Hyperlinking
+  const getWikiData = () => window.WIKI_DATA || (typeof WIKI_DATA !== 'undefined' ? WIKI_DATA : null);
   const EntityGlossary = [];
 
   function initGlossary() {
-    if (!window.WIKI_DATA || !WIKI_DATA.articles) return;
+    const data = getWikiData();
+    if (!data || !data.articles) return;
 
-    WIKI_DATA.articles.forEach(article => {
+    EntityGlossary.length = 0; // Clear any existing
+    data.articles.forEach(article => {
       // Add primary title
       EntityGlossary.push({
         term: article.title,
@@ -55,8 +57,9 @@
 
   // Get article by ID
   function getArticle(id) {
-    if (!window.WIKI_DATA || !WIKI_DATA.articles) return null;
-    return WIKI_DATA.articles.find(a => a.id === id);
+    const data = getWikiData();
+    if (!data || !data.articles) return null;
+    return data.articles.find(a => a.id === id || (a.aliases && a.aliases.includes(id)));
   }
 
   // =========================================================================
@@ -145,12 +148,13 @@
   // =========================================================================
   function renderSidebar() {
     const navTreeContainer = document.getElementById('sidebar-nav-tree');
-    if (!navTreeContainer || !WIKI_DATA) return;
+    const data = getWikiData();
+    if (!navTreeContainer || !data) return;
 
     let html = '';
 
-    WIKI_DATA.categories.forEach(cat => {
-      const articlesInCat = WIKI_DATA.articles.filter(a => a.category === cat.id);
+    data.categories.forEach(cat => {
+      const articlesInCat = data.articles.filter(a => a.category === cat.id);
       const isExpanded = (AppState.currentCategory === cat.id);
 
       html += `
@@ -217,7 +221,8 @@
       return;
     }
 
-    const catObj = WIKI_DATA.categories.find(c => c.id === article.category) || { name: article.category, icon: '📜' };
+    const data = getWikiData();
+    const catObj = (data && data.categories ? data.categories.find(c => c.id === article.category) : null) || { name: article.category, icon: '📜' };
 
     // Format tags
     let tagsHtml = '';
@@ -369,7 +374,10 @@
 
       const matches = [];
 
-      WIKI_DATA.articles.forEach(art => {
+      const data = getWikiData();
+      if (!data || !data.articles) return;
+
+      data.articles.forEach(art => {
         let score = 0;
         let matchedSnippet = '';
 
@@ -527,7 +535,7 @@
       }
     }
 
-    // If no saved sessions in localStorage, load from data/sessions.json
+    // If no saved sessions in localStorage, load from data/sessions.json or use embedded default
     if (!AppState.sessions || AppState.sessions.length === 0) {
       try {
         const res = await fetch('data/sessions.json');
@@ -536,7 +544,31 @@
           saveSessions();
         }
       } catch (e) {
-        console.warn('Could not load data/sessions.json directly; using starter default', e);
+        // Fallback for file:// protocol or offline use
+        AppState.sessions = [
+          {
+            "sessionNumber": 0,
+            "title": "The Coronation on Crystal & The Handlers' Trap",
+            "realDate": "Campaign Launch",
+            "inGameDate": "Month of the Sun, Period VIII (Year 1 of the Triumvirate)",
+            "summary": "The Player Character Triumvirate was crowned in Kordava upon the famed floor of polished crystal. General Don Rodrigo de Valenza stationed his elite caballeros around the palace perimeter, pledging martial protection. High Chancellor Marquis Mateo de Sadoria assumed direct custody of all crown ledgers, officially declaring the state treasury bankrupt due to foreign debt obligations to Argos. The young monarchs received formal bows from the assembled Grandees, though Duke Gonzalo de Guarralid made several cutting remarks testing their martial mettle under pundonor. Underground intelligence confirms that republican cells in The Pit view the coronation as a farce, while the outlawed Church of Nemeth has stepped up nocturnal recruitment.",
+            "sovereigntyPoints": 0,
+            "pundonorStatus": "Unstained (No penalties active)",
+            "activeThreads": [
+              "The Empty Vaults: Marquis Mateo has refused royal requests for personal guard stipends.",
+              "The Whispering Pit: Republican agitators are circulating pamphlets claiming the Restoration Council murdered the republican founder in Period VI.",
+              "The River Embargo: Rumors that Duke Gonzalo's retainers in Jerida are preparing to halt crown timber barges."
+            ],
+            "npcDispositions": {
+              "General Don Rodrigo de Valenza": "Protective / Patronizing (+1 Martial Guard, -1 Freedom)",
+              "High Chancellor Marquis Mateo de Sadoria": "Cordial / Financially Restrictive",
+              "Fencing Master Lucia 'La Mariposa'": "Hostile / Curious (Awaiting royal action)",
+              "Father Malachai the Blind": "Condemnatory (Demands destruction of zombie pits)",
+              "High Duke Gonzalo de Guarralid": "Dismissive / Challenging (Testing pundonor)"
+            }
+          }
+        ];
+        saveSessions();
       }
     }
   }
@@ -825,15 +857,21 @@
   // ROUTING & NAVIGATION
   // =========================================================================
   function handleRoute() {
-    const hash = window.location.hash.slice(1);
+    let hash = window.location.hash.slice(1);
     if (!hash) {
-      window.location.hash = '#overview/campaign-premise';
-      return;
+      hash = 'overview/campaign-premise';
+      window.location.hash = '#' + hash;
     }
 
     const parts = hash.split('/');
-    const cat = parts[0];
-    const id = parts[1] || cat;
+    let cat = parts[0];
+    let id = parts[1];
+
+    if (!id) {
+      id = cat;
+      const art = getArticle(id);
+      if (art) cat = art.category;
+    }
 
     AppState.currentCategory = cat;
     AppState.currentArticleId = id;
@@ -866,9 +904,8 @@
   // =========================================================================
   // INITIALIZATION
   // =========================================================================
-  window.addEventListener('DOMContentLoaded', async () => {
+  function boot() {
     initGlossary();
-    await initSessions();
     initModeToggle();
     initSearch();
     initTools();
@@ -889,9 +926,23 @@
     document.getElementById('modal-session-cancel')?.addEventListener('click', closeAddSessionModal);
     document.getElementById('modal-session-save')?.addEventListener('click', saveNewSessionFromModal);
 
-    // Hash routing
+    // Hash routing & immediate initial render
     window.addEventListener('hashchange', handleRoute);
     handleRoute();
-  });
+
+    // Load sessions asynchronously in background
+    initSessions().then(() => {
+      if (AppState.currentCategory === 'sessions') {
+        renderSessionView();
+      }
+      renderSidebar();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 
 })();
