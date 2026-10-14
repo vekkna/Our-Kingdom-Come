@@ -423,7 +423,7 @@
           ${g.appearance ? `<div class="glance-item"><strong>Appearance:</strong> ${g.appearance}</div>` : ''}
           ${g.mannerisms ? `<div class="glance-item"><strong>Mannerisms:</strong> ${g.mannerisms}</div>` : ''}
           ${g.quote ? `<div class="glance-item quote"><strong>Quote:</strong> &ldquo;${g.quote}&rdquo;</div>` : ''}
-          ${g.courtDCs ? `<div class="glance-item dcs"><strong>Court DCs:</strong> ${g.courtDCs}</div>` : ''}
+          ${g.courtDCs ? `<div class="glance-item dcs"><strong>Reaction &amp; Morale:</strong> ${g.courtDCs}</div>` : ''}
         </div>
       `;
     }
@@ -1210,7 +1210,7 @@
         replacement = `\n<div class="gm-callout">\n  <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET LEVER</div>\n  <p>${selectedText || 'Confidential agendas, blackmail material, or unrevealed truths...'}</p>\n</div>\n`;
         break;
       case 'dc-box':
-        replacement = `\n<div class="dc-box">\n  <span class="dc-tag">DC 15 Society</span>\n  <span>${selectedText || 'Skill check description and consequence of success or failure.'}</span>\n</div>\n`;
+        replacement = `\n<div class="dc-box">\n  <span class="dc-tag">Ability Check</span>\n  <span>${selectedText || 'Roll under Ability Score on 1d20 (or 2d6 Reaction / Morale check).'}</span>\n</div>\n`;
         break;
       case 'escalation':
         replacement = `\n<div class="escalation">\n  <strong>Escalation / Event:</strong> ${selectedText || 'Sudden complication, ambush, or political deadline.'}\n</div>\n`;
