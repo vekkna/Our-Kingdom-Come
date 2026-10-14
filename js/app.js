@@ -454,14 +454,39 @@
 
   function attachWikiLinkEvents(parentElement) {
     parentElement.querySelectorAll('.wiki-link').forEach(link => {
+      const id = link.getAttribute('data-id') || link.getAttribute('href')?.replace(/^#.*?\//, '');
+      const article = id ? getArticle(id) : null;
+
+      if (article && !link.getAttribute('title')) {
+        const glanceClass = article.atAGlance?.classLevel ? ` [${article.atAGlance.classLevel}]` : '';
+        link.setAttribute('title', `${article.title}${glanceClass} — Click to view full dossier (Shift+Click for preview)`);
+      }
+
       link.addEventListener('click', (e) => {
-        const id = link.getAttribute('data-id');
-        // If holding shift or ctrl, open in full article directly; otherwise open in fast preview drawer
-        if (e.shiftKey || e.ctrlKey || e.metaKey) {
-          return; // Let default hash navigation proceed
+        // If middle click or holding ctrl/meta, allow standard browser new tab behavior
+        if (e.button !== 0 || e.ctrlKey || e.metaKey) {
+          return;
         }
-        e.preventDefault();
-        openPreviewDrawer(id);
+
+        // If holding Shift or Alt, open in side preview drawer for quick peek
+        if (e.shiftKey || e.altKey) {
+          e.preventDefault();
+          if (id) openPreviewDrawer(id);
+          return;
+        }
+
+        // Primary action: Navigate directly to the full article page!
+        closePreviewDrawer();
+
+        const targetHref = link.getAttribute('href');
+        // If clicking a link to the current article, re-scroll to top
+        if (targetHref && window.location.hash === targetHref) {
+          e.preventDefault();
+          const container = document.getElementById('content-area');
+          if (container) container.scrollTop = 0;
+        }
+        // Otherwise, allow standard browser navigation to href="#category/id",
+        // which triggers hashchange -> handleRoute() -> renders full article!
       });
     });
   }
@@ -1741,6 +1766,7 @@
     document.getElementById('drawer-open-full-btn')?.addEventListener('click', () => {
       const fullLink = document.getElementById('drawer-open-full-btn').getAttribute('data-target');
       if (fullLink) {
+        closePreviewDrawer();
         window.location.hash = fullLink;
       }
     });
