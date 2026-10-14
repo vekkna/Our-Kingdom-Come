@@ -6,7 +6,8 @@ window.WIKI_DATA = {
     "title": "Our Kingdom Come",
     "subtitle": "Zingara Sandbox Campaign & GM Intrigue Compendium",
     "epoch": "Period VIII: The Besieged Kingdom",
-    "totalArticles": 70
+    "totalArticles": 70,
+    "lastUpdated": "2026-10-14T17:43:00.000Z"
   },
   "categories": [
     {
