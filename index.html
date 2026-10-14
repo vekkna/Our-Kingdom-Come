@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Our Kingdom Come - Zingara RPG Campaign Setting and Royal Court GM Intrigue Compendium">
+  <title>Our Kingdom Come &bull; Zingara GM Compendium</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="app-container">
+    <!-- TOP HEADER -->
+    <header id="top-header">
+      <div class="header-left">
+        <button id="sidebar-toggle-btn" title="Toggle Navigation Sidebar (Alt+S)" aria-label="Toggle Navigation Sidebar">&#9776;</button>
+        <div class="brand-title">
+          <span>👑 Our Kingdom Come</span>
+          <span class="brand-badge">Period VIII</span>
+        </div>
+      </div>
+
+      <!-- Live Search Bar -->
+      <div class="search-wrapper">
+        <input type="text" id="global-search" placeholder="Quick search lore, NPCs, rules, DC checks... (/ to focus)" autocomplete="off" spellcheck="false">
+        <span class="search-shortcut">/</span>
+      </div>
+
+      <!-- Header Controls -->
+      <div class="header-actions">
+        <button id="mode-toggle-btn" class="mode-toggle-btn gm-active" title="Toggle GM Confidential / Player Safe Mode">
+          👁️ <span class="mode-text">GM Secrets Mode</span>
+        </button>
+        <button id="btn-tools-toggle" class="btn-icon" title="Toggle Quick Dice Roller & GM Tools">
+          🎲 <span class="mode-text">Dice</span>
+        </button>
+        <a href="#sessions" class="btn-icon" title="Jump to Campaign Session Logs">
+          📖 <span class="mode-text">Sessions</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <main id="main-workspace">
+      <!-- LEFT SIDEBAR -->
+      <aside id="sidebar">
+        <div id="sidebar-nav-tree">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </aside>
+
+      <!-- CONTENT DISPLAY AREA -->
+      <section id="content-area" role="main">
+        <!-- Rendered dynamically by app.js -->
+      </section>
+
+      <!-- SLIDE-OUT QUICK PREVIEW DRAWER -->
+      <div id="preview-drawer" aria-label="Quick Lore Preview Drawer">
+        <div class="drawer-header">
+          <div class="drawer-title-group">
+            <h3 id="drawer-title">Entity Dossier</h3>
+            <small id="drawer-subtitle">Category</small>
+          </div>
+          <button id="drawer-close-btn" class="drawer-close-btn" title="Close Preview Drawer">&times;</button>
+        </div>
+        <div class="drawer-body" id="drawer-body">
+          <!-- Dynamic quick card content -->
+        </div>
+        <div class="drawer-footer">
+          <button id="drawer-open-full-btn" class="btn-open-full">Open Full Article &rarr;</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- LIVE SEARCH RESULTS DROPDOWN -->
+    <div id="search-results-modal" style="display: none;">
+      <div class="search-results-list" id="search-results-list">
+        <!-- Search matches dynamically injected here -->
+      </div>
+    </div>
+
+    <!-- QUICK GM TOOLS BAR (DICE ROLLER) -->
+    <div id="tools-drawer">
+      <div class="dice-roller-bar">
+        <strong style="color: var(--accent-gold); margin-right: 8px;">Table Dice:</strong>
+        <button class="dice-btn" data-die="4">d4</button>
+        <button class="dice-btn" data-die="6">d6</button>
+        <button class="dice-btn" data-die="8">d8</button>
+        <button class="dice-btn" data-die="10">d10</button>
+        <button class="dice-btn" data-die="12">d12</button>
+        <button class="dice-btn" data-die="20">d20</button>
+        <button class="dice-btn" data-die="100">d100</button>
+        <span id="dice-result-display">Click a die to roll</span>
+      </div>
+    </div>
+
+    <!-- MODAL: ADD NEW SESSION LOG -->
+    <div id="session-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-card">
+        <h2 style="margin-top: 0; color: var(--accent-gold); border-bottom: 1px solid var(--border-medium); padding-bottom: 8px;">Log New Campaign Session</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label for="modal-session-num">Session Number</label>
+            <input type="number" id="modal-session-num" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="modal-session-date">Real Date</label>
+            <input type="date" id="modal-session-date" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="modal-session-ingame">In-Game Calendar Date</label>
+            <input type="text" id="modal-session-ingame" class="form-input" placeholder="e.g. Month of the Lion, Period VIII">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-session-title">Session Title / Episode Name</label>
+          <input type="text" id="modal-session-title" class="form-input" placeholder="e.g. Blood on the Crystal Floor">
+        </div>
+
+        <div class="form-group">
+          <label for="modal-session-summary">Narrative Recap &amp; Key Decisions</label>
+          <textarea id="modal-session-summary" class="form-textarea" rows="5" placeholder="What occurred during the session? Key royal edicts, duels fought, clues discovered..."></textarea>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label for="modal-session-sovereignty">Crown Sovereignty Shift (+ / -)</label>
+            <input type="number" id="modal-session-sovereignty" class="form-input" placeholder="0">
+          </div>
+          <div class="form-group">
+            <label for="modal-session-pundonor">Pundonor Status</label>
+            <input type="text" id="modal-session-pundonor" class="form-input" placeholder="e.g. Unstained, or -2 Social penalty active">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-session-threads">Active Plot Leads (One per line)</label>
+          <textarea id="modal-session-threads" class="form-textarea" rows="3" placeholder="Enter upcoming hooks, rumors, or leads to follow up..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button id="modal-session-cancel" class="btn-secondary">Cancel</button>
+          <button id="modal-session-save" class="btn-primary">Save Session Log</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CORE SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

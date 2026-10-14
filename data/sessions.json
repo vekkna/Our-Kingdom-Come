@@ -1,0 +1,23 @@
+[
+  {
+    "sessionNumber": 0,
+    "title": "The Coronation on Crystal & The Handlers' Trap",
+    "realDate": "Campaign Launch",
+    "inGameDate": "Month of the Sun, Period VIII (Year 1 of the Triumvirate)",
+    "summary": "The Player Character Triumvirate was crowned in Kordava upon the famed floor of polished crystal. General Don Rodrigo de Valenza stationed his elite caballeros around the palace perimeter, pledging martial protection. High Chancellor Marquis Mateo de Sadoria assumed direct custody of all crown ledgers, officially declaring the state treasury bankrupt due to foreign debt obligations to Argos. The young monarchs received formal bows from the assembled Grandees, though Duke Gonzalo de Guarralid made several cutting remarks testing their martial mettle under pundonor. Underground intelligence confirms that republican cells in The Pit view the coronation as a farce, while the outlawed Church of Nemeth has stepped up nocturnal recruitment.",
+    "sovereigntyPoints": 0,
+    "pundonorStatus": "Unstained (No penalties active)",
+    "activeThreads": [
+      "The Empty Vaults: Marquis Mateo has refused royal requests for personal guard stipends.",
+      "The Whispering Pit: Republican agitators are circulating pamphlets claiming the Restoration Council murdered the republican founder in Period VI.",
+      "The River Embargo: Rumors that Duke Gonzalo's retainers in Jerida are preparing to halt crown timber barges."
+    ],
+    "npcDispositions": {
+      "General Don Rodrigo de Valenza": "Protective / Patronizing (+1 Martial Guard, -1 Freedom)",
+      "High Chancellor Marquis Mateo de Sadoria": "Cordial / Financially Restrictive",
+      "Fencing Master Lucia 'La Mariposa'": "Hostile / Curious (Awaiting royal action)",
+      "Father Malachai the Blind": "Condemnatory (Demands destruction of zombie pits)",
+      "High Duke Gonzalo de Guarralid": "Dismissive / Challenging (Testing pundonor)"
+    }
+  }
+]
