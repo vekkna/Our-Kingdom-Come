@@ -673,6 +673,173 @@ a:hover, a:focus-visible {
   border: 1px solid rgba(46, 204, 113, 0.3);
 }
 
+/* ==========================================================================
+   LABYRINTH LORD RPG STAT BLOCK STYLES
+   ========================================================================== */
+.stat-block {
+  background: var(--bg-card);
+  border: 2px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin: 20px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  font-size: 0.92rem;
+}
+
+.stat-block-header {
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stat-npc-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.stat-class-level {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.stat-grid-primary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+  background: var(--bg-surface);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--accent-gold);
+}
+
+.stat-row-item {
+  line-height: 1.45;
+}
+
+.stat-row-item strong {
+  color: var(--accent-gold);
+}
+
+.stat-abilities-bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin: 14px 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .stat-abilities-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-ability-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 8px 4px;
+}
+
+.stat-ability-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+.stat-ability-score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.stat-ability-mod {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.stat-saves-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin: 14px 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .stat-saves-bar {
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  }
+}
+
+.stat-save-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 4px;
+}
+
+.stat-save-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #3498db;
+  white-space: nowrap;
+}
+
+.stat-save-val {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.stat-section-title {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 14px 0 6px;
+  border-bottom: 1px dashed var(--border-medium);
+  padding-bottom: 3px;
+}
+
+.stat-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.stat-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.84rem;
+}
+
+.stat-pill strong {
+  color: var(--accent-gold);
+}
+
 /* Badges */
 .badge {
   display: inline-block;
@@ -1740,6 +1907,37 @@ body.player-safe-mode #btn-sync-export-top {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   background: #ffffff;
   color: #1c1b18;
+}
+
+:root[data-theme="light"] .stat-block,
+.light-theme .stat-block {
+  background: #fdfbf7;
+  border-color: #bfa15f;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme="light"] .stat-grid-primary,
+.light-theme .stat-grid-primary {
+  background: #f4efe4;
+  border-left-color: #8c5d0d;
+}
+
+:root[data-theme="light"] .stat-ability-box,
+.light-theme .stat-ability-box {
+  background: #ffffff;
+  border-color: #dfd7c5;
+}
+
+:root[data-theme="light"] .stat-save-box,
+.light-theme .stat-save-box {
+  background: #ffffff;
+  border-color: #dfd7c5;
+}
+
+:root[data-theme="light"] .stat-pill,
+.light-theme .stat-pill {
+  background: #ffffff;
+  border-color: #cfc4ad;
 }
 
 /* ==========================================================================

@@ -419,6 +419,7 @@
       const g = article.atAGlance;
       glanceHtml = `
         <div class="at-a-glance-grid" style="margin-top: 0; margin-bottom: 14px;">
+          ${g.classLevel ? `<div class="glance-item" style="grid-column: 1 / -1; background: var(--bg-surface); border-left: 3px solid var(--accent-gold); padding: 8px 12px; border-radius: var(--radius-sm);"><strong>⚔️ Labyrinth Lord:</strong> <span style="color: var(--accent-gold); font-weight: 700;">${g.classLevel}</span>${g.combatStats ? ` &bull; <span style="font-family: var(--font-mono); font-size: 0.85rem;">${g.combatStats}</span>` : ''}</div>` : ''}
           ${g.appearance ? `<div class="glance-item"><strong>Appearance:</strong> ${g.appearance}</div>` : ''}
           ${g.mannerisms ? `<div class="glance-item"><strong>Mannerisms:</strong> ${g.mannerisms}</div>` : ''}
           ${g.quote ? `<div class="glance-item quote"><strong>Quote:</strong> &ldquo;${g.quote}&rdquo;</div>` : ''}
@@ -1350,6 +1351,15 @@
         quote: quote,
         courtDCs: courtDCs
       };
+    }
+
+    const existingBase = getArticle(id);
+    if (existingBase && existingBase.atAGlance) {
+      if (existingBase.atAGlance.classLevel || existingBase.atAGlance.combatStats) {
+        if (!articleObj.atAGlance) articleObj.atAGlance = {};
+        if (existingBase.atAGlance.classLevel) articleObj.atAGlance.classLevel = existingBase.atAGlance.classLevel;
+        if (existingBase.atAGlance.combatStats) articleObj.atAGlance.combatStats = existingBase.atAGlance.combatStats;
+      }
     }
 
     // Save into AppState.customArticles
