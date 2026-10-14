@@ -24,6 +24,15 @@
     }
   };
 
+  function loadJsonStorage(key, fallback = []) {
+    try {
+      const val = safeStorage.getItem(key);
+      return val ? JSON.parse(val) : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
   // State Management
   const AppState = {
     currentArticleId: 'campaign-premise',
@@ -34,11 +43,72 @@
     drawerEntityId: null,
     searchQuery: '',
     selectedSearchIdx: 0,
-    sessions: []
+    sessions: [],
+    customArticles: loadJsonStorage('okc_custom_articles', []),
+    deletedArticleIds: loadJsonStorage('okc_deleted_articles', [])
   };
   window.AppState = AppState;
 
-  const getWikiData = () => window.WIKI_DATA || (typeof WIKI_DATA !== 'undefined' ? WIKI_DATA : null);
+  function saveCustomArticles() {
+    safeStorage.setItem('okc_custom_articles', JSON.stringify(AppState.customArticles));
+  }
+
+  function saveDeletedArticles() {
+    safeStorage.setItem('okc_deleted_articles', JSON.stringify(AppState.deletedArticleIds));
+  }
+
+  // Dynamic Compendium Data Merge (Canonical + Custom Overrides - Deleted Articles)
+  function getWikiData() {
+    const base = window.WIKI_DATA || (typeof WIKI_DATA !== 'undefined' ? WIKI_DATA : null);
+    if (!base) return null;
+
+    const deletedSet = new Set(AppState.deletedArticleIds || []);
+    const customMap = new Map();
+    (AppState.customArticles || []).forEach(art => {
+      if (art && art.id) customMap.set(art.id, art);
+    });
+
+    const mergedArticles = [];
+    const handledIds = new Set();
+
+    if (base.articles && Array.isArray(base.articles)) {
+      base.articles.forEach(art => {
+        if (deletedSet.has(art.id)) return;
+        if (customMap.has(art.id)) {
+          const custom = customMap.get(art.id);
+          mergedArticles.push(Object.assign({}, art, custom, {
+            _isCanonical: true,
+            _isModified: true
+          }));
+          handledIds.add(art.id);
+        } else {
+          mergedArticles.push(art);
+          handledIds.add(art.id);
+        }
+      });
+    }
+
+    (AppState.customArticles || []).forEach(art => {
+      if (!art || !art.id) return;
+      if (deletedSet.has(art.id)) return;
+      if (!handledIds.has(art.id)) {
+        mergedArticles.push(Object.assign({}, art, {
+          _isCustom: true
+        }));
+        handledIds.add(art.id);
+      }
+    });
+
+    return {
+      meta: Object.assign({}, base.meta, {
+        totalArticles: mergedArticles.length
+      }),
+      categories: base.categories || [],
+      articles: mergedArticles
+    };
+  }
+  window.getWikiData = getWikiData;
+
   const EntityGlossary = [];
 
   function initGlossary() {
@@ -273,6 +343,14 @@
       }
     }
 
+    // Custom or modified badge indicators
+    let loreBadgeHtml = '';
+    if (article._isCustom) {
+      loreBadgeHtml = `<span class="badge-custom-lore">Custom Article</span>`;
+    } else if (article._isModified) {
+      loreBadgeHtml = `<span class="badge-modified-lore">Locally Modified</span>`;
+    }
+
     container.innerHTML = `
       <div class="content-container">
         <div class="breadcrumb-trail">
@@ -284,7 +362,15 @@
         </div>
 
         <div class="article-header">
-          <span class="article-category-badge">${catObj.name}</span>
+          <div class="article-header-top">
+            <span class="article-category-badge">${catObj.name}</span>
+            <div class="article-header-actions">
+              ${loreBadgeHtml}
+              <button id="btn-edit-current-article" class="btn-edit-article" title="Edit this article in the live compendium editor">
+                ✏️ Edit Article
+              </button>
+            </div>
+          </div>
           <h1 class="article-title">${article.title}</h1>
           ${article.subtitle ? `<div class="article-subtitle">${article.subtitle}</div>` : ''}
           ${tagsHtml}
@@ -300,6 +386,11 @@
 
     // Reset scroll position to top
     container.scrollTop = 0;
+
+    // Attach click listener for Edit button
+    document.getElementById('btn-edit-current-article')?.addEventListener('click', () => {
+      openArticleEditor(article.id);
+    });
 
     // Attach click listeners to all wiki-links in article body
     attachWikiLinkEvents(container);
@@ -974,6 +1065,652 @@
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  function slugify(text) {
+    return text.toString().toLowerCase().trim()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w\-]+/g, '')
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '');
+  }
+
+  // =========================================================================
+  // TOAST NOTIFICATIONS
+  // =========================================================================
+  function showToast(message, type = 'info', duration = 3500) {
+    const container = document.getElementById('toast-notification');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = `toast-message ${type === 'success' ? 'toast-success' : (type === 'error' ? 'toast-error' : '')}`;
+
+    let icon = 'ℹ️';
+    if (type === 'success') icon = '✅';
+    if (type === 'error') icon = '⚠️';
+
+    toast.innerHTML = `<span>${icon}</span> <span>${escapeHtml(message)}</span>`;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transition = 'opacity 0.3s ease';
+      setTimeout(() => {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 300);
+    }, duration);
+  }
+
+  // =========================================================================
+  // IN-BROWSER ARTICLE EDITOR ENGINE
+  // =========================================================================
+  function initArticleEditor() {
+    const editModal = document.getElementById('modal-article-edit');
+    const closeBtn = document.getElementById('modal-editor-close-btn');
+    const cancelBtn = document.getElementById('modal-editor-cancel-btn');
+    const saveBtn = document.getElementById('modal-editor-save-btn');
+    const deleteBtn = document.getElementById('modal-editor-delete-btn');
+    const titleInput = document.getElementById('editor-article-title');
+    const idInput = document.getElementById('editor-article-id');
+    const origIdInput = document.getElementById('editor-original-id');
+    const contentTextarea = document.getElementById('editor-article-content');
+    const quickTagsContainer = document.getElementById('editor-quick-tags');
+
+    if (!editModal) return;
+
+    closeBtn?.addEventListener('click', closeArticleEditor);
+    cancelBtn?.addEventListener('click', closeArticleEditor);
+    saveBtn?.addEventListener('click', saveArticleFromEditor);
+    deleteBtn?.addEventListener('click', deleteOrRevertArticleFromEditor);
+
+    // Auto-generate slug ID when typing title for brand new articles
+    titleInput?.addEventListener('input', () => {
+      if (!origIdInput.value) {
+        idInput.value = slugify(titleInput.value);
+      }
+    });
+
+    // Allow Tab key inside content textarea for indentation
+    contentTextarea?.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        const start = contentTextarea.selectionStart;
+        const end = contentTextarea.selectionEnd;
+        contentTextarea.setRangeText('  ', start, end, 'end');
+      }
+    });
+
+    // Quick tag insertion toolbar
+    quickTagsContainer?.querySelectorAll('.tag-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.getAttribute('data-tag');
+        insertTagIntoEditor(tag, contentTextarea);
+      });
+    });
+
+    // Sidebar New Article button
+    document.getElementById('btn-new-article-sidebar')?.addEventListener('click', () => {
+      openArticleEditor(null);
+    });
+  }
+
+  function insertTagIntoEditor(tagType, textarea) {
+    if (!textarea) return;
+    textarea.focus();
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selectedText = textarea.value.substring(start, end);
+
+    let replacement = '';
+    switch (tagType) {
+      case 'p':
+        replacement = `<p>${selectedText || 'New paragraph text...'}</p>`;
+        break;
+      case 'h3':
+        replacement = `<h3>${selectedText || 'Section Heading'}</h3>`;
+        break;
+      case 'h4':
+        replacement = `<h4>${selectedText || 'Subheading'}</h4>`;
+        break;
+      case 'strong':
+        replacement = `<strong>${selectedText || 'bold text'}</strong>`;
+        break;
+      case 'em':
+        replacement = `<em>${selectedText || 'italic text'}</em>`;
+        break;
+      case 'ul':
+        replacement = `<ul>\n  <li>${selectedText || 'First item'}</li>\n  <li>Second item</li>\n</ul>`;
+        break;
+      case 'gm-callout':
+        replacement = `\n<div class="gm-callout">\n  <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET LEVER</div>\n  <p>${selectedText || 'Confidential agendas, blackmail material, or unrevealed truths...'}</p>\n</div>\n`;
+        break;
+      case 'dc-box':
+        replacement = `\n<div class="dc-box">\n  <span class="dc-tag">DC 15 Society</span>\n  <span>${selectedText || 'Skill check description and consequence of success or failure.'}</span>\n</div>\n`;
+        break;
+      case 'escalation':
+        replacement = `\n<div class="escalation">\n  <strong>Escalation / Event:</strong> ${selectedText || 'Sudden complication, ambush, or political deadline.'}\n</div>\n`;
+        break;
+      case 'rule-box':
+        replacement = `\n<div class="rule-box">\n  <div class="rule-header">MECHANICS &bull; TITLE</div>\n  <p>${selectedText || 'Rule mechanics description, modifiers, and tactical applications.'}</p>\n</div>\n`;
+        break;
+      case 'info-card':
+        replacement = `\n<div class="info-card">\n  <h4>${selectedText || 'Card Title'}</h4>\n  <p>Detailed breakdown or quick reference notes.</p>\n</div>\n`;
+        break;
+      default:
+        replacement = selectedText;
+    }
+
+    textarea.setRangeText(replacement, start, end, 'select');
+    textarea.dispatchEvent(new Event('input'));
+  }
+
+  function openArticleEditor(articleId = null) {
+    const editModal = document.getElementById('modal-article-edit');
+    const deleteBtn = document.getElementById('modal-editor-delete-btn');
+    const modeBadge = document.getElementById('editor-mode-badge');
+    const modalTitle = document.getElementById('editor-modal-title');
+    const idInput = document.getElementById('editor-article-id');
+
+    if (!editModal) return;
+
+    if (articleId) {
+      const art = getArticle(articleId);
+      if (!art) {
+        showToast('Article not found to edit', 'error');
+        return;
+      }
+
+      document.getElementById('editor-original-id').value = art.id;
+      idInput.value = art.id;
+      idInput.readOnly = true;
+      idInput.style.opacity = '0.7';
+
+      document.getElementById('editor-article-title').value = art.title || '';
+      document.getElementById('editor-article-category').value = art.category || 'overview';
+      document.getElementById('editor-article-subtitle').value = art.subtitle || '';
+      document.getElementById('editor-article-tags').value = (art.tags || []).join(', ');
+      document.getElementById('editor-article-aliases').value = (art.aliases || []).join(', ');
+      document.getElementById('editor-article-summary').value = art.summary || '';
+
+      document.getElementById('editor-glance-appearance').value = art.atAGlance?.appearance || '';
+      document.getElementById('editor-glance-mannerisms').value = art.atAGlance?.mannerisms || '';
+      document.getElementById('editor-glance-quote').value = art.atAGlance?.quote || '';
+      document.getElementById('editor-glance-dcs').value = art.atAGlance?.courtDCs || '';
+
+      document.getElementById('editor-article-gm-secrets').value = art.gmSecrets || '';
+      document.getElementById('editor-article-related').value = (art.relatedIds || []).join(', ');
+      document.getElementById('editor-article-content').value = art.content || '';
+
+      modalTitle.textContent = `Edit: ${art.title}`;
+      deleteBtn.style.display = 'inline-block';
+      if (art._isCustom) {
+        deleteBtn.textContent = '🗑️ Delete Custom Article';
+        modeBadge.textContent = 'Custom Article';
+        modeBadge.className = 'badge-status badge-gold';
+      } else if (art._isModified) {
+        deleteBtn.textContent = '↺ Revert to Canonical Lore';
+        modeBadge.textContent = 'Modified Canonical';
+        modeBadge.className = 'badge-status';
+      } else {
+        deleteBtn.textContent = '🗑️ Hide / Delete from Wiki';
+        modeBadge.textContent = 'Canonical Lore';
+        modeBadge.className = 'badge-status';
+      }
+    } else {
+      // New Article
+      document.getElementById('editor-original-id').value = '';
+      idInput.value = '';
+      idInput.readOnly = false;
+      idInput.style.opacity = '1';
+
+      document.getElementById('editor-article-title').value = '';
+      document.getElementById('editor-article-category').value = AppState.currentCategory !== 'sessions' ? AppState.currentCategory : 'overview';
+      document.getElementById('editor-article-subtitle').value = '';
+      document.getElementById('editor-article-tags').value = '';
+      document.getElementById('editor-article-aliases').value = '';
+      document.getElementById('editor-article-summary').value = '';
+
+      document.getElementById('editor-glance-appearance').value = '';
+      document.getElementById('editor-glance-mannerisms').value = '';
+      document.getElementById('editor-glance-quote').value = '';
+      document.getElementById('editor-glance-dcs').value = '';
+
+      document.getElementById('editor-article-gm-secrets').value = '';
+      document.getElementById('editor-article-related').value = '';
+      document.getElementById('editor-article-content').value = '<p>Write article content here...</p>';
+
+      modalTitle.textContent = 'Create New Compendium Article';
+      deleteBtn.style.display = 'none';
+      modeBadge.textContent = 'New Entry';
+      modeBadge.className = 'badge-status badge-gold';
+    }
+
+    editModal.style.display = 'flex';
+    document.getElementById('editor-article-title').focus();
+  }
+
+  function closeArticleEditor() {
+    const editModal = document.getElementById('modal-article-edit');
+    if (editModal) editModal.style.display = 'none';
+  }
+
+  function saveArticleFromEditor() {
+    const title = document.getElementById('editor-article-title').value.trim();
+    let id = document.getElementById('editor-article-id').value.trim();
+    const category = document.getElementById('editor-article-category').value;
+    const subtitle = document.getElementById('editor-article-subtitle').value.trim();
+    const tagsRaw = document.getElementById('editor-article-tags').value;
+    const aliasesRaw = document.getElementById('editor-article-aliases').value;
+    const summary = document.getElementById('editor-article-summary').value.trim();
+    const content = document.getElementById('editor-article-content').value.trim();
+    const gmSecrets = document.getElementById('editor-article-gm-secrets').value.trim();
+    const relatedRaw = document.getElementById('editor-article-related').value;
+
+    const appearance = document.getElementById('editor-glance-appearance').value.trim();
+    const mannerisms = document.getElementById('editor-glance-mannerisms').value.trim();
+    const quote = document.getElementById('editor-glance-quote').value.trim();
+    const courtDCs = document.getElementById('editor-glance-dcs').value.trim();
+
+    if (!title) {
+      alert('Please provide an article title.');
+      document.getElementById('editor-article-title').focus();
+      return;
+    }
+
+    if (!id) {
+      id = slugify(title);
+    }
+
+    if (!content) {
+      alert('Please write article content.');
+      document.getElementById('editor-article-content').focus();
+      return;
+    }
+
+    const tags = tagsRaw.split(',').map(s => s.trim()).filter(Boolean);
+    const aliases = aliasesRaw.split(',').map(s => s.trim()).filter(Boolean);
+    const relatedIds = relatedRaw.split(',').map(s => s.trim()).filter(Boolean);
+
+    const articleObj = {
+      id: id,
+      category: category,
+      title: title,
+      subtitle: subtitle,
+      tags: tags,
+      aliases: aliases,
+      summary: summary || title,
+      content: content,
+      gmSecrets: gmSecrets,
+      relatedIds: relatedIds
+    };
+
+    if (appearance || mannerisms || quote || courtDCs) {
+      articleObj.atAGlance = {
+        appearance: appearance,
+        mannerisms: mannerisms,
+        quote: quote,
+        courtDCs: courtDCs
+      };
+    }
+
+    // Save into AppState.customArticles
+    const existingIdx = AppState.customArticles.findIndex(a => a.id === id);
+    if (existingIdx !== -1) {
+      AppState.customArticles[existingIdx] = articleObj;
+    } else {
+      AppState.customArticles.push(articleObj);
+    }
+
+    // Ensure it's removed from deleted list if previously deleted
+    AppState.deletedArticleIds = AppState.deletedArticleIds.filter(delId => delId !== id);
+
+    saveCustomArticles();
+    saveDeletedArticles();
+
+    // Re-initialize dynamic subsystems
+    initGlossary();
+    closeArticleEditor();
+
+    // Navigate to edited article
+    window.location.hash = `#${category}/${id}`;
+    handleRoute();
+
+    showToast(`Saved "${title}" to compendium!`, 'success');
+  }
+
+  function deleteOrRevertArticleFromEditor() {
+    const origId = document.getElementById('editor-original-id').value;
+    if (!origId) return;
+
+    const art = getArticle(origId);
+    const isCustom = art && art._isCustom;
+    const isModified = art && art._isModified;
+
+    const actionName = isCustom ? 'delete this custom article' : (isModified ? 'revert this article to canonical lore' : 'hide this article from the compendium');
+    if (!confirm(`Are you sure you want to ${actionName}?`)) {
+      return;
+    }
+
+    if (isCustom || isModified) {
+      AppState.customArticles = AppState.customArticles.filter(a => a.id !== origId);
+      saveCustomArticles();
+    } else {
+      if (!AppState.deletedArticleIds.includes(origId)) {
+        AppState.deletedArticleIds.push(origId);
+        saveDeletedArticles();
+      }
+    }
+
+    initGlossary();
+    closeArticleEditor();
+
+    if (isModified) {
+      showToast(`Reverted "${art.title}" to original lore!`, 'info');
+      handleRoute();
+    } else {
+      showToast(`Article removed from wiki.`, 'info');
+      window.location.hash = '#overview/campaign-premise';
+    }
+  }
+
+  // =========================================================================
+  // COMPENDIUM SYNC & CLOUD EXPORT ENGINE
+  // =========================================================================
+  function initSyncEngine() {
+    const syncModal = document.getElementById('modal-sync-export');
+    const closeBtn = document.getElementById('modal-sync-close-btn');
+    const closeFooterBtn = document.getElementById('modal-sync-close-footer');
+
+    closeBtn?.addEventListener('click', closeSyncModal);
+    closeFooterBtn?.addEventListener('click', closeSyncModal);
+
+    // Header & Sidebar sync triggers
+    document.getElementById('btn-sync-export-top')?.addEventListener('click', openSyncModal);
+    document.getElementById('btn-sync-sidebar')?.addEventListener('click', openSyncModal);
+
+    // Download & Save options
+    document.getElementById('btn-download-datajs')?.addEventListener('click', downloadDataJs);
+    document.getElementById('btn-direct-save-disk')?.addEventListener('click', directSaveDataJsToDisk);
+
+    // GitHub Sync
+    document.getElementById('btn-github-commit')?.addEventListener('click', pushCommitToGitHub);
+
+    // JSON Backup / Restore / Reset
+    document.getElementById('btn-export-edits-json')?.addEventListener('click', exportEditsBackupJSON);
+    document.getElementById('btn-import-edits-json')?.addEventListener('click', () => {
+      document.getElementById('input-import-edits-file')?.click();
+    });
+    document.getElementById('input-import-edits-file')?.addEventListener('change', importEditsBackupJSON);
+    document.getElementById('btn-reset-edits')?.addEventListener('click', resetAllCustomEdits);
+  }
+
+  function openSyncModal() {
+    const modal = document.getElementById('modal-sync-export');
+    if (!modal) return;
+
+    // Load saved GitHub credentials
+    const patInput = document.getElementById('github-pat-input');
+    const repoInput = document.getElementById('github-repo-input');
+    const branchInput = document.getElementById('github-branch-input');
+
+    if (patInput) patInput.value = safeStorage.getItem('okc_github_pat', '');
+    if (branchInput) branchInput.value = safeStorage.getItem('okc_github_branch', 'main');
+
+    let savedRepo = safeStorage.getItem('okc_github_repo', '');
+    if (!savedRepo && window.location.hostname.endsWith('github.io')) {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      const owner = window.location.hostname.split('.')[0];
+      const repo = parts[0] || '';
+      if (owner && repo) savedRepo = `${owner}/${repo}`;
+    }
+    if (repoInput) repoInput.value = savedRepo;
+
+    const statusEl = document.getElementById('github-sync-status');
+    if (statusEl) statusEl.innerHTML = '';
+
+    modal.style.display = 'flex';
+  }
+
+  function closeSyncModal() {
+    const modal = document.getElementById('modal-sync-export');
+    if (modal) modal.style.display = 'none';
+  }
+
+  function generateCompendiumDataJs() {
+    const data = getWikiData();
+    if (!data) return '';
+
+    // Strip internal runtime flags for pristine data file
+    const cleanArticles = data.articles.map(a => {
+      const copy = Object.assign({}, a);
+      delete copy._isCanonical;
+      delete copy._isModified;
+      delete copy._isCustom;
+      return copy;
+    });
+
+    const exportObj = {
+      meta: {
+        title: data.meta.title || "Our Kingdom Come",
+        subtitle: data.meta.subtitle || "Zingara Sandbox Campaign & GM Intrigue Compendium",
+        epoch: data.meta.epoch || "Period VIII: The Besieged Kingdom",
+        totalArticles: cleanArticles.length,
+        lastUpdated: new Date().toISOString()
+      },
+      categories: data.categories,
+      articles: cleanArticles
+    };
+
+    const serialized = JSON.stringify(exportObj, null, 2);
+
+    return `// Our Kingdom Come - Zingara Sandbox GM Compendium Data\n// Auto-compiled from canonical source documents and GM in-browser updates\n\nwindow.WIKI_DATA = ${serialized};\n\nvar WIKI_DATA = window.WIKI_DATA;\n\nif (typeof module !== 'undefined' && module.exports) {\n  module.exports = WIKI_DATA;\n}\n`;
+  }
+  window.generateCompendiumDataJs = generateCompendiumDataJs;
+  window.openArticleEditor = openArticleEditor;
+  window.openSyncModal = openSyncModal;
+
+  function downloadDataJs() {
+    const content = generateCompendiumDataJs();
+    downloadBlob(content, 'data.js', 'application/javascript');
+    showToast('Downloaded updated data.js!', 'success');
+  }
+
+  async function directSaveDataJsToDisk() {
+    const content = generateCompendiumDataJs();
+    if ('showSaveFilePicker' in window) {
+      try {
+        const handle = await window.showSaveFilePicker({
+          suggestedName: 'data.js',
+          types: [{
+            description: 'JavaScript Compendium (*.js)',
+            accept: { 'application/javascript': ['.js'] }
+          }]
+        });
+        const writable = await handle.createWritable();
+        await writable.write(content);
+        await writable.close();
+        showToast('Directly saved to data.js on disk!', 'success');
+        return;
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+        console.warn('showSaveFilePicker error, falling back to download', err);
+      }
+    }
+    // Fallback if browser doesn't support or encountered error
+    downloadBlob(content, 'data.js', 'application/javascript');
+    showToast('Browser downloaded updated data.js', 'info');
+  }
+
+  function downloadBlob(content, filename, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 100);
+  }
+
+  function utf8ToBase64(str) {
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+  }
+
+  async function pushCommitToGitHub() {
+    const patInput = document.getElementById('github-pat-input');
+    const repoInput = document.getElementById('github-repo-input');
+    const branchInput = document.getElementById('github-branch-input');
+    const commitMsgInput = document.getElementById('github-commit-msg');
+    const statusEl = document.getElementById('github-sync-status');
+
+    const pat = patInput.value.trim();
+    const repo = repoInput.value.trim();
+    const branch = branchInput.value.trim() || 'main';
+    const commitMsg = commitMsgInput.value.trim() || 'Update Zingara compendium lore from GM in-browser editor';
+
+    if (!pat) {
+      alert('Please enter your GitHub Personal Access Token (PAT).');
+      patInput.focus();
+      return;
+    }
+    if (!repo || !repo.includes('/')) {
+      alert('Please enter your repository in owner/repo format (e.g. username/Our-Kingdom-Come).');
+      repoInput.focus();
+      return;
+    }
+
+    // Save config in localStorage
+    safeStorage.setItem('okc_github_pat', pat);
+    safeStorage.setItem('okc_github_repo', repo);
+    safeStorage.setItem('okc_github_branch', branch);
+
+    statusEl.className = 'sync-status-display loading';
+    statusEl.innerHTML = '⏳ Contacting GitHub API...';
+
+    try {
+      const filePath = 'js/data.js';
+      const apiUrl = `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${encodeURIComponent(branch)}`;
+
+      // Step 1: Get current file sha if file exists
+      let currentSha = null;
+      const getRes = await fetch(apiUrl, {
+        headers: {
+          'Authorization': `Bearer ${pat}`,
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+
+      if (getRes.ok) {
+        const fileInfo = await getRes.json();
+        currentSha = fileInfo.sha;
+      } else if (getRes.status !== 404) {
+        const errData = await getRes.json().catch(() => ({}));
+        throw new Error(errData.message || `GitHub error (Status ${getRes.status})`);
+      }
+
+      statusEl.innerHTML = '⏳ Committing updated compendium...';
+
+      // Step 2: Push commit with base64 content
+      const contentStr = generateCompendiumDataJs();
+      const base64Content = utf8ToBase64(contentStr);
+
+      const putBody = {
+        message: commitMsg,
+        content: base64Content,
+        branch: branch
+      };
+      if (currentSha) {
+        putBody.sha = currentSha;
+      }
+
+      const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${pat}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(putBody)
+      });
+
+      if (!putRes.ok) {
+        const errData = await putRes.json().catch(() => ({}));
+        throw new Error(errData.message || `Commit failed with status ${putRes.status}`);
+      }
+
+      statusEl.className = 'sync-status-display success';
+      statusEl.innerHTML = `✅ Successfully committed to <strong>${escapeHtml(branch)}</strong>!`;
+      showToast(`Pushed compendium to GitHub (${branch})!`, 'success');
+    } catch (err) {
+      console.error('GitHub Sync Error:', err);
+      statusEl.className = 'sync-status-display error';
+      statusEl.innerHTML = `❌ Error: ${escapeHtml(err.message)}`;
+      showToast(`GitHub commit failed: ${err.message}`, 'error');
+    }
+  }
+
+  function exportEditsBackupJSON() {
+    const backup = {
+      exportVersion: 1,
+      exportedAt: new Date().toISOString(),
+      customArticles: AppState.customArticles,
+      deletedArticleIds: AppState.deletedArticleIds
+    };
+    const content = JSON.stringify(backup, null, 2);
+    downloadBlob(content, 'okc_compendium_edits.json', 'application/json');
+    showToast('Exported custom edits backup JSON', 'success');
+  }
+
+  function importEditsBackupJSON(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (data && Array.isArray(data.customArticles)) {
+          AppState.customArticles = data.customArticles;
+          AppState.deletedArticleIds = Array.isArray(data.deletedArticleIds) ? data.deletedArticleIds : [];
+          saveCustomArticles();
+          saveDeletedArticles();
+          initGlossary();
+          renderSidebar();
+          handleRoute();
+          closeSyncModal();
+          showToast('Custom edits restored successfully!', 'success');
+        } else {
+          alert('Invalid backup JSON format. Missing customArticles array.');
+        }
+      } catch (err) {
+        alert('Failed to parse JSON file: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function resetAllCustomEdits() {
+    if (!confirm('Are you sure you want to revert ALL custom and modified articles back to canonical lore? This cannot be undone unless you exported a backup.')) {
+      return;
+    }
+    AppState.customArticles = [];
+    AppState.deletedArticleIds = [];
+    saveCustomArticles();
+    saveDeletedArticles();
+    initGlossary();
+    renderSidebar();
+    handleRoute();
+    closeSyncModal();
+    showToast('Compendium restored to original canonical lore!', 'info');
+  }
+
   // =========================================================================
   // INITIALIZATION
   // =========================================================================
@@ -983,6 +1720,8 @@
     initModeToggle();
     initSearch();
     initTools();
+    initArticleEditor();
+    initSyncEngine();
 
     // Sidebar Toggle
     document.getElementById('sidebar-toggle-btn')?.addEventListener('click', toggleSidebar);

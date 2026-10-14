@@ -73,6 +73,9 @@
         <button id="mode-toggle-btn" class="mode-toggle-btn gm-active" title="Toggle GM Confidential / Player Safe Mode">
           👁️ <span class="mode-text">GM Secrets Mode</span>
         </button>
+        <button id="btn-sync-export-top" class="btn-icon" title="Sync & Export Compendium to GitHub / Disk">
+          💾 <span class="mode-text">Sync</span>
+        </button>
         <button id="btn-tools-toggle" class="btn-icon" title="Toggle Quick Dice Roller & GM Tools">
           🎲 <span class="mode-text">Dice</span>
         </button>
@@ -86,6 +89,14 @@
     <main id="main-workspace">
       <!-- LEFT SIDEBAR -->
       <aside id="sidebar">
+        <div class="sidebar-action-bar">
+          <button id="btn-new-article-sidebar" class="btn-sidebar-action" title="Create New Compendium Article">
+            ➕ New Article
+          </button>
+          <button id="btn-sync-sidebar" class="btn-sidebar-action" title="Sync & Export Wiki">
+            💾 Sync / Export
+          </button>
+        </div>
         <div id="sidebar-nav-tree">
           <!-- Populated dynamically by app.js -->
         </div>
@@ -188,6 +199,246 @@
         </div>
       </div>
     </div>
+
+    <!-- MODAL: IN-BROWSER ARTICLE EDITOR -->
+    <div id="modal-article-edit" class="modal-overlay" style="display: none;">
+      <div class="modal-card modal-large">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h2 id="editor-modal-title" style="margin: 0; color: var(--accent-gold);">Edit Article</h2>
+            <span id="editor-mode-badge" class="badge-status">Editing</span>
+          </div>
+          <button id="modal-editor-close-btn" class="modal-close-icon" title="Close Editor">&times;</button>
+        </div>
+
+        <form id="form-article-editor" onsubmit="return false;">
+          <input type="hidden" id="editor-original-id">
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="editor-article-title">Article Title <span class="text-crimson">*</span></label>
+              <input type="text" id="editor-article-title" class="form-input" required placeholder="e.g. King Ancillus I">
+            </div>
+            <div class="form-group">
+              <label for="editor-article-id">Article ID / Slug <small class="text-dim">(URL identifier)</small></label>
+              <input type="text" id="editor-article-id" class="form-input" placeholder="e.g. king-ancillus-i">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="editor-article-category">Compendium Category <span class="text-crimson">*</span></label>
+              <select id="editor-article-category" class="form-select">
+                <option value="overview">👑 Campaign Overview</option>
+                <option value="npcs">🎭 Royal Court &amp; NPCs</option>
+                <option value="factions">⚔️ Factions &amp; Power Blocs</option>
+                <option value="gazetteer">🗺️ Regional Gazetteer</option>
+                <option value="history">📜 Chronology &amp; Periods</option>
+                <option value="rules">⚖️ Rules &amp; Mechanics</option>
+                <option value="relics">💀 Arcana &amp; Relics</option>
+                <option value="hooks">🎯 Plot Hooks &amp; Sandbox</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="editor-article-subtitle">Subtitle / Distinction</label>
+              <input type="text" id="editor-article-subtitle" class="form-input" placeholder="e.g. First Monarch of Period VIII">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="editor-article-tags">Tags <small class="text-dim">(Comma-separated)</small></label>
+              <input type="text" id="editor-article-tags" class="form-input" placeholder="e.g. Royal Court, Monarch, Period VIII">
+            </div>
+            <div class="form-group">
+              <label for="editor-article-aliases">Aliases / Auto-Link Terms <small class="text-dim">(Comma-separated)</small></label>
+              <input type="text" id="editor-article-aliases" class="form-input" placeholder="e.g. Ancillus, Iron King">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="editor-article-summary">Quick Summary <small class="text-dim">(Shown in fast preview card &amp; search)</small></label>
+            <input type="text" id="editor-article-summary" class="form-input" placeholder="Brief 1-2 sentence description...">
+          </div>
+
+          <!-- Collapsible At-A-Glance Section -->
+          <details class="editor-accordion">
+            <summary><strong>At A Glance Profile</strong> <small class="text-dim">(Appearance, Mannerisms, Quotes, DCs - Optional)</small></summary>
+            <div class="editor-accordion-content form-grid-2">
+              <div class="form-group">
+                <label for="editor-glance-appearance">Appearance</label>
+                <input type="text" id="editor-glance-appearance" class="form-input" placeholder="e.g. Broad-shouldered, silver rapier...">
+              </div>
+              <div class="form-group">
+                <label for="editor-glance-mannerisms">Mannerisms</label>
+                <input type="text" id="editor-glance-mannerisms" class="form-input" placeholder="e.g. Never blinks while listening...">
+              </div>
+              <div class="form-group">
+                <label for="editor-glance-quote">Quote</label>
+                <input type="text" id="editor-glance-quote" class="form-input" placeholder="e.g. The crown does not negotiate with dust.">
+              </div>
+              <div class="form-group">
+                <label for="editor-glance-dcs">Court DCs</label>
+                <input type="text" id="editor-glance-dcs" class="form-input" placeholder="e.g. DC 16 Insight, DC 18 Pundonor">
+              </div>
+            </div>
+          </details>
+
+          <!-- GM Confidential Secrets -->
+          <div class="form-group" style="margin-top: 10px;">
+            <label for="editor-article-gm-secrets">
+              🔒 GM Confidential Secrets / Hidden Levers
+              <small class="text-dim">(Masked in Player Safe Mode)</small>
+            </label>
+            <textarea id="editor-article-gm-secrets" class="form-textarea" rows="2" placeholder="Hidden agenda, leverage points, secret motivations..."></textarea>
+          </div>
+
+          <!-- Related Entity IDs -->
+          <div class="form-group">
+            <label for="editor-article-related">Related Article IDs <small class="text-dim">(Comma-separated IDs for cross-references)</small></label>
+            <input type="text" id="editor-article-related" class="form-input" placeholder="e.g. valenza, sadoria, court-matrix">
+          </div>
+
+          <!-- HTML Article Body with Quick Toolbar -->
+          <div class="form-group">
+            <div class="editor-toolbar-header">
+              <label for="editor-article-content">
+                Article Body (HTML) <span class="text-crimson">*</span>
+              </label>
+              <span class="editor-toolbar-hint">Character names and aliases auto-hyperlink automatically!</span>
+            </div>
+            
+            <div class="editor-quick-tags" id="editor-quick-tags">
+              <button type="button" class="tag-btn" data-tag="p" title="Wrap or insert Paragraph">&lt;p&gt;</button>
+              <button type="button" class="tag-btn" data-tag="h3" title="Wrap or insert Section Heading">&lt;h3&gt;</button>
+              <button type="button" class="tag-btn" data-tag="h4" title="Wrap or insert Subheading">&lt;h4&gt;</button>
+              <button type="button" class="tag-btn" data-tag="strong" title="Wrap in Bold">&lt;b&gt;</button>
+              <button type="button" class="tag-btn" data-tag="em" title="Wrap in Italic">&lt;i&gt;</button>
+              <button type="button" class="tag-btn" data-tag="ul" title="Insert Unordered List">&lt;ul&gt;</button>
+              <button type="button" class="tag-btn tag-btn-special" data-tag="gm-callout" title="GM Confidential Callout Box">🔒 GM Secret</button>
+              <button type="button" class="tag-btn tag-btn-special" data-tag="dc-box" title="Difficulty Class Check Box">🎲 DC Check</button>
+              <button type="button" class="tag-btn tag-btn-special" data-tag="escalation" title="Escalation / Threat Event">⚡ Escalation</button>
+              <button type="button" class="tag-btn tag-btn-special" data-tag="rule-box" title="Rule / Mechanics Box">📜 Rule Box</button>
+              <button type="button" class="tag-btn tag-btn-special" data-tag="info-card" title="Informational Highlight Card">ℹ️ Info Card</button>
+            </div>
+
+            <textarea id="editor-article-content" class="form-textarea code-editor" rows="14" required placeholder="<h3>Section Heading</h3>&#10;<p>Write article body here...</p>"></textarea>
+          </div>
+
+          <div class="modal-footer-actions">
+            <button type="button" id="modal-editor-delete-btn" class="btn-danger" style="display: none;">Delete Article</button>
+            <div style="display: flex; gap: 10px; margin-left: auto;">
+              <button type="button" id="modal-editor-cancel-btn" class="btn-secondary">Cancel</button>
+              <button type="button" id="modal-editor-save-btn" class="btn-primary">Save &amp; Apply</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: COMPENDIUM SYNC & EXPORT -->
+    <div id="modal-sync-export" class="modal-overlay" style="display: none;">
+      <div class="modal-card modal-medium">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h2 style="margin: 0; color: var(--accent-gold);">Compendium Sync &amp; Export</h2>
+            <span class="badge-status badge-gold">Zero Server Required</span>
+          </div>
+          <button id="modal-sync-close-btn" class="modal-close-icon" title="Close Sync Modal">&times;</button>
+        </div>
+
+        <div class="sync-modal-body">
+          <p class="text-muted" style="margin-bottom: 16px;">
+            Your edits are active immediately in this browser. Use any option below to export or synchronize your compendium back to your local repository or GitHub Pages.
+          </p>
+
+          <!-- OPTION 1: 1-CLICK GITHUB COMMIT -->
+          <div class="sync-card">
+            <div class="sync-card-header">
+              <span class="sync-card-icon">🐙</span>
+              <div>
+                <strong>1-Click GitHub Sync</strong>
+                <div class="text-dim text-small">Directly commits the updated <code>js/data.js</code> to your GitHub repository using GitHub's REST API.</div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 12px;">
+              <label for="github-pat-input">Personal Access Token (PAT)</label>
+              <input type="password" id="github-pat-input" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+              <small class="text-dim">Requires <code>contents:write</code> (or <code>repo</code>) permission. Stored securely in your browser's localStorage.</small>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="github-repo-input">Repository (owner/repo)</label>
+                <input type="text" id="github-repo-input" class="form-input" placeholder="username/Our-Kingdom-Come">
+              </div>
+              <div class="form-group">
+                <label for="github-branch-input">Branch</label>
+                <input type="text" id="github-branch-input" class="form-input" value="main" placeholder="main">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="github-commit-msg">Commit Message</label>
+              <input type="text" id="github-commit-msg" class="form-input" value="Update Zingara compendium lore from GM in-browser editor">
+            </div>
+
+            <div class="sync-action-row">
+              <button id="btn-github-commit" class="btn-primary">
+                🚀 Commit &amp; Push to GitHub
+              </button>
+              <div id="github-sync-status" class="sync-status-display"></div>
+            </div>
+          </div>
+
+          <!-- OPTION 2: LOCAL DISK & DATA.JS EXPORT -->
+          <div class="sync-card" style="margin-top: 16px;">
+            <div class="sync-card-header">
+              <span class="sync-card-icon">💾</span>
+              <div>
+                <strong>Local File Overwrite &amp; Download</strong>
+                <div class="text-dim text-small">Download the complete updated <code>js/data.js</code> or overwrite directly on disk.</div>
+              </div>
+            </div>
+            
+            <div class="sync-action-row" style="margin-top: 12px; gap: 10px; flex-wrap: wrap;">
+              <button id="btn-direct-save-disk" class="btn-primary" title="Overwrite js/data.js using File System Access API">
+                📁 Direct Overwrite js/data.js
+              </button>
+              <button id="btn-download-datajs" class="btn-secondary" title="Standard file download">
+                📥 Download data.js
+              </button>
+            </div>
+          </div>
+
+          <!-- OPTION 3: EDITS BACKUP & RESET -->
+          <div class="sync-card" style="margin-top: 16px;">
+            <div class="sync-card-header">
+              <span class="sync-card-icon">🔄</span>
+              <div>
+                <strong>Backup &amp; Reset Custom Edits</strong>
+                <div class="text-dim text-small">Export or import just your modified and custom articles.</div>
+              </div>
+            </div>
+
+            <div class="sync-action-row" style="margin-top: 12px; gap: 10px; flex-wrap: wrap;">
+              <button id="btn-export-edits-json" class="btn-secondary">Export Edits (JSON)</button>
+              <button id="btn-import-edits-json" class="btn-secondary">Import Edits (JSON)</button>
+              <input type="file" id="input-import-edits-file" style="display: none;" accept=".json">
+              <button id="btn-reset-edits" class="btn-danger" style="margin-left: auto;">Reset All Custom Edits</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer-actions">
+          <button id="modal-sync-close-footer" class="btn-secondary">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-notification" class="toast-container" aria-live="polite"></div>
 
   </div>
 
