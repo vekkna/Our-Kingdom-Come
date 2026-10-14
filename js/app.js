@@ -11,6 +11,7 @@
   const AppState = {
     currentArticleId: 'campaign-premise',
     currentCategory: 'overview',
+    theme: localStorage.getItem('okc_theme') || 'dark',
     isPlayerSafe: localStorage.getItem('okc_player_safe') === 'true',
     sidebarOpen: window.innerWidth > 900,
     drawerEntityId: null,
@@ -785,6 +786,45 @@
   }
 
   // =========================================================================
+  // LIGHT / DARK THEME TOGGLE
+  // =========================================================================
+  function initThemeToggle() {
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (!themeBtn) return;
+
+    function applyTheme() {
+      const isLight = AppState.theme === 'light';
+      document.documentElement.setAttribute('data-theme', AppState.theme);
+      document.body.setAttribute('data-theme', AppState.theme);
+
+      if (isLight) {
+        themeBtn.innerHTML = `🌙 <span class="mode-text">Dark</span>`;
+        themeBtn.title = "Light mode active (High-contrast parchment). Click or press Alt+T for Dark obsidian mode.";
+      } else {
+        themeBtn.innerHTML = `☀️ <span class="mode-text">Light</span>`;
+        themeBtn.title = "Dark mode active (Zingaran obsidian). Click or press Alt+T for Light parchment mode.";
+      }
+      localStorage.setItem('okc_theme', AppState.theme);
+    }
+
+    themeBtn.addEventListener('click', () => {
+      AppState.theme = AppState.theme === 'light' ? 'dark' : 'light';
+      applyTheme();
+    });
+
+    // Keyboard shortcut: Alt+T to toggle theme
+    document.addEventListener('keydown', (e) => {
+      if (e.altKey && (e.key === 't' || e.key === 'T')) {
+        e.preventDefault();
+        AppState.theme = AppState.theme === 'light' ? 'dark' : 'light';
+        applyTheme();
+      }
+    });
+
+    applyTheme();
+  }
+
+  // =========================================================================
   // GM MODE & PLAYER-SAFE TOGGLE
   // =========================================================================
   function initModeToggle() {
@@ -816,7 +856,7 @@
     // Delegated click event to temporarily unmask confidential elements when clicked in Player-Safe Mode
     document.addEventListener('click', (e) => {
       if (!AppState.isPlayerSafe) return;
-      const target = e.target.closest('.gm-callout p, .gm-only-cell, .dc-box, .escalation');
+      const target = e.target.closest('.gm-callout, .gm-only-cell, .dc-box, .escalation, .glance-item.dcs, th.gm-only-header');
       if (target) {
         target.classList.toggle('revealed');
       }
@@ -905,6 +945,7 @@
   // INITIALIZATION
   // =========================================================================
   function boot() {
+    initThemeToggle();
     initGlossary();
     initModeToggle();
     initSearch();

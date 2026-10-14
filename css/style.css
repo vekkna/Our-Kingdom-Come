@@ -4,7 +4,8 @@
    Optimized for: Tablet & Desktop Live Play (Zero Latency, Tablet Touch Targets)
    ========================================================================== */
 
-:root {
+:root,
+[data-theme="dark"] {
   /* Dark Obsidian & Slate Foundation */
   --bg-core: #0d0e12;
   --bg-sidebar: #13141a;
@@ -56,6 +57,48 @@
   --shadow-drawer: -6px 0 24px rgba(0, 0, 0, 0.65);
 }
 
+[data-theme="light"] {
+  /* Clean High-Contrast Parchment & Scholarly Foundation */
+  --bg-core: #f5f2ea;
+  --bg-sidebar: #eae4d5;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-card: #f9f6ef;
+  --bg-input: #ffffff;
+  
+  /* Borders & Dividers */
+  --border-subtle: #e2dac9;
+  --border-medium: #cbbfab;
+  --border-strong: #9e917a;
+  --border-gold: #9e731b;
+  
+  /* Text & Legibility (High Contrast Ink) */
+  --text-main: #1c1b18;
+  --text-muted: #49453c;
+  --text-dim: #716c60;
+  --text-inverse: #ffffff;
+  
+  /* Zingaran Heraldic Accents */
+  --accent-gold: #8c5d0d;
+  --accent-gold-hover: #674204;
+  --accent-crimson: #a91d2c;
+  --accent-crimson-bg: rgba(169, 29, 44, 0.08);
+  --accent-crimson-border: #8b1824;
+  --accent-purple: #6c3483;
+  --accent-teal: #0e6655;
+  --accent-blue: #1b4f72;
+  
+  /* Interactive Feedback */
+  --link-color: #8c5d0d;
+  --link-hover: #523403;
+  --link-bg: rgba(140, 93, 13, 0.09);
+  --focus-ring: 2px solid var(--accent-gold);
+
+  /* Shadows */
+  --shadow-main: 0 3px 12px rgba(0, 0, 0, 0.1);
+  --shadow-drawer: -4px 0 24px rgba(0, 0, 0, 0.16);
+}
+
 /* Reset & Box Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -87,7 +130,7 @@ h1, h2, h3, h4, h5 {
 
 h1 { font-size: 1.8rem; color: var(--accent-gold); }
 h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 6px; margin: 20px 0 12px; }
-h3 { font-size: 1.2rem; color: #f4ede0; margin: 16px 0 8px; }
+h3 { font-size: 1.2rem; color: var(--text-main); margin: 16px 0 8px; }
 h4 { font-size: 1.05rem; color: var(--accent-gold); margin: 12px 0 6px; }
 
 p { margin-bottom: 12px; }
@@ -249,6 +292,29 @@ a:hover, a:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* Light / Dark Mode Toggle */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-medium);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--accent-gold);
+  transform: translateY(-1px);
 }
 
 /* GM vs Player-Safe Mode Toggle */
@@ -586,7 +652,7 @@ a:hover, a:focus-visible {
 .glance-item.quote {
   grid-column: 1 / -1;
   font-style: italic;
-  color: #f4ede0;
+  color: var(--text-main);
   background: var(--bg-surface);
   padding: 10px 14px;
   border-left: 3px solid var(--accent-gold);
@@ -666,6 +732,8 @@ a:hover, a:focus-visible {
 body.player-safe-mode .gm-callout {
   border-color: var(--border-medium);
   background-color: var(--bg-surface);
+  cursor: pointer;
+  position: relative;
 }
 
 body.player-safe-mode .gm-callout .gm-badge {
@@ -673,30 +741,53 @@ body.player-safe-mode .gm-callout .gm-badge {
   color: var(--text-dim);
 }
 
-body.player-safe-mode .gm-callout p,
-body.player-safe-mode .gm-only-cell .gm-mask-text,
-body.player-safe-mode .dc-box,
-body.player-safe-mode .escalation {
-  filter: blur(5px);
+/* Blur titles, headers, badges, paragraphs, and list items in confidential sections */
+body.player-safe-mode .gm-callout:not(.revealed) .gm-badge,
+body.player-safe-mode .gm-callout:not(.revealed) p,
+body.player-safe-mode .gm-callout:not(.revealed) h1,
+body.player-safe-mode .gm-callout:not(.revealed) h2,
+body.player-safe-mode .gm-callout:not(.revealed) h3,
+body.player-safe-mode .gm-callout:not(.revealed) h4,
+body.player-safe-mode .gm-callout:not(.revealed) h5,
+body.player-safe-mode .gm-callout:not(.revealed) ul,
+body.player-safe-mode .gm-callout:not(.revealed) ol,
+body.player-safe-mode .gm-only-cell:not(.revealed) .gm-mask-text,
+body.player-safe-mode th.gm-only-header:not(.revealed),
+body.player-safe-mode .dc-box:not(.revealed),
+body.player-safe-mode .escalation:not(.revealed),
+body.player-safe-mode .glance-item.dcs:not(.revealed) {
+  filter: blur(6px);
   user-select: none;
   cursor: pointer;
   transition: filter 0.2s ease;
-  position: relative;
 }
 
-body.player-safe-mode .gm-callout p::after,
-body.player-safe-mode .gm-only-cell::after,
-body.player-safe-mode .dc-box::after {
-  content: "🔒 Confidential GM Data (Click to peek)";
+/* Subtle click-to-peek badges */
+body.player-safe-mode .gm-callout:not(.revealed)::after,
+body.player-safe-mode .gm-only-cell:not(.revealed)::after,
+body.player-safe-mode .dc-box:not(.revealed)::after,
+body.player-safe-mode .glance-item.dcs:not(.revealed)::after,
+body.player-safe-mode th.gm-only-header:not(.revealed)::after {
+  content: "🔒 Confidential (Click to peek)";
   display: block;
   font-size: 0.75rem;
   color: var(--accent-gold);
   filter: blur(0);
-  margin-top: 4px;
+  margin-top: 6px;
   font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  user-select: none;
 }
 
-body.player-safe-mode .revealed {
+body.player-safe-mode th.gm-only-header:not(.revealed)::after {
+  margin-top: 2px;
+  font-size: 0.7rem;
+}
+
+/* Revealed States */
+body.player-safe-mode .revealed,
+body.player-safe-mode .revealed * {
   filter: none !important;
   user-select: text !important;
 }
@@ -1070,6 +1161,78 @@ body.player-safe-mode .revealed::after {
 }
 
 /* ==========================================================================
+   LIGHT MODE COMPONENT REFINEMENTS
+   High-contrast, crystal-clear clarity for bright environments & tablets
+   ========================================================================== */
+[data-theme="light"] .rule-box {
+  background-color: #eef6fb;
+  border: 1px solid #7fb3d5;
+  border-left: 4px solid #2980b9;
+}
+
+[data-theme="light"] .rule-header {
+  color: #1b4f72;
+}
+
+[data-theme="light"] .dc-box {
+  background-color: #edf7ee;
+  border: 1px solid #a9dfbf;
+  border-left: 4px solid #27ae60;
+  color: #145a32;
+}
+
+[data-theme="light"] .escalation {
+  background: rgba(214, 137, 16, 0.12);
+  color: #7d4807;
+  border-left: 3px solid #b7791f;
+}
+
+[data-theme="light"] .glance-item.dcs {
+  background: rgba(39, 174, 96, 0.1);
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  color: #196f3d;
+}
+
+[data-theme="light"] .rival-badge {
+  background: rgba(192, 57, 43, 0.1);
+  border-color: #c0392b;
+  color: #922b21;
+}
+
+[data-theme="light"] .search-highlight {
+  background-color: #f9e79f;
+  color: #1a1917;
+}
+
+[data-theme="light"] #search-results-modal {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] #dice-result-display {
+  color: #196f3d;
+}
+
+[data-theme="light"] .mode-toggle-btn.gm-active {
+  background-color: rgba(169, 29, 44, 0.08);
+  border-color: #a91d2c;
+  color: #8b1824;
+}
+
+[data-theme="light"] .mode-toggle-btn.player-active {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-color: #27ae60;
+  color: #196f3d;
+}
+
+[data-theme="light"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] .modal-card {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (TABLETS & PHONES)
    ========================================================================== */
 @media (max-width: 900px) {
@@ -1094,7 +1257,8 @@ body.player-safe-mode .revealed::after {
     font-size: 1rem;
   }
   
-  .mode-toggle-btn span.mode-text {
+  .mode-toggle-btn span.mode-text,
+  .theme-toggle-btn span.mode-text {
     display: none;
   }
 }

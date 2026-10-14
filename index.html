@@ -6,6 +6,12 @@
   <meta name="description" content="Our Kingdom Come - Zingara RPG Campaign Setting and Royal Court GM Intrigue Compendium">
   <title>Our Kingdom Come &bull; Zingara GM Compendium</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      var saved = localStorage.getItem('okc_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </head>
 <body>
 
@@ -28,6 +34,10 @@
 
       <!-- Header Controls -->
       <div class="header-actions">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Light / Dark Mode (Alt+T)" aria-label="Toggle Theme">
+          <span class="theme-icon">☀️</span>
+          <span class="mode-text">Light</span>
+        </button>
         <button id="mode-toggle-btn" class="mode-toggle-btn gm-active" title="Toggle GM Confidential / Player Safe Mode">
           👁️ <span class="mode-text">GM Secrets Mode</span>
         </button>

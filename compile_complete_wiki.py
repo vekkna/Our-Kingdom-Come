@@ -274,7 +274,7 @@ def main():
       <th>NPC Name &amp; Title</th>
       <th>Primary Faction</th>
       <th>Stated Stance Toward PCs</th>
-      <th>Secret Agenda / Hidden Lever</th>
+      <th class="gm-only-header">Secret Agenda / Hidden Lever</th>
       <th>Primary Court Rival</th>
     </tr>
   </thead>
