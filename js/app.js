@@ -7,18 +7,36 @@
 (function () {
   'use strict';
 
+  // Safe Storage Wrapper (never throws even if cookies/storage blocked)
+  const safeStorage = {
+    getItem: (key, fallback = null) => {
+      try {
+        const val = localStorage.getItem(key);
+        return val !== null ? val : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    },
+    setItem: (key, val) => {
+      try {
+        localStorage.setItem(key, val);
+      } catch (e) {}
+    }
+  };
+
   // State Management
   const AppState = {
     currentArticleId: 'campaign-premise',
     currentCategory: 'overview',
-    theme: localStorage.getItem('okc_theme') || 'dark',
-    isPlayerSafe: localStorage.getItem('okc_player_safe') === 'true',
+    theme: document.documentElement.getAttribute('data-theme') || safeStorage.getItem('okc_theme', 'dark'),
+    isPlayerSafe: safeStorage.getItem('okc_player_safe', 'false') === 'true',
     sidebarOpen: window.innerWidth > 900,
     drawerEntityId: null,
     searchQuery: '',
     selectedSearchIdx: 0,
     sessions: []
   };
+  window.AppState = AppState;
 
   const getWikiData = () => window.WIKI_DATA || (typeof WIKI_DATA !== 'undefined' ? WIKI_DATA : null);
   const EntityGlossary = [];
@@ -527,7 +545,7 @@
   // SESSION LOG & CAMPAIGN TRACKER
   // =========================================================================
   async function initSessions() {
-    const saved = localStorage.getItem('okc_sessions');
+    const saved = safeStorage.getItem('okc_sessions');
     if (saved) {
       try {
         AppState.sessions = JSON.parse(saved);
@@ -536,7 +554,7 @@
       }
     }
 
-    // If no saved sessions in localStorage, load from data/sessions.json or use embedded default
+    // If no saved sessions in storage, load from data/sessions.json or use embedded default
     if (!AppState.sessions || AppState.sessions.length === 0) {
       try {
         const res = await fetch('data/sessions.json');
@@ -575,7 +593,7 @@
   }
 
   function saveSessions() {
-    localStorage.setItem('okc_sessions', JSON.stringify(AppState.sessions));
+    safeStorage.setItem('okc_sessions', JSON.stringify(AppState.sessions));
   }
 
   function renderSessionView() {
@@ -795,7 +813,11 @@
     function applyTheme() {
       const isLight = AppState.theme === 'light';
       document.documentElement.setAttribute('data-theme', AppState.theme);
-      document.body.setAttribute('data-theme', AppState.theme);
+      document.documentElement.className = isLight ? 'light-theme' : 'dark-theme';
+      if (document.body) {
+        document.body.setAttribute('data-theme', AppState.theme);
+        document.body.className = (document.body.className.replace(/\b(light|dark)-theme\b/g, '') + ' ' + (isLight ? 'light-theme' : 'dark-theme')).trim();
+      }
 
       if (isLight) {
         themeBtn.innerHTML = `🌙 <span class="mode-text">Dark</span>`;
@@ -804,20 +826,31 @@
         themeBtn.innerHTML = `☀️ <span class="mode-text">Light</span>`;
         themeBtn.title = "Dark mode active (Zingaran obsidian). Click or press Alt+T for Light parchment mode.";
       }
-      localStorage.setItem('okc_theme', AppState.theme);
+      safeStorage.setItem('okc_theme', AppState.theme);
     }
 
-    themeBtn.addEventListener('click', () => {
-      AppState.theme = AppState.theme === 'light' ? 'dark' : 'light';
-      applyTheme();
+    themeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof window.__toggleTheme === 'function') {
+        window.__toggleTheme();
+        AppState.theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      } else {
+        AppState.theme = AppState.theme === 'light' ? 'dark' : 'light';
+        applyTheme();
+      }
     });
 
     // Keyboard shortcut: Alt+T to toggle theme
     document.addEventListener('keydown', (e) => {
       if (e.altKey && (e.key === 't' || e.key === 'T')) {
         e.preventDefault();
-        AppState.theme = AppState.theme === 'light' ? 'dark' : 'light';
-        applyTheme();
+        if (typeof window.__toggleTheme === 'function') {
+          window.__toggleTheme();
+          AppState.theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        } else {
+          AppState.theme = AppState.theme === 'light' ? 'dark' : 'light';
+          applyTheme();
+        }
       }
     });
 
@@ -845,7 +878,7 @@
         modeBtn.innerHTML = `👁️ <span class="mode-text">GM Secrets Mode</span>`;
         modeBtn.title = "GM Mode is active (All secret agendas, hidden levers, and DCs are visible). Click to switch to Player Safe Mode.";
       }
-      localStorage.setItem('okc_player_safe', AppState.isPlayerSafe);
+      safeStorage.setItem('okc_player_safe', AppState.isPlayerSafe);
     }
 
     modeBtn.addEventListener('click', () => {

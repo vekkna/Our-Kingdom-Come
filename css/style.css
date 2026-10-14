@@ -5,7 +5,10 @@
    ========================================================================== */
 
 :root,
-[data-theme="dark"] {
+:root[data-theme="dark"],
+[data-theme="dark"],
+html.dark-theme,
+body.dark-theme {
   /* Dark Obsidian & Slate Foundation */
   --bg-core: #0d0e12;
   --bg-sidebar: #13141a;
@@ -57,7 +60,10 @@
   --shadow-drawer: -6px 0 24px rgba(0, 0, 0, 0.65);
 }
 
-[data-theme="light"] {
+:root[data-theme="light"],
+[data-theme="light"],
+html.light-theme,
+body.light-theme {
   /* Clean High-Contrast Parchment & Scholarly Foundation */
   --bg-core: #f5f2ea;
   --bg-sidebar: #eae4d5;
@@ -1164,71 +1170,97 @@ body.player-safe-mode .revealed::after {
    LIGHT MODE COMPONENT REFINEMENTS
    High-contrast, crystal-clear clarity for bright environments & tablets
    ========================================================================== */
-[data-theme="light"] .rule-box {
+:root[data-theme="light"] .rule-box,
+[data-theme="light"] .rule-box,
+.light-theme .rule-box {
   background-color: #eef6fb;
   border: 1px solid #7fb3d5;
   border-left: 4px solid #2980b9;
 }
 
-[data-theme="light"] .rule-header {
+:root[data-theme="light"] .rule-header,
+[data-theme="light"] .rule-header,
+.light-theme .rule-header {
   color: #1b4f72;
 }
 
-[data-theme="light"] .dc-box {
+:root[data-theme="light"] .dc-box,
+[data-theme="light"] .dc-box,
+.light-theme .dc-box {
   background-color: #edf7ee;
   border: 1px solid #a9dfbf;
   border-left: 4px solid #27ae60;
   color: #145a32;
 }
 
-[data-theme="light"] .escalation {
+:root[data-theme="light"] .escalation,
+[data-theme="light"] .escalation,
+.light-theme .escalation {
   background: rgba(214, 137, 16, 0.12);
   color: #7d4807;
   border-left: 3px solid #b7791f;
 }
 
-[data-theme="light"] .glance-item.dcs {
+:root[data-theme="light"] .glance-item.dcs,
+[data-theme="light"] .glance-item.dcs,
+.light-theme .glance-item.dcs {
   background: rgba(39, 174, 96, 0.1);
   border: 1px solid rgba(39, 174, 96, 0.3);
   color: #196f3d;
 }
 
-[data-theme="light"] .rival-badge {
+:root[data-theme="light"] .rival-badge,
+[data-theme="light"] .rival-badge,
+.light-theme .rival-badge {
   background: rgba(192, 57, 43, 0.1);
   border-color: #c0392b;
   color: #922b21;
 }
 
-[data-theme="light"] .search-highlight {
+:root[data-theme="light"] .search-highlight,
+[data-theme="light"] .search-highlight,
+.light-theme .search-highlight {
   background-color: #f9e79f;
   color: #1a1917;
 }
 
-[data-theme="light"] #search-results-modal {
+:root[data-theme="light"] #search-results-modal,
+[data-theme="light"] #search-results-modal,
+.light-theme #search-results-modal {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-[data-theme="light"] #dice-result-display {
+:root[data-theme="light"] #dice-result-display,
+[data-theme="light"] #dice-result-display,
+.light-theme #dice-result-display {
   color: #196f3d;
 }
 
-[data-theme="light"] .mode-toggle-btn.gm-active {
+:root[data-theme="light"] .mode-toggle-btn.gm-active,
+[data-theme="light"] .mode-toggle-btn.gm-active,
+.light-theme .mode-toggle-btn.gm-active {
   background-color: rgba(169, 29, 44, 0.08);
   border-color: #a91d2c;
   color: #8b1824;
 }
 
-[data-theme="light"] .mode-toggle-btn.player-active {
+:root[data-theme="light"] .mode-toggle-btn.player-active,
+[data-theme="light"] .mode-toggle-btn.player-active,
+.light-theme .mode-toggle-btn.player-active {
   background-color: rgba(39, 174, 96, 0.1);
   border-color: #27ae60;
   color: #196f3d;
 }
 
-[data-theme="light"] .modal-overlay {
+:root[data-theme="light"] .modal-overlay,
+[data-theme="light"] .modal-overlay,
+.light-theme .modal-overlay {
   background: rgba(0, 0, 0, 0.45);
 }
 
-[data-theme="light"] .modal-card {
+:root[data-theme="light"] .modal-card,
+[data-theme="light"] .modal-card,
+.light-theme .modal-card {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
 }
 

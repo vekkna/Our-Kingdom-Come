@@ -5,11 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="description" content="Our Kingdom Come - Zingara RPG Campaign Setting and Royal Court GM Intrigue Compendium">
   <title>Our Kingdom Come &bull; Zingara GM Compendium</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
   <script>
     (function() {
-      var saved = localStorage.getItem('okc_theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', saved);
+      function getStoredTheme() {
+        try { return localStorage.getItem('okc_theme') || 'dark'; } catch(e) { return 'dark'; }
+      }
+      function setStoredTheme(t) {
+        try { localStorage.setItem('okc_theme', t); } catch(e) {}
+      }
+      var current = getStoredTheme();
+      document.documentElement.setAttribute('data-theme', current);
+      document.documentElement.className = current === 'light' ? 'light-theme' : 'dark-theme';
+
+      window.__toggleTheme = function() {
+        var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        var next = cur === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        document.documentElement.className = next === 'light' ? 'light-theme' : 'dark-theme';
+        if (document.body) {
+          document.body.setAttribute('data-theme', next);
+          document.body.className = (document.body.className.replace(/\b(light|dark)-theme\b/g, '') + ' ' + next + '-theme').trim();
+        }
+        setStoredTheme(next);
+        var btn = document.getElementById('theme-toggle-btn');
+        if (btn) {
+          if (next === 'light') {
+            btn.innerHTML = '🌙 <span class="mode-text">Dark</span>';
+            btn.title = "Light mode active (High-contrast parchment). Click or press Alt+T for Dark obsidian mode.";
+          } else {
+            btn.innerHTML = '☀️ <span class="mode-text">Light</span>';
+            btn.title = "Dark mode active (Zingaran obsidian). Click or press Alt+T for Light parchment mode.";
+          }
+        }
+        if (window.AppState) {
+          window.AppState.theme = next;
+        }
+      };
     })();
   </script>
 </head>
@@ -160,7 +192,7 @@
   </div>
 
   <!-- CORE SCRIPTS -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 </html>
