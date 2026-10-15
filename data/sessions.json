@@ -19,5 +19,32 @@
       "Father Malachai the Blind": "Condemnatory (Demands destruction of zombie pits)",
       "High Duke Gonzalo de Guarralid": "Dismissive / Challenging (Testing pundonor)"
     }
+  },
+  {
+    "sessionNumber": 1,
+    "title": "The Thief's Bargain & The Shadows of the Corn Armada",
+    "realDate": "Session 1 Recap",
+    "inGameDate": "Month of the Sun, Period VIII (Day 4 of the Triumvirate)",
+    "summary": "Desperate for independent wealth to bypass High Chancellor Marquis Mateo's bankrupt treasury, the PC Triumvirate slipped in disguise into the Lower Wards of Kordova. In The Drowned Rat, a squalid dive clinging to the sewer outfall of The Pit, they met Joaquin 'El Grajo' Valiente—a starving cutpurse crushed by the city's economic collapse and an 80-sovereign blood-tithe debt to his guildmaster. In exchange for coin and a blood-oath guarantee of being included in any future schemes, Joaquin agreed to introduce the PCs to the elusive Night Guild of Kordova. Joaquin revealed that an all-out underworld war is erupting: a displaced thieves' guild from the southern port of Velasco, violently expelled by the newly arrived religious refugees from Kordova, has invaded the capital to muscle in on local turf. With Kordova's municipal granaries down to four days of food, the Triumvirate took a bold gamble: they dispatched a formal royal herald to invite Capitán-Commodore Nikolos Voros of the offshore Argossean Grain Fleet to the High Alcázar to 'negotiate grain prices.' In secret, the young monarchs are laying plans to steal the entire 50,000-bushel cargo—either by trapping the Commodore on trumped-up criminal charges in court or by orchestrating a midnight boarding operation with cutthroats from the Night Guild or the Velasco Syndicate.",
+    "sovereigntyPoints": 1,
+    "pundonorStatus": "Unstained (Maintained incognito bearing in tavern)",
+    "activeThreads": [
+      "The Guild Audition: Joaquin has arranged a midnight descent through the sewer sluices to the Cistern of the Blind Saint to meet Guildmaster Don Beltrán de Soto.",
+      "The Velasco Incursion: Displaced maritime cutthroats under Capitán Don Casimiro de Velasco are ambushing Kordovan lookouts and seizing dockside protection rackets.",
+      "The Refugee Backlash: News arrives from the south that Kordovan religious refugees in Velasco have completely overthrown the city council, sparking panic among the Grandees.",
+      "Joaquin's Debt Clock: Joaquin has 48 hours to pay his 80-sovereign fine to Don Beltrán before the guild breaks his fingers and sells him to Master Vane's corpse carts.",
+      "The Grain Fleet Summons: Commodore Nikolos Voros and Factor Demetrio Phokas have accepted the royal invitation to negotiate grain prices at the High Alcázar; the PCs must prepare their legal ambush or finalize night-boarding plans.",
+      "The Famine Clock: Kordova has less than 96 hours of grain remaining before devastating bread riots erupt across the Lower Wards and The Pit."
+    ],
+    "npcDispositions": {
+      "Joaquin 'El Grajo' Valiente": "Grateful / Bound by Oath (+1 Underworld Guide, High Debt Vulnerability)",
+      "Guildmaster Don Beltrán de Soto": "Wary / Awaiting Tribute (Demands proof of royal competence)",
+      "Capitán Don Casimiro de Velasco": "Hostile / Opportunistic (Looking for weakness in Kordova)",
+      "General Don Rodrigo de Valenza": "Unaware of PCs' nocturnal excursion (Stepped up curfew patrols)",
+      "High Chancellor Marquis Mateo de Sadoria": "Suspicious of missing palace kitchen supplies",
+      "Capitán-Commodore Nikolos Voros": "Arrogant / Commercial Stance (Awaiting formal audience with 4 armed marines & Factor Demetrio Phokas)",
+      "Factor Demetrio 'The Abacus' Phokas": "Nervous / Calculating (Clutching master grain manifests and debt covenants)",
+      "Ambassador Tiberio of Messantia": "Smug / Orchestrating (Instructed Voros to reject all royal credit to force the Baracha Strait treaty)"
+    }
   }
 ]
