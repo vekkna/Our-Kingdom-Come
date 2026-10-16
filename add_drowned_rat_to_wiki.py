@@ -59,7 +59,7 @@ def main():
 <div class="info-card">
   <p><strong>Establishment Type:</strong> Semi-Submerged Waterfront Tavern, Underworld Neutral Ground &amp; Smugglers' Clearinghouse</p>
   <p><strong>Location:</strong> Lower Ward of <a href="#gazetteer/kordava" class="wiki-link">Kordova</a>, perched over the great sluice outfall where the municipal storm conduits cascade into the sunken ruins of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a></p>
-  <p><strong>Proprietress:</strong> <a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera ("La Balanza")</a>, veteran fence and retired cabaret dancer</p>
+  <p><strong>Proprietress:</strong> <a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera ("The Scales")</a>, veteran fence and retired cabaret dancer</p>
   <p><strong>Notable Staff:</strong> <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriza</a> (Reanimated Zombie Barmaid), "Gordo" Basilio (Cook, Tapster &amp; Bilge-Pumper)</p>
   <p><strong>Affiliated Factions:</strong> <a href="#factions/kordovan-thieves-guild" class="wiki-link">The Night Guild of Kordova</a> (primary street front), <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a> (hostile extortion target), <a href="#factions/republican-insurgents" class="wiki-link">Republican Insurgents</a> (occasional patrons)</p>
 </div>
@@ -97,7 +97,7 @@ def main():
     <tr>
       <td><strong>The Sump Booths</strong></td>
       <td>Four recessed alcoves carved from ancient sewer stone, draped with dripping, moldering canvas sails.</td>
-      <td>Private negotiation dens. Where <a href="#npcs/joaquin" class="wiki-link">Joachor 'El Grajo'</a> met the PC Triumvirate. Whispered conversations cannot be overheard over the deafening roar of the adjacent sewer sluice.</td>
+      <td>Private negotiation dens. Where <a href="#npcs/joaquin" class="wiki-link">Joachor 'The Jackdaw'</a> met the PC Triumvirate. Whispered conversations cannot be overheard over the deafening roar of the adjacent sewer sluice.</td>
       <td>Grants +2 on Stealth / Hide in Shadows checks; immune to mundane eavesdropping.</td>
     </tr>
     <tr>
@@ -144,7 +144,7 @@ def main():
 
 <h3>4. Notable Staff</h3>
 <ul>
-  <li><strong><a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera ("La Balanza")</a> — Proprietress &amp; Master Fence:</strong> A sixty-seven-year-old one-eyed underworld veteran who has survived four kings, three sieges, and two plague years. She treats monarchs and cutpurses with equal, biting cynicism and keeps the tavern neutral ground under <em>El Pundonor del Arroyo</em>.</li>
+  <li><strong><a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera ("The Scales")</a> — Proprietress &amp; Master Fence:</strong> A sixty-seven-year-old one-eyed underworld veteran who has survived four kings, three sieges, and two plague years. She treats monarchs and cutpurses with equal, biting cynicism and keeps the tavern neutral ground under <em>El Pundonor del Arroyo</em>.</li>
   <li><strong><a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriza</a> — The Undead Barmaid:</strong> The legendary singing barmaid of the tavern who died of canal typhus during the civil war. Reanimated by a renegade university necromancer at Vespera's expense, she glides silently through the flooded taproom in an antique lace apron, powdered with dried lavender, carrying tankards with terrifying undead balance and breaking the bones of rowdy brawlers with 18 Strength rigor mortis.</li>
   <li><strong>"Gordo" Basilio — Cook, Tapster &amp; Bilge-Pumper:</strong> A half-deaf, four-hundred-pound former whaling harpooner missing his left ear and three fingers. Basilio tends the fire, chops fish with a rusted flensing cleaver, and works the bilge pump like a tireless iron engine. If a fight turns lethal, Basilio hurls scalding chowder or swings a heavy oak pump handle (1d8+3 damage).</li>
 </ul>
@@ -302,7 +302,7 @@ def main():
     beatriz_article = {
         "id": "beatriz-la-palida",
         "category": "npcs",
-        "title": "Pale Beatrizaa (Beatriza the Pale)",
+        "title": "Pale Beatriza (Beatriza the Pale)",
         "subtitle": "The Undead Barmaid of The Drowned Rat • Gentle Thrall of the Canal District",
         "tags": ["Royal Court", "NPC", "Undead", "Zombie", "The Drowned Rat", "Kordava", "The Pit", "Necromancy", "Underworld", "Period VIII"],
         "aliases": [

@@ -33,7 +33,197 @@
     }
   }
 
+  // Automatic Migration Map for Hyborian Zingaran Names in LocalStorage
+  const OKC_NAMES_MAP = [
+    [/\bGeneral Don Rodrigo de Valenza\b/g, "General Don Rodorigo de Valenza"],
+    [/\bGeneral Rodrigo de Valenza\b/g, "General Rodorigo de Valenza"],
+    [/\bDon Rodrigo de Valenza\b/g, "Don Rodorigo de Valenza"],
+    [/\bRodrigo de Valenza\b/g, "Rodorigo de Valenza"],
+    [/\bGeneral Don Rodrigo\b/g, "General Don Rodorigo"],
+    [/\bGeneral Rodrigo\b/g, "General Rodorigo"],
+    [/\bDon Rodrigo\b/g, "Don Rodorigo"],
+    [/\bRodrigo\b/g, "Rodorigo"],
+
+    [/\bHigh Chancellor Marquis Mateo de Sadoria\b/g, "High Chancellor Marquis Murzio de Sadoria"],
+    [/\bChancellor Marquis Mateo de Sadoria\b/g, "Chancellor Marquis Murzio de Sadoria"],
+    [/\bChancellor Marquis Mateo\b/g, "Chancellor Marquis Murzio"],
+    [/\bMarquis Mateo de Sadoria\b/g, "Marquis Murzio de Sadoria"],
+    [/\bMateo de Sadoria\b/g, "Murzio de Sadoria"],
+    [/\bMarquis Mateo\b/g, "Marquis Murzio"],
+    [/\bChancellor Mateo\b/g, "Chancellor Murzio"],
+    [/\bMateo\b/g, "Murzio"],
+
+    [/\bFencing Master Lucia "La Mariposa" de la Vega\b/g, 'Fencing Master Luzaia "The Mariposa" de Vegara'],
+    [/\bLucia "La Mariposa" de la Vega\b/g, 'Luzaia "The Mariposa" de Vegara'],
+    [/\bFencing Master Lucia 'La Mariposa' de la Vega\b/g, "Fencing Master Luzaia 'The Mariposa' de Vegara"],
+    [/\bLucia 'La Mariposa' de la Vega\b/g, "Luzaia 'The Mariposa' de Vegara"],
+    [/\bFencing Master Lucia 'La Mariposa'\b/g, "Fencing Master Luzaia 'The Mariposa'"],
+    [/\bFencing Master Lucia\b/g, "Fencing Master Luzaia"],
+    [/\bLucia de la Vega\b/g, "Luzaia de Vegara"],
+    [/\bLucia\b/g, "Luzaia"],
+    [/\bde la Vega\b/g, "de Vegara"],
+
+    [/\bHigh Duke Gonzalo de Guarralid\b/g, "High Duke Gonzalgo de Guarralid"],
+    [/\bDuke Gonzalo de Guarralid\b/g, "Duke Gonzalgo de Guarralid"],
+    [/\bDuke Gonzalo\b/g, "Duke Gonzalgo"],
+    [/\bHigh Duke Gonzalo\b/g, "High Duke Gonzalgo"],
+    [/\bGonzalo de Guarralid\b/g, "Gonzalgo de Guarralid"],
+    [/\bGonzalo\b/g, "Gonzalgo"],
+
+    [/\bLord Belisario de Obregon\b/g, "Lord Belbroso de Obregor"],
+    [/\bBelisario de Obregon\b/g, "Belbroso de Obregor"],
+    [/\bLord Belisario\b/g, "Lord Belbroso"],
+    [/\bBelisario\b/g, "Belbroso"],
+    [/\bde Obregon\b/g, "de Obregor"],
+
+    [/\bMaestro Bartolomeo 'El Basto'\b/g, "Maestro Bartorzo 'The Cleaver'"],
+    [/\bBartolomeo 'El Basto'\b/g, "Bartorzo 'The Cleaver'"],
+    [/\bMaestro Bartolomeo\b/g, "Maestro Bartorzo"],
+    [/\bBartolomeo\b/g, "Bartorzo"],
+    [/\bEl Basto\b/g, "The Cleaver"],
+
+    [/\bDon Fernao de Silveira\b/g, "Don Fernazo de Silvero"],
+    [/\bFernao de Silveira\b/g, "Fernazo de Silvero"],
+    [/\bDon Fernao\b/g, "Don Fernazo"],
+    [/\bFernao\b/g, "Fernazo"],
+    [/\bde Silveira\b/g, "de Silvero"],
+
+    [/\bDr\. Horatio Escovedo\b/g, "Dr. Horasto Escovador"],
+    [/\bHoratio Escovedo\b/g, "Horasto Escovador"],
+    [/\bDr\. Escovedo\b/g, "Dr. Escovador"],
+    [/\bEscovedo\b/g, "Escovador"],
+
+    [/\bIgnacio Mora\b/g, "Ignako Morasto"],
+    [/\bIgnacio\b/g, "Ignako"],
+
+    [/\bDoña Elvira de Ancillus-Moreno\b/g, "Doña Elvissa de Ancillus-Morando"],
+    [/\bElvira de Ancillus-Moreno\b/g, "Elvissa de Ancillus-Morando"],
+    [/\bDoña Elvira de Ancillus\b/g, "Doña Elvissa de Ancillus"],
+    [/\bElvira de Ancillus\b/g, "Elvissa de Ancillus"],
+    [/\bDoña Elvira\b/g, "Doña Elvissa"],
+    [/\bElvira\b/g, "Elvissa"],
+
+    [/\bHermano Pascual\b/g, "Hermano Pasqualo"],
+    [/\bBrother Pascual\b/g, "Brother Pasqualo"],
+    [/\bPascual\b/g, "Pasqualo"],
+
+    [/\bJoaquin 'El Grajo' Valiente\b/g, "Joachor 'The Jackdaw' Valiento"],
+    [/\bJoaquin Valiente\b/g, "Joachor Valiento"],
+    [/\bEl Grajo Valiente\b/g, "The Jackdaw Valiento"],
+    [/\bJoaquin\b/g, "Joachor"],
+    [/\bEl Grajo\b/g, "The Jackdaw"],
+
+    [/\bGuildmaster Don Beltrán 'El Tuerto' de Soto\b/g, "Guildmaster Don Beltrano 'One-Eye' de Zoto"],
+    [/\bDon Beltrán 'El Tuerto' de Soto\b/g, "Don Beltrano 'One-Eye' de Zoto"],
+    [/\bGuildmaster Don Beltrán\b/g, "Guildmaster Don Beltrano"],
+    [/\bGuildmaster Beltrán\b/g, "Guildmaster Beltrano"],
+    [/\bDon Beltrán de Soto\b/g, "Don Beltrano de Zoto"],
+    [/\bBeltrán de Soto\b/g, "Beltrano de Zoto"],
+    [/\bDon Beltrán\b/g, "Don Beltrano"],
+    [/\bBeltrán\b/g, "Beltrano"],
+    [/\bde Soto\b/g, "de Zoto"],
+    [/\bEl Tuerto\b/g, "One-Eye"],
+
+    [/\bCapitán Don Casimiro 'El Gavilán' de Velasco\b/g, "Capitán Don Cazmiro 'The Hawk' de Velasko"],
+    [/\bCapitán Casimiro 'El Gavilán'\b/g, "Capitán Cazmiro 'The Hawk'"],
+    [/\bDon Casimiro 'El Gavilán' de Velasco\b/g, "Don Cazmiro 'The Hawk' de Velasko"],
+    [/\bDon Casimiro 'El Gavilán'\b/g, "Don Cazmiro 'The Hawk'"],
+    [/\bCapitán Don Casimiro\b/g, "Capitán Don Cazmiro"],
+    [/\bCapitán Casimiro\b/g, "Capitán Cazmiro"],
+    [/\bDon Casimiro de Velasco\b/g, "Don Cazmiro de Velasko"],
+    [/\bCasimiro de Velasco\b/g, "Cazmiro de Velasko"],
+    [/\bDon Casimiro\b/g, "Don Cazmiro"],
+    [/\bCasimiro\b/g, "Cazmiro"],
+    [/\bEl Gavilán\b/g, "The Hawk"],
+
+    [/\bDean Don Baltasar de Argote\b/g, "Dean Don Balthaso de Argoto"],
+    [/\bDean Baltasar de Argote\b/g, "Dean Balthaso de Argoto"],
+    [/\bDon Baltasar de Argote\b/g, "Don Balthaso de Argoto"],
+    [/\bBaltasar de Argote\b/g, "Balthaso de Argoto"],
+    [/\bDean Baltasar\b/g, "Dean Balthaso"],
+    [/\bDean Argote\b/g, "Dean Argoto"],
+    [/\bBaltasar\b/g, "Balthaso"],
+    [/\bde Argote\b/g, "de Argoto"],
+
+    [/\bMaestra Valeria de Morata\b/g, "Maestra Valessa de Morato"],
+    [/\bValeria de Morata\b/g, "Valessa de Morato"],
+    [/\bMaestra Valeria\b/g, "Maestra Valessa"],
+    [/\bValeria Morata\b/g, "Valessa Morato"],
+    [/\bValeria\b/g, "Valessa"],
+    [/\bde Morata\b/g, "de Morato"],
+
+    [/\bMaestro Eusebio 'The Scribe' Falcón\b/g, "Maestro Eusevios 'The Scribe' Falkor"],
+    [/\bMaestro Eusebio Falcón\b/g, "Maestro Eusevios Falkor"],
+    [/\bEusebio 'The Scribe' Falcón\b/g, "Eusevios 'The Scribe' Falkor"],
+    [/\bEusebio Falcón\b/g, "Eusevios Falkor"],
+    [/\bMaestro Eusebio\b/g, "Maestro Eusevios"],
+    [/\bArchivist Falcón\b/g, "Archivist Falkor"],
+    [/\bEusebio\b/g, "Eusevios"],
+
+    [/\bDoña Constanza de Silva\b/g, "Doña Kostanza de Silvero"],
+    [/\bConstanza de Silva\b/g, "Kostanza de Silvero"],
+    [/\bDoña Constanza\b/g, "Doña Kostanza"],
+    [/\bConstanza\b/g, "Kostanza"],
+
+    [/\bDon Tristán de Revella y Montalbán\b/g, "Don Tristao de Revello y Montalvo"],
+    [/\bTristán de Revella y Montalbán\b/g, "Tristao de Revello y Montalvo"],
+    [/\bDon Tristán de Revella\b/g, "Don Tristao de Revello"],
+    [/\bTristán de Revella\b/g, "Tristao de Revello"],
+    [/\bDon Tristán\b/g, "Don Tristao"],
+    [/\bTristán\b/g, "Tristao"],
+
+    [/\bCapitán Andrés 'El Quebrantado' de Hojeda\b/g, "Capitán Androvo 'The Broken' de Ojedo"],
+    [/\bCapitán Andrés 'El Quebrantado'\b/g, "Capitán Androvo 'The Broken'"],
+    [/\bCapitán Andrés de Hojeda\b/g, "Capitán Androvo de Ojedo"],
+    [/\bAndrés de Hojeda\b/g, "Androvo de Ojedo"],
+    [/\bCapitán Andrés\b/g, "Capitán Androvo"],
+    [/\bCaptain Hojeda\b/g, "Captain Ojedo"],
+    [/\bCommander Hojeda\b/g, "Commander Ojedo"],
+    [/\bAndrés\b/g, "Androvo"],
+    [/\bde Hojeda\b/g, "de Ojedo"],
+    [/\bEl Quebrantado\b/g, "The Broken"],
+
+    [/\bMadre Soledad 'La Marcada'\b/g, "Madre Soledor 'The Marked'"],
+    [/\bSoledad 'La Marcada'\b/g, "Soledor 'The Marked'"],
+    [/\bMadre Soledad\b/g, "Madre Soledor"],
+    [/\bSoledad\b/g, "Soledor"],
+    [/\bLa Marcada\b/g, "The Marked"],
+
+    [/\bAlcalde Bartolomé Cadenas\b/g, "Alcalde Barzolo Kadenzo"],
+    [/\bBartolomé Cadenas\b/g, "Barzolo Kadenzo"],
+    [/\bAlcalde Cadenas\b/g, "Alcalde Kadenzo"],
+    [/\bBailiff Cadenas\b/g, "Bailiff Kadenzo"],
+    [/\bMayor Cadenas\b/g, "Mayor Kadenzo"],
+    [/\bDon Bartolomé\b/g, "Don Barzolo"],
+    [/\bBartolomé\b/g, "Barzolo"],
+    [/\bCadenas\b/g, "Kadenzo"],
+
+    [/\bOld Mother Vespera \(Vespera 'La Balanza'\)\b/g, "Old Mother Vespera (Vespera 'The Scales')"],
+    [/\bVespera 'La Balanza'\b/g, "Vespera 'The Scales'"],
+    [/\bLa Balanza\b/g, "The Scales"],
+
+    [/\bPale Beatriz \(Beatriz la Pálida\)\b/g, "Pale Beatriza (Beatriza the Pale)"],
+    [/\bBeatriz la Pálida\b/g, "Beatriza the Pale"],
+    [/\bPale Beatriz\b/g, "Pale Beatriza"],
+    [/\bBeatriz\b/g, "Beatriza"],
+    [/\bla Pálida\b/g, "the Pale"]
+  ];
+
+  function migrateOldNames(obj) {
+    if (!obj) return obj;
+    try {
+      let str = JSON.stringify(obj);
+      for (const [regex, replacement] of OKC_NAMES_MAP) {
+        str = str.replace(regex, replacement);
+      }
+      return JSON.parse(str);
+    } catch (e) {
+      return obj;
+    }
+  }
+
   // State Management
+  const rawCustomArticles = loadJsonStorage('okc_custom_articles', []);
   const AppState = {
     currentArticleId: 'campaign-premise',
     currentCategory: 'overview',
@@ -44,11 +234,16 @@
     searchQuery: '',
     selectedSearchIdx: 0,
     sessions: [],
-    customArticles: loadJsonStorage('okc_custom_articles', []),
+    customArticles: migrateOldNames(rawCustomArticles),
     deletedArticleIds: loadJsonStorage('okc_deleted_articles', []),
     collapsedCategories: new Set(loadJsonStorage('okc_collapsed_cats', []))
   };
   window.AppState = AppState;
+
+  // Persist migrated custom articles immediately if changes were made
+  if (JSON.stringify(rawCustomArticles) !== JSON.stringify(AppState.customArticles)) {
+    saveCustomArticles();
+  }
 
   function saveCustomArticles() {
     safeStorage.setItem('okc_custom_articles', JSON.stringify(AppState.customArticles));
@@ -835,22 +1030,25 @@
   // SESSION LOG & CAMPAIGN TRACKER
   // =========================================================================
   async function initSessions() {
+    const hasV2 = safeStorage.getItem('okc_names_migrated') === 'v2';
     const saved = safeStorage.getItem('okc_sessions');
     if (saved) {
       try {
-        AppState.sessions = JSON.parse(saved);
+        AppState.sessions = migrateOldNames(JSON.parse(saved));
+        saveSessions();
       } catch (err) {
         console.error('Failed to parse saved sessions', err);
       }
     }
 
-    // If no saved sessions in storage, load from data/sessions.json or use embedded default
-    if (!AppState.sessions || AppState.sessions.length === 0) {
+    // If no saved sessions in storage or version needs upgrade, load from data/sessions.json
+    if (!AppState.sessions || AppState.sessions.length === 0 || !hasV2) {
       try {
         const res = await fetch('data/sessions.json');
         if (res.ok) {
           AppState.sessions = await res.json();
           saveSessions();
+          safeStorage.setItem('okc_names_migrated', 'v2');
         }
       } catch (e) {
         // Fallback for file:// protocol or offline use

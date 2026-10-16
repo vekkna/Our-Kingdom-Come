@@ -160,7 +160,7 @@ def main():
   <li><strong>The Triple Mortgage Catastrophe:</strong> In a series of alcohol-fueled poker nights over the past two years, Tristao signed away overlapping legal claims to the Revella tin mines to no fewer than three predatory entities:
     <ol>
       <li><strong>To the Argossean Syndicates:</strong> For 50 silver pieces and six casks of Messantian Malmsey, he signed a deed pledging 40% of all future tin output to <a href="#npcs/demetrio-phokas" class="wiki-link">Factor Demetrio Phokas</a> of the Grain Fleet.</li>
-      <li><strong>To the Night Guild of Kordova:</strong> To settle a 120-sovereign dice debt to <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano de Soto</a>, he pledged the toll-gates and river flumes of Revella as collateral.</li>
+      <li><strong>To the Night Guild of Kordova:</strong> To settle a 120-sovereign dice debt to <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano de Zoto</a>, he pledged the toll-gates and river flumes of Revella as collateral.</li>
       <li><strong>To Chancellor Sadoria:</strong> A corrupt treasury notary purchased Tristao's defaulted tax debts for 300 silver pieces, giving <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> a formal legal warrant to seize the entire estate the moment it becomes productive!</li>
     </ol>
   </li>
@@ -388,7 +388,7 @@ def main():
 <p>The PCs must track down Tristao in <em>The Drowned Rat</em> or the university gutters, pay off his immediate bar tabs (12 silver pieces), and clean him up for a formal private audience. If the PCs give him royal coin directly, he immediately vanishes for 24 hours on a celebratory bender, requiring a DC 13 Streetwise check to retrieve him from a brothel cellar. The PCs must equip him with a horse, a sober secretary, and a formal Royal Charter of Reinstatement.</p>
 
 <h4>Stage 2: The Mountain Trek &amp; The Border Toll</h4>
-<p>Traveling north toward Revella, the expedition must cross the rugged gorges of the upper Thunder River. At the border pass of <em>Paso del Hierro</em>, retainers of <a href="#npcs/gonzalo-guarralid" class="wiki-link">Duke Gonzalgo</a> attempt to impose an exorbitant &ldquo;military transit tax&rdquo; of 50 silver pieces. The PCs can flash royal authority (DC 14 Intimidation), out-duel the checkpoint commander, or find a treacherous smugglers' trail guided by <a href="#npcs/joaquin" class="wiki-link">Joachor 'El Grajo'</a>.</p>
+<p>Traveling north toward Revella, the expedition must cross the rugged gorges of the upper Thunder River. At the border pass of <em>Paso del Hierro</em>, retainers of <a href="#npcs/gonzalo-guarralid" class="wiki-link">Duke Gonzalgo</a> attempt to impose an exorbitant &ldquo;military transit tax&rdquo; of 50 silver pieces. The PCs can flash royal authority (DC 14 Intimidation), out-duel the checkpoint commander, or find a treacherous smugglers' trail guided by <a href="#npcs/joaquin" class="wiki-link">Joachor 'The Jackdaw'</a>.</p>
 
 <h4>Stage 3: Parley or Siege at the San Gilberto Mines</h4>
 <p>Arriving in Revella, the PCs find <a href="#gazetteer/revella" class="wiki-link">Castillo de Revella</a> in ruins and the mine adits heavily barricaded by <em>La Hermandad del Pico</em>. Toribio &ldquo;El Yunque&rdquo; hoists a black banner and warns the party back:

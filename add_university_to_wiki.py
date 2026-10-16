@@ -369,7 +369,7 @@ def main():
 
 <p>Her relationship with <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a> is pure contempt. She views his industrial zombie pits as bio-hazardous butcheries that waste valuable corpses through rapid bacterial gangrene. If backed by the PCs, Valessa can establish an elite <em>Royal Fleshcraft Atelier</em> capable of producing clean, articulate, and non-decomposing servant thralls suitable for royal palaces and military engineering.</p>
 """,
-        "gmSecrets": "Valessa's younger brother, Tiago de Morata, is currently an unbonded clerk in Chancellor Sadoria's treasury offices. She uses him to leak confidential state budget memos to Dean Argoto. If Tiago is ever caught or threatened with The Pit, Valessa will do anything—including assassinating a court official with untraceable nerve venom—to protect him.",
+        "gmSecrets": "Valessa's younger brother, Tiago de Morato, is currently an unbonded clerk in Chancellor Sadoria's treasury offices. She uses him to leak confidential state budget memos to Dean Argoto. If Tiago is ever caught or threatened with The Pit, Valessa will do anything—including assassinating a court official with untraceable nerve venom—to protect him.",
         "relatedIds": [
             "royal-university-of-kordava",
             "dean-baltasar-argote",

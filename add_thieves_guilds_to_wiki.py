@@ -25,7 +25,7 @@ def build_data():
     print(f"Loaded existing wiki data with {len(data['articles'])} articles.")
 
     # -------------------------------------------------------------
-    # 1. NEW ARTICLE: joaquin (NPC: Joachor "El Grajo" Valiente)
+    # 1. NEW ARTICLE: joaquin (NPC: Joachor "The Jackdaw" Valiente)
     # -------------------------------------------------------------
     joaquin_article = {
         "id": "joaquin",
@@ -35,7 +35,7 @@ def build_data():
         "tags": ["Royal Court", "NPC", "Thief", "Kordava", "The Pit", "Night Guild", "Session 1", "Underworld"],
         "aliases": [
             "Joachor Valiento",
-            "El Grajo",
+            "The Jackdaw",
             "The Jackdaw",
             "Joachor",
             "The Down-on-His-Luck Thief",
@@ -49,7 +49,7 @@ def build_data():
             "quote": "A crown on the throne or a copper in the gutter—it's all iron and gold waiting for fingers that know how to coax it free. But in Kordova today, my lords, even the rats are pawning their whiskers to pay the garrison tax. Feed me, back me, cut me into your schemes—and I'll show you where the real kings of this city hold their court.",
             "courtDCs": "Morale: 7 (Desperate survivor); Initial Reaction: +2 on 2d6 Reaction Rolls when offered bread, wine, or silver (Hungry & Eager); Charisma check (or 50 gp advance) to secure his unquestioned loyalty under royal interrogation.",
             "publicStance": "Presents himself as a harmless, starving dock-scavenger and tavern errand-runner nursing dreg-ale in the lower sinks of Kordova.",
-            "secretAgenda": "Joachor owes an 80-gold-sovereign 'blood tithe' to Guildmaster Don Beltrano de Soto after botching a jewel heist against an armored caballero coach. If he fails to pay by week's end, the guild enforcers will break his hands and sell him to Master Alchemist Vane's corpse-wagons. He hopes the PC Triumvirate's royal schemes will earn him enough bullion to clear his debt and elevate him into the guild's Inner Circle.",
+            "secretAgenda": "Joachor owes an 80-gold-sovereign 'blood tithe' to Guildmaster Don Beltrano de Zoto after botching a jewel heist against an armored caballero coach. If he fails to pay by week's end, the guild enforcers will break his hands and sell him to Master Alchemist Vane's corpse-wagons. He hopes the PC Triumvirate's royal schemes will earn him enough bullion to clear his debt and elevate him into the guild's Inner Circle.",
             "rival": "'El Macho' Murzio Corvo (Guild Enforcer) & Inés 'La Loba' (Velascan Assassin)",
             "classLevel": "5th-Level Thief (Cutpurse & Roof-Runner)",
             "combatStats": "AC 5 (AAC 14) | HP 18 | THAC0 18 | Atk +4 (1d4+1) | Backstab x3 | Saves: 12/12/11/14/12"
@@ -223,7 +223,7 @@ def build_data():
         "tags": ["Royal Court", "NPC", "Thief", "Crime Lord", "Night Guild", "The Pit", "Kordava", "Underworld"],
         "aliases": [
             "Don Beltrano",
-            "El Tuerto",
+            "One-Eye",
             "Beltrano de Zoto",
             "The One-Eyed Crow",
             "Guildmaster Beltrano",
@@ -407,7 +407,7 @@ def build_data():
         "tags": ["Royal Court", "NPC", "Thief", "Fighter", "Velasco", "Exile", "The Pit", "Kordava", "Corsair"],
         "aliases": [
             "Don Cazmiro",
-            "El Gavilán",
+            "The Hawk",
             "The Sparrowhawk",
             "Cazmiro de Velasko",
             "Capitán Cazmiro",
@@ -422,7 +422,7 @@ def build_data():
             "courtDCs": "Morale: 11 (Vengeful desperation); Initial Reaction: -3 on 2d6 Reaction Rolls if any PC wears religious emblems; DC 17 Charisma check (or offering intelligence on religious refugee camps) to strike a mercenary pact.",
             "publicStance": "Presents himself as an independent Argossean merchant captain seeking commercial anchorage in Kordova's harbor.",
             "secretAgenda": "Cazmiro desires far more than street turf: he wants bloody vengeance against the Church of Nemeth and the religious refugees who expelled him from Velasco. He is planning a nocturnal slaughter of the refugee camp outside Kordova's South Gate, intending to plunder their hidden church bullion.",
-            "rival": "Guildmaster Don Beltrano de Soto & Father Malachai the Blind",
+            "rival": "Guildmaster Don Beltrano de Zoto & Father Malachai the Blind",
             "classLevel": "10th-Level Fighter / 8th-Level Thief (Corsair Warlord)",
             "combatStats": "AC -1 (AAC 20) | HP 62 | THAC0 11 | Atk +13 (1d8+6) & +11 (1d4+4) | Backstab x3 | Saves: 8/6/7/8/9"
         },
@@ -430,7 +430,7 @@ def build_data():
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">The Velasco Syndicate &bull; War-Boss of the Mudflats</span>
-    <span class="badge rival-badge">Primary Rivals: Guildmaster Don Beltrano de Soto &amp; Father Malachai the Blind</span>
+    <span class="badge rival-badge">Primary Rivals: Guildmaster Don Beltrano de Zoto &amp; Father Malachai the Blind</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A barrel-chested, sun-darkened Zingaran corsair in his early forties with a swept black mustache and smoldering amber eyes. Wears a salt-crusted turquoise velvet frock coat trimmed with tarnished gold braid over a cuirass of green-patinated sea-bronze. His left cheek bears a hideous, raised brand of the holy sun—burned into his bone by the inquisitors of Velasco.</div>
@@ -844,7 +844,7 @@ def build_data():
       <td><a href="#npcs/beltran-desoto" class="wiki-link">'El Macho' Corvo</a> &amp; <a href="#npcs/casimiro-velasco" class="wiki-link">Inés 'La Loba'</a></td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano 'El Tuerto'</a></strong><br><small>Master of the Night Guild</small></td>
+      <td><strong><a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano 'One-Eye'</a></strong><br><small>Master of the Night Guild</small></td>
       <td><span class="badge">The Night Guild of Kordova</span></td>
       <td>Wary, cynical criminal patriarch; open to transaction if treated with gutter pundonor.</td>
       <td class="gm-only-cell"><span class="gm-mask-text">Possesses pre-Cataclysmic Sluice Key to palace water-gates; desperate to repel Velasco invaders.</span></td>
@@ -914,7 +914,7 @@ def build_data():
 <h3>The Lower Wards, Wharves &amp; The Underworld Turf War</h3>
 <p>Downslope from the soaring sea-cliffs of the High Alcázar lie the sprawling, fog-drenched <strong>Lower Wards and Harbor Docks</strong> of Kordova. Here, between the fish-salting sheds, reeking tanneries, and timber wharves, the kingdom's economic paralysis is raw and suffocating. With state bankruptcy freezing official commerce, living workers displaced by <a href="#npcs/vane" class="wiki-link">Master Vane</a>'s industrial zombies, and food prices soaring, the waterfront has become a powder keg.</p>
 
-<p>At the mouth of the great sewer outfall sits <em>The Drowned Rat</em>—a notorious subterranean dive where cutpurses, smugglers, and down-on-their-luck scoundrels like <a href="#npcs/joaquin" class="wiki-link">Joachor 'The Jackdaw' Valiento</a> congregate. The Lower Wards are currently gripped by a brutal gang war: the indigenous <a href="#factions/kordovan-thieves-guild" class="wiki-link">Night Guild of Kordova</a>, ruled by <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano de Soto</a> from deep within <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>, is fighting for its life against the ruthless <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a> under <a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Don Cazmiro</a>—maritime cutthroats violently driven out of their southern home port by fanatical religious refugees.</p>
+<p>At the mouth of the great sewer outfall sits <em>The Drowned Rat</em>—a notorious subterranean dive where cutpurses, smugglers, and down-on-their-luck scoundrels like <a href="#npcs/joaquin" class="wiki-link">Joachor 'The Jackdaw' Valiento</a> congregate. The Lower Wards are currently gripped by a brutal gang war: the indigenous <a href="#factions/kordovan-thieves-guild" class="wiki-link">Night Guild of Kordova</a>, ruled by <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano de Zoto</a> from deep within <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>, is fighting for its life against the ruthless <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a> under <a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Don Cazmiro</a>—maritime cutthroats violently driven out of their southern home port by fanatical religious refugees.</p>
 """
         if 'The Lower Wards, Wharves &amp; The Underworld Turf War' not in kordava_art['content']:
             kordava_art['content'] += kordava_expansion
@@ -928,7 +928,7 @@ def build_data():
     if the_pit_art:
         pit_expansion = """
 <h3>The Underworld Dens: The Cistern of the Blind Saint</h3>
-<p>Deep beneath the ruined sunken palaces of The Pit, beyond the patrols of <a href="#factions/republican-insurgents" class="wiki-link">Republican Insurgents</a> and the zombie containment pits, lies the secret heart of Kordova's criminal empire: <strong>The Cistern of the Blind Saint</strong>. A colossal pre-Cataclysmic reservoir carved from black granite during Period II, this subterranean vault serves as the headquarters of <a href="#factions/kordovan-thieves-guild" class="wiki-link">The Night Guild of Kordova</a>. From an elevated dais above the dark waters, <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano de Soto</a> administers <em>El Pundonor del Arroyo</em>, adjudicating criminal disputes, storing fenced silver, and coordinating defenses against <a href="#factions/velasco-thieves-guild" class="wiki-link">Velascan cutthroats</a> seeking to infiltrate the depths.</p>
+<p>Deep beneath the ruined sunken palaces of The Pit, beyond the patrols of <a href="#factions/republican-insurgents" class="wiki-link">Republican Insurgents</a> and the zombie containment pits, lies the secret heart of Kordova's criminal empire: <strong>The Cistern of the Blind Saint</strong>. A colossal pre-Cataclysmic reservoir carved from black granite during Period II, this subterranean vault serves as the headquarters of <a href="#factions/kordovan-thieves-guild" class="wiki-link">The Night Guild of Kordova</a>. From an elevated dais above the dark waters, <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano de Zoto</a> administers <em>El Pundonor del Arroyo</em>, adjudicating criminal disputes, storing fenced silver, and coordinating defenses against <a href="#factions/velasco-thieves-guild" class="wiki-link">Velascan cutthroats</a> seeking to infiltrate the depths.</p>
 """
         if 'The Cistern of the Blind Saint' not in the_pit_art['content']:
             the_pit_art['content'] += pit_expansion
@@ -969,14 +969,14 @@ def build_data():
             "sovereigntyPoints": 1,
             "pundonorStatus": "Unstained (Maintained incognito bearing in tavern)",
             "activeThreads": [
-                "The Guild Audition: Joachor has arranged a midnight descent through the sewer sluices to the Cistern of the Blind Saint to meet Guildmaster Don Beltrano de Soto.",
+                "The Guild Audition: Joachor has arranged a midnight descent through the sewer sluices to the Cistern of the Blind Saint to meet Guildmaster Don Beltrano de Zoto.",
                 "The Velasco Incursion: Displaced maritime cutthroats under Capitán Don Cazmiro de Velasco are ambushing Kordovan lookouts and seizing dockside protection rackets.",
                 "The Refugee Backlash: News arrives from the south that Kordovan religious refugees in Velasco have completely overthrown the city council, sparking panic among the Grandees.",
                 "Joachor's Debt Clock: Joachor has 48 hours to pay his 80-sovereign fine to Don Beltrano before the guild breaks his fingers and sells him to Master Vane's corpse carts."
             ],
             "npcDispositions": {
                 "Joachor 'The Jackdaw' Valiento": "Grateful / Bound by Oath (+1 Underworld Guide, High Debt Vulnerability)",
-                "Guildmaster Don Beltrano de Soto": "Wary / Awaiting Tribute (Demands proof of royal competence)",
+                "Guildmaster Don Beltrano de Zoto": "Wary / Awaiting Tribute (Demands proof of royal competence)",
                 "Capitán Don Cazmiro de Velasco": "Hostile / Opportunistic (Looking for weakness in Kordova)",
                 "General Don Rodorigo de Valenza": "Unaware of PCs' nocturnal excursion (Stepped up curfew patrols)",
                 "High Chancellor Marquis Murzio de Sadoria": "Suspicious of missing palace kitchen supplies"

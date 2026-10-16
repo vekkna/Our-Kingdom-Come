@@ -238,7 +238,7 @@ def main():
             "title": "Maestro Bartorzo 'The Cleaver'",
             "subtitle": "Master Cook of the Cavernous Kitchens & Scullery Despot &bull; Palace Household / Domestic Guilds",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "The Pit"],
-            "aliases": ["Maestro Bartorzo", "El Basto", "The Cleaver", "Master Cook", "Bartorzo"],
+            "aliases": ["Maestro Bartorzo", "The Cleaver", "The Cleaver", "Master Cook", "Bartorzo"],
             "summary": "The gargantuan, sweat-drenched culinary despot who rules the sweltering subterranean kitchens of the Alcázar with an iron cleaver and boiling fat. Beneath his despotic kitchen empire, he controls the dumbwaiters and grease flues connecting the palace directly to the black market of The Pit.",
             "stats": {
                 "classLevel": "10th-Level Fighter (Scullery Despot)",
@@ -537,7 +537,7 @@ def main():
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Escovador is haunted by his past. Six months before the campaign began, <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> threatened to have Escovador's sister burned as a witch by the Church of Nemeth unless the doctor prepared a slow, undetectable metabolic poison for the Regent Don Karlo. Escovador complied, and Carlos died in his sleep of "cardiac melancholy." Consumed by remorse, Escovador now views the PC Triumvirate as his only chance for redemption. He secretly spikes their morning tea with preventative broad-spectrum antidotes and constantly monitors their vitals for signs of Council tampering.</p>
+  <p>Escovador is haunted by his past. Six months before the campaign began, <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> threatened to have Escovador's sister burned as a witch by the Church of Nemeth unless the doctor prepared a slow, undetectable metabolic poison for the Regent Don Karlo. Escovador complied, and Karlo died in his sleep of "cardiac melancholy." Consumed by remorse, Escovador now views the PC Triumvirate as his only chance for redemption. He secretly spikes their morning tea with preventative broad-spectrum antidotes and constantly monitors their vitals for signs of Council tampering.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>

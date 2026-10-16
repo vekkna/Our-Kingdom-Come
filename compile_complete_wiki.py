@@ -97,7 +97,7 @@ def main():
     npc_configs = [
         ("valenza", "General Don Rodorigo de Valenza (Head of the Royal Army)", "Military Elite / Restoration Council", ["Don Rodorigo", "General Valenza", "Rodorigo de Valenza", "Head of the Royal Army"], "Fencing Master Luzaia 'The Mariposa' de Vegara"),
         ("sadoria", "High Chancellor Marquis Murzio de Sadoria (Chief Monarchist)", "Restoration Council / Bureaucracy", ["Marquis Murzio", "Murzio de Sadoria", "High Chancellor", "Chief Monarchist"], "High Duke Gonzalgo de Guarralid"),
-        ("lucia", "Fencing Master Luzaia \"La Mariposa\" de la Vega (Republican Cell Commander)", "Republican Insurgents (The Pit)", ["La Mariposa", "Luzaia de Vegara", "Luzaia", "Fencing Master Luzaia"], "General Don Rodorigo de Valenza"),
+        ("lucia", "Fencing Master Luzaia \"La Mariposa\" de Vegara (Republican Cell Commander)", "Republican Insurgents (The Pit)", ["La Mariposa", "Luzaia de Vegara", "Luzaia", "Fencing Master Luzaia"], "General Don Rodorigo de Valenza"),
         ("malachai", "Father Malachai the Blind (High Priest of the Underground Church of Nemeth)", "Church of Nemeth the Gnostic", ["Father Malachai", "Malachai", "High Priest of Nemeth"], "Master Alchemist Vane"),
         ("gonzalo-guarralid", "High Duke Gonzalgo de Guarralid (Grandee Representative)", "Grandee Coalitions (Eastern League)", ["Gonzalgo de Guarralid", "Duke Gonzalgo", "High Duke Gonzalgo", "Guarralid"], "High Chancellor Marquis Murzio de Sadoria"),
         ("vesper", "Vesper the Key-Master (Spymaster of The Pit & Black Market Guildmaster)", "Underworld Syndicates / Smugglers", ["Vesper", "Key-Master", "The Key-Master"], "General Don Rodorigo de Valenza"),

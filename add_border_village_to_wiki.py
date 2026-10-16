@@ -217,7 +217,7 @@ def main():
         "aliases": [
             "Capitán Androvo",
             "Androvo de Ojedo",
-            "El Quebrantado",
+            "The Broken",
             "The Broken Captain",
             "Captain Ojedo",
             "Androvo el Quebrantado",
@@ -524,7 +524,7 @@ def main():
             "The Mayor of San Severo",
             "The Sweat-Drenched Magistrate"
         ],
-        "summary": "The corrupt, thoroughly terrified royal magistrate and customs master of San Severo del Vado. Appointed by High Chancellor Marquis Murzio de Sadoria to squeeze transit taxes from the southern road, Cadenas was trapped when the village revolted. Held hostage by the rebels, he now wanders the barricades in trembling panic, terrified that Don Rodorigo will hang him for treason and that the peasants will pitch him into the river if he flees.",
+        "summary": "The corrupt, thoroughly terrified royal magistrate and customs master of San Severo del Vado. Appointed by High Chancellor Marquis Murzio de Sadoria to squeeze transit taxes from the southern road, Kadenzo was trapped when the village revolted. Held hostage by the rebels, he now wanders the barricades in trembling panic, terrified that Don Rodorigo will hang him for treason and that the peasants will pitch him into the river if he flees.",
         "atAGlance": {
             "appearance": "A plump, soft-handed gentleman of fifty-two with thinning oiled brown hair, watery hazel eyes, and a perpetually sweat-drenched, ruddy forehead. He wears the rumpled remnants of courtly dignity: an ochre velvet doublet with tarnished silver frogs, wine-stained breeches, and a heavy brass chain of municipal office that he constantly clutches to steady his shaking hands.",
             "mannerisms": "Dabs his streaming forehead with a grease-spotted silk handkerchief every ten seconds; flinches violently at the sound of horses whinnying or metal clanking; addresses anyone armed as 'My noble Lord' or 'Most gracious General'; drops to his knees in instant supplication at the first hint of anger.",
@@ -644,7 +644,7 @@ def main():
 
 <div class="hook-card info-card">
   <h4>Path A: The Iron Hand (The Executioner's Crown)</h4>
-  <p><strong>Action:</strong> The PCs sign the decrees, sanction the military assault, and order the summary hanging of Androvo, Soledor, and Cadenas on the bridge parapets.</p>
+  <p><strong>Action:</strong> The PCs sign the decrees, sanction the military assault, and order the summary hanging of Androvo, Soledor, and Kadenzo on the bridge parapets.</p>
   <p><strong>Outcome:</strong></p>
   <ul>
     <li><strong>Military Acclaim:</strong> General Valenza is deeply impressed by their cold resolve (+2 Reaction Roll bonus, eliminates Command Friction in the army for 30 days). The royal army secures the border road.</li>
@@ -862,7 +862,7 @@ def main():
 """
         if 'andres-hojeda' not in matrix_art['content']:
             matrix_art['content'] = matrix_art['content'].replace('</tbody>', new_rows + '  </tbody>')
-            print("Updated court-matrix with Androvo, Soledor, and Cadenas!")
+            print("Updated court-matrix with Androvo, Soledor, and Kadenzo!")
         for rid in ['andres-hojeda', 'madre-soledad', 'alcalde-cadenas', 'san-severo', 'hook-uprising-san-severo']:
             if rid not in matrix_art.get('relatedIds', []):
                 matrix_art.setdefault('relatedIds', []).append(rid)

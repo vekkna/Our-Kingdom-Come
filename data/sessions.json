@@ -29,7 +29,7 @@
     "sovereigntyPoints": 1,
     "pundonorStatus": "Unstained (Maintained incognito bearing in tavern)",
     "activeThreads": [
-      "The Guild Audition: Joachor has arranged a midnight descent through the sewer sluices to the Cistern of the Blind Saint to meet Guildmaster Don Beltrano de Soto.",
+      "The Guild Audition: Joachor has arranged a midnight descent through the sewer sluices to the Cistern of the Blind Saint to meet Guildmaster Don Beltrano de Zoto.",
       "The Velasco Incursion: Displaced maritime cutthroats under Capitán Don Cazmiro de Velasco are ambushing Kordovan lookouts and seizing dockside protection rackets.",
       "The Refugee Backlash: News arrives from the south that Kordovan religious refugees in Velasco have completely overthrown the city council, sparking panic among the Grandees.",
       "Joachor's Debt Clock: Joachor has 48 hours to pay his 80-sovereign fine to Don Beltrano before the guild breaks his fingers and sells him to Master Vane's corpse carts.",
@@ -40,7 +40,7 @@
     ],
     "npcDispositions": {
       "Joachor 'The Jackdaw' Valiento": "Grateful / Bound by Oath (+1 Underworld Guide, High Debt Vulnerability)",
-      "Guildmaster Don Beltrano de Soto": "Wary / Awaiting Tribute (Demands proof of royal competence)",
+      "Guildmaster Don Beltrano de Zoto": "Wary / Awaiting Tribute (Demands proof of royal competence)",
       "Capitán Don Cazmiro de Velasco": "Hostile / Opportunistic (Looking for weakness in Kordova)",
       "General Don Rodorigo de Valenza": "Unaware of PCs' nocturnal excursion (Stepped up curfew patrols)",
       "High Chancellor Marquis Murzio de Sadoria": "Suspicious of missing palace kitchen supplies",
