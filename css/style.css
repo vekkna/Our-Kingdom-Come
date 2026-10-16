@@ -409,19 +409,81 @@ a:hover, a:focus-visible {
 
 .sidebar-section-header {
   font-family: var(--font-serif);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 14px 16px 6px;
+  padding: 8px 12px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  border-radius: var(--radius-sm);
+  margin: 3px 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.sidebar-section-header:hover {
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.sidebar-section-header:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 1px;
+}
+
+.sidebar-section-header .header-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-section-header .header-meta-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-section-header .nav-chevron {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  width: 14px;
+  text-align: center;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .nav-group {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+.nav-group.collapsed > .nav-group-items {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+}
+
+.nav-group.collapsed .sidebar-section-header {
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-group.collapsed .sidebar-section-header:hover {
+  opacity: 1;
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--accent-gold);
 }
 
 .nav-item {
@@ -565,6 +627,134 @@ a:hover, a:focus-visible {
   margin-top: 0;
   border-bottom: 1px solid var(--border-subtle);
   padding-bottom: 4px;
+}
+
+.info-card h4 a.wiki-link,
+.hook-card h4 a.wiki-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.info-card h4 a.wiki-link:hover,
+.hook-card h4 a.wiki-link:hover {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--accent-gold);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.npc-quick-hooks-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 20px 0;
+  padding: 10px 14px;
+  background: rgba(192, 57, 43, 0.08);
+  border-left: 4px solid var(--accent-crimson);
+  border-radius: var(--radius-sm);
+  border-top: 1px solid rgba(192, 57, 43, 0.2);
+  border-right: 1px solid rgba(192, 57, 43, 0.2);
+  border-bottom: 1px solid rgba(192, 57, 43, 0.2);
+}
+
+.quick-hooks-label {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ff9da8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.quick-hooks-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.related-references-card {
+  border-left: 4px solid var(--accent-gold) !important;
+  background: var(--bg-surface) !important;
+}
+
+.related-references-card h4 {
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.related-block {
+  margin-bottom: 14px;
+}
+
+.related-block:last-child {
+  margin-bottom: 0;
+}
+
+.related-subheading {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.related-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hook-link-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(192, 57, 43, 0.18) !important;
+  border: 1px solid var(--accent-crimson) !important;
+  color: #ff9da8 !important;
+  padding: 4px 10px !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.hook-link-pill:hover {
+  background: rgba(192, 57, 43, 0.35) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  border-color: #ff9da8 !important;
+}
+
+.hook-ref-bar {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* GM Only Callout Box */

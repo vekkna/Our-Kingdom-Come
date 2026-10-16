@@ -44,8 +44,8 @@ LL_NPCS = {
             "Ring of Free Action (Immune to Hold Person, paralysis, webs, and magical entanglement)",
             "Potions of Extra-Healing (x2 vials, each restores 3d6+3 HP)"
         ],
-        "tactics": "<strong>Veteran Parry:</strong> Once per combat round, Rodrigo can sacrifice his attack to parry, imposing a -4 penalty on all incoming melee attacks against him until the next round.<br><strong>Command of the Host:</strong> All royal army guards within 60' receive a +2 bonus to Morale checks and +1 to hit as long as Don Rodrigo remains standing on the battlefield.",
-        "pcComparison": "Compared to the Level 8–9 PC Triumvirate, Don Rodrigo substantially out-tanks and out-hits the PC Warrior (78 HP vs ~50 HP; AC -2 vs ~AC 2; attack +15 vs +6). A direct frontal martial assault against Rodrigo in Kordava is almost certain suicide without isolating him from his garrison, turning the army's loyalties, or finding an artifact like the <em>Black Blade of Kalenius</em>."
+        "tactics": "<strong>Veteran Parry:</strong> Once per combat round, Rodorigo can sacrifice his attack to parry, imposing a -4 penalty on all incoming melee attacks against him until the next round.<br><strong>Command of the Host:</strong> All royal army guards within 60' receive a +2 bonus to Morale checks and +1 to hit as long as Don Rodorigo remains standing on the battlefield.",
+        "pcComparison": "Compared to the Level 8–9 PC Triumvirate, Don Rodorigo substantially out-tanks and out-hits the PC Warrior (78 HP vs ~50 HP; AC -2 vs ~AC 2; attack +15 vs +6). A direct frontal martial assault against Rodorigo in Kordava is almost certain suicide without isolating him from his garrison, turning the army's loyalties, or finding an artifact like the <em>Black Blade of Kalenius</em>."
     },
     "sadoria": {
         "classLevel": "12th-Level Thief (Shadow Master & Master Assassin)",
@@ -130,8 +130,8 @@ LL_NPCS = {
             "Cloak of Protection +1",
             "Ring of Invisibility (Used to slip through sewer grates into palace corridors unnoticed)"
         ],
-        "tactics": "<strong>Flèche Riposte:</strong> In single combat or duels under pundonor, whenever an opponent attacks and misses Lucia, she gains an immediate free counter-attack at +2 to hit.<br><strong>Disarming Flourish:</strong> Can sacrifice her off-hand attack to disarm an opponent on a successful attack roll vs. AC; target's weapon flies 10' unless they make a Save vs. Paralyze.",
-        "pcComparison": "In a 1-on-1 formal duel under pundonor, Lucia's AC -1, Riposte, and 18-20 Critical Threat make her significantly more dangerous than the PC Warrior (Level 9). The PCs cannot defeat her in a sporting duel without relying on tactical dishonor, terrain advantages, or magical assistance."
+        "tactics": "<strong>Flèche Riposte:</strong> In single combat or duels under pundonor, whenever an opponent attacks and misses Luzaia, she gains an immediate free counter-attack at +2 to hit.<br><strong>Disarming Flourish:</strong> Can sacrifice her off-hand attack to disarm an opponent on a successful attack roll vs. AC; target's weapon flies 10' unless they make a Save vs. Paralyze.",
+        "pcComparison": "In a 1-on-1 formal duel under pundonor, Luzaia's AC -1, Riposte, and 18-20 Critical Threat make her significantly more dangerous than the PC Warrior (Level 9). The PCs cannot defeat her in a sporting duel without relying on tactical dishonor, terrain advantages, or magical assistance."
     },
     "malachai": {
         "classLevel": "13th-Level Cleric (Patriarch of the Gnostic Ebon Flame)",
@@ -212,7 +212,7 @@ LL_NPCS = {
             "Potion of Giant Strength (Grants STR 21: +4 to hit, +6 damage for 1 hour)"
         ],
         "tactics": "<strong>Grandee Cavalry Escort:</strong> Always accompanied in the city by 6 veteran mounted caballeros (Fighters Level 5, AC 2, 28 HP each) and his personal armorer.<br><strong>Cattle Baron's Defiance:</strong> Immune to mundane intimidation; gains +2 on all saving throws against fear and panic.",
-        "pcComparison": "With 72 HP and a devastating mounted lance charge (2d10+10), Gonzalo hits harder than the PC Warrior. In the capital, his retinue of veteran caballeros gives him local numerical superiority over the PCs."
+        "pcComparison": "With 72 HP and a devastating mounted lance charge (2d10+10), Gonzalgo hits harder than the PC Warrior. In the capital, his retinue of veteran caballeros gives him local numerical superiority over the PCs."
     },
     "vesper": {
         "classLevel": "12th-Level Thief (Shadow King of The Pit)",
@@ -503,7 +503,7 @@ def update_data_file():
   </thead>
   <tbody>
     <tr>
-      <td><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodrigo de Valenza</a></strong><br><small>Head of Royal Army</small></td>
+      <td><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodorigo de Valenza</a></strong><br><small>Head of Royal Army</small></td>
       <td><span class="stat-class-level">Fighter 13</span></td>
       <td>Neutral</td>
       <td><strong>-2 (21)</strong></td>
@@ -513,7 +513,7 @@ def update_data_file():
       <td>Out-tanks and out-hits PC Fighter (Lvl 9). Direct martial duel is near-suicide without dividing his garrisons.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Mateo de Sadoria</a></strong><br><small>Chief Monarchist</small></td>
+      <td><strong><a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Murzio de Sadoria</a></strong><br><small>Chief Monarchist</small></td>
       <td><span class="stat-class-level">Thief 12</span></td>
       <td>Chaotic</td>
       <td><strong>1 (18)</strong></td>
@@ -523,7 +523,7 @@ def update_data_file():
       <td>1st attack auto-misses; mind shielded from Mage divinations; x4 Backstab drops unarmored royals.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/lucia" class="wiki-link">Fencing Master Lucia 'La Mariposa'</a></strong><br><small>Republican Commander</small></td>
+      <td><strong><a href="#npcs/lucia" class="wiki-link">Fencing Master Luzaia 'The Mariposa'</a></strong><br><small>Republican Commander</small></td>
       <td><span class="stat-class-level">Fighter 12</span></td>
       <td>Chaotic</td>
       <td><strong>-1 (20)</strong></td>
@@ -543,7 +543,7 @@ def update_data_file():
       <td>Casts 6th-level miracles (PC Cleric has 5th). Save vs Death is 3; can destroy or command party's thralls.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/gonzalo-guarralid" class="wiki-link">High Duke Gonzalo de Guarralid</a></strong><br><small>Grandee Representative</small></td>
+      <td><strong><a href="#npcs/gonzalo-guarralid" class="wiki-link">High Duke Gonzalgo de Guarralid</a></strong><br><small>Grandee Representative</small></td>
       <td><span class="stat-class-level">Fighter 11</span></td>
       <td>Neutral</td>
       <td><strong>-1 (20)</strong></td>
@@ -652,8 +652,8 @@ def update_data_file():
 <h3>3. The City Power Hierarchy: Why the Handlers Out-Tier the PCs</h3>
 <p>The Game Master must enforce the central operational premise: <strong>the PCs are untested monarchs whose city handlers are veterans of Level 11 to 13</strong>.</p>
 <ul>
-  <li><strong>Military Elite (General Don Rodrigo de Valenza — Fighter 13, AC -2, 78 HP):</strong> Boasts nearly double the PC Fighter's health, an attack bonus of +15 with <em>The Iron Edict</em>, and command over hundreds of garrison troops. A frontal assault against him leads to swift military capture or death.</li>
-  <li><strong>Monarchist Bureaucracy (Marquis Mateo de Sadoria — Thief 12, AC 1, 48 HP):</strong> His <em>Cloak of Displacement</em> automatically negates the PCs' first attack, while his <em>Amulet</em> prevents the PC Mage from reading his mind. His x4 Backstab with lethal venom can assassinate an isolated PC.</li>
+  <li><strong>Military Elite (General Don Rodorigo de Valenza — Fighter 13, AC -2, 78 HP):</strong> Boasts nearly double the PC Fighter's health, an attack bonus of +15 with <em>The Iron Edict</em>, and command over hundreds of garrison troops. A frontal assault against him leads to swift military capture or death.</li>
+  <li><strong>Monarchist Bureaucracy (Marquis Murzio de Sadoria — Thief 12, AC 1, 48 HP):</strong> His <em>Cloak of Displacement</em> automatically negates the PCs' first attack, while his <em>Amulet</em> prevents the PC Mage from reading his mind. His x4 Backstab with lethal venom can assassinate an isolated PC.</li>
   <li><strong>Underground Nemeth (Father Malachai the Blind — Cleric 13, AC 1, 58 HP):</strong> Wields 6th-circle divine miracles (including <em>Finger of Death</em> and <em>Word of Recall</em>) and a Save vs. Poison/Death of <strong>3</strong>. He outclasses the PC Cleric by two entire spell levels.</li>
   <li><strong>Industrial Necromancy (Master Alchemist Vane — Magic-User 12, AC 4, 36 HP):</strong> Casts 6th-circle arcane magic (including <em>Death Spell</em> and <em>Disintegrate</em>) and can hurl 12d6 <em>Fireballs</em>. His <em>Death Spell</em> slays creatures of 8 HD or less without a saving throw, meaning PC retainers and guards are wiped out instantly.</li>
 </ul>
@@ -662,7 +662,7 @@ def update_data_file():
   <div class="gm-badge">GM CONFIDENTIAL &bull; SANDBOX RESOLUTION DIRECTIVE</div>
   <p>Because the city handlers out-tier the PCs in direct combat, the Triumvirate must overcome their handlers through <strong>asymmetric sandbox play</strong>:</p>
   <ul>
-    <li>Exploit rivalries: Set General Don Rodrigo against Marquis Mateo, or pit Father Malachai's zealots against Master Vane's thrall pits.</li>
+    <li>Exploit rivalries: Set General Don Rodorigo against Marquis Murzio, or pit Father Malachai's zealots against Master Vane's thrall pits.</li>
     <li>Recover pre-Cataclysmic relics: The <em>Black Blade of Kalenius</em> and <em>Obsidian Blade of Azur</em> level the playing field against high-level warlords.</li>
     <li>Utilize Pundonor duel exemptions: Under Zingaran code, even a Level 13 General must face formal duel conditions if insulted under sacred forms.</li>
     <li>Secure independent revenue: Bypass Sadoria's treasury lockout by tapping smuggling channels with Vesper or uncovering King Kalenius's flooded tombs.</li>
@@ -680,7 +680,7 @@ def update_data_file():
             "aliases": ["Labyrinth Lord Rules", "Labyrinth Lord", "PC Levels", "NPC Levels", "D&D Rules", "Labyrinth Lord Mechanics"],
             "summary": "Complete Labyrinth Lord (B/X retro-clone) mechanical parameters: Level 9 Warrior (240k XP), Level 9 Cleric, Level 8 Mage, versus Level 11–13 city handlers, saves, THAC0, and combat dynamics.",
             "content": ll_rules_content,
-            "gmSecrets": "Ensure players realize that attacking Rodrigo, Sadoria, or Vane directly is a TPK without alliances or relics.",
+            "gmSecrets": "Ensure players realize that attacking Rodorigo, Sadoria, or Vane directly is a TPK without alliances or relics.",
             "relatedIds": ["court-matrix", "valenza", "sadoria", "lucia", "malachai", "pundonor", "command-friction"]
         })
         print("Created rules/labyrinth-lord-mechanics article")

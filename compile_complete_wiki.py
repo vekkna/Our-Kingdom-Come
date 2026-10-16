@@ -95,12 +95,12 @@ def main():
     # 2. ROYAL COURT NPCS (8 DOSSIERS - Complete from Royal Court NPCs.docx)
     # =========================================================================
     npc_configs = [
-        ("valenza", "General Don Rodrigo de Valenza (Head of the Royal Army)", "Military Elite / Restoration Council", ["Don Rodrigo", "General Valenza", "Rodrigo de Valenza", "Head of the Royal Army"], "Fencing Master Lucia 'La Mariposa' de la Vega"),
-        ("sadoria", "High Chancellor Marquis Mateo de Sadoria (Chief Monarchist)", "Restoration Council / Bureaucracy", ["Marquis Mateo", "Mateo de Sadoria", "High Chancellor", "Chief Monarchist"], "High Duke Gonzalo de Guarralid"),
-        ("lucia", "Fencing Master Lucia \"La Mariposa\" de la Vega (Republican Cell Commander)", "Republican Insurgents (The Pit)", ["La Mariposa", "Lucia de la Vega", "Lucia", "Fencing Master Lucia"], "General Don Rodrigo de Valenza"),
+        ("valenza", "General Don Rodorigo de Valenza (Head of the Royal Army)", "Military Elite / Restoration Council", ["Don Rodorigo", "General Valenza", "Rodorigo de Valenza", "Head of the Royal Army"], "Fencing Master Luzaia 'The Mariposa' de Vegara"),
+        ("sadoria", "High Chancellor Marquis Murzio de Sadoria (Chief Monarchist)", "Restoration Council / Bureaucracy", ["Marquis Murzio", "Murzio de Sadoria", "High Chancellor", "Chief Monarchist"], "High Duke Gonzalgo de Guarralid"),
+        ("lucia", "Fencing Master Luzaia \"La Mariposa\" de la Vega (Republican Cell Commander)", "Republican Insurgents (The Pit)", ["La Mariposa", "Luzaia de Vegara", "Luzaia", "Fencing Master Luzaia"], "General Don Rodorigo de Valenza"),
         ("malachai", "Father Malachai the Blind (High Priest of the Underground Church of Nemeth)", "Church of Nemeth the Gnostic", ["Father Malachai", "Malachai", "High Priest of Nemeth"], "Master Alchemist Vane"),
-        ("gonzalo-guarralid", "High Duke Gonzalo de Guarralid (Grandee Representative)", "Grandee Coalitions (Eastern League)", ["Gonzalo de Guarralid", "Duke Gonzalo", "High Duke Gonzalo", "Guarralid"], "High Chancellor Marquis Mateo de Sadoria"),
-        ("vesper", "Vesper the Key-Master (Spymaster of The Pit & Black Market Guildmaster)", "Underworld Syndicates / Smugglers", ["Vesper", "Key-Master", "The Key-Master"], "General Don Rodrigo de Valenza"),
+        ("gonzalo-guarralid", "High Duke Gonzalgo de Guarralid (Grandee Representative)", "Grandee Coalitions (Eastern League)", ["Gonzalgo de Guarralid", "Duke Gonzalgo", "High Duke Gonzalgo", "Guarralid"], "High Chancellor Marquis Murzio de Sadoria"),
+        ("vesper", "Vesper the Key-Master (Spymaster of The Pit & Black Market Guildmaster)", "Underworld Syndicates / Smugglers", ["Vesper", "Key-Master", "The Key-Master"], "General Don Rodorigo de Valenza"),
         ("vane", "Master Alchemist Vane (Industrial Thrall Overseer)", "Crown Necromantic Apparatus", ["Master Vane", "Alchemist Vane", "Vane"], "Father Malachai the Blind"),
         ("tiberio", "Ambassador Tiberio of Messantia (Foreign Envoy)", "Kingdom of Argos / Hyborian Powers", ["Ambassador Tiberio", "Tiberio", "Envoy Tiberio"], "Vesper the Key-Master")
     ]
@@ -280,25 +280,25 @@ def main():
   </thead>
   <tbody>
     <tr>
-      <td><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodrigo de Valenza</a></strong><br><small>Head of Royal Army</small></td>
+      <td><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodorigo de Valenza</a></strong><br><small>Head of Royal Army</small></td>
       <td><span class="badge">Military Elite / Restoration Council</span></td>
       <td>Protective martial defender; loyal guardian of the crown.</td>
       <td class="gm-only-cell"><span class="gm-mask-text">Keep PCs dependent on army; conceal Period VI assassination of republican founder.</span></td>
-      <td><a href="#npcs/lucia" class="wiki-link">Lucia de la Vega</a></td>
+      <td><a href="#npcs/lucia" class="wiki-link">Luzaia de Vegara</a></td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Mateo de Sadoria</a></strong><br><small>Chief Monarchist</small></td>
+      <td><strong><a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Murzio de Sadoria</a></strong><br><small>Chief Monarchist</small></td>
       <td><span class="badge">Restoration Council / Bureaucracy</span></td>
       <td>Devoted mentor, elder statesman, and administrative guide.</td>
       <td class="gm-only-cell"><span class="gm-mask-text">Restrict royal stipend to keep PCs financially paralyzed; hoard state wealth in Council vaults.</span></td>
-      <td><a href="#npcs/gonzalo-guarralid" class="wiki-link">Duke Gonzalo de Guarralid</a></td>
+      <td><a href="#npcs/gonzalo-guarralid" class="wiki-link">Duke Gonzalgo de Guarralid</a></td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/lucia" class="wiki-link">Fencing Master Lucia 'La Mariposa' de la Vega</a></strong><br><small>Republican Commander</small></td>
+      <td><strong><a href="#npcs/lucia" class="wiki-link">Fencing Master Luzaia 'The Mariposa' de Vegara</a></strong><br><small>Republican Commander</small></td>
       <td><span class="badge">Republican Insurgents (The Pit)</span></td>
       <td>Openly hostile to monarchy; offers conditional secret pacts.</td>
       <td class="gm-only-cell"><span class="gm-mask-text">Expose Council's Period VI assassination plot; dismantle feudal monarchy for a republic.</span></td>
-      <td><a href="#npcs/valenza" class="wiki-link">General Don Rodrigo</a></td>
+      <td><a href="#npcs/valenza" class="wiki-link">General Don Rodorigo</a></td>
     </tr>
     <tr>
       <td><strong><a href="#npcs/malachai" class="wiki-link">Father Malachai the Blind</a></strong><br><small>High Priest of Nemeth</small></td>
@@ -308,18 +308,18 @@ def main():
       <td><a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a></td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/gonzalo-guarralid" class="wiki-link">High Duke Gonzalo de Guarralid</a></strong><br><small>Grandee Representative</small></td>
+      <td><strong><a href="#npcs/gonzalo-guarralid" class="wiki-link">High Duke Gonzalgo de Guarralid</a></strong><br><small>Grandee Representative</small></td>
       <td><span class="badge">Grandee Coalitions (Eastern League)</span></td>
       <td>Dismissive of young rulers; demands absolute provincial autonomy.</td>
       <td class="gm-only-cell"><span class="gm-mask-text">Weaken central crown tariffs; hoard mountain mineral wealth; test crown strength via duels.</span></td>
-      <td><a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a></td>
+      <td><a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a></td>
     </tr>
     <tr>
       <td><strong><a href="#npcs/vesper" class="wiki-link">Vesper the Key-Master</a></strong><br><small>Spymaster of The Pit</small></td>
       <td><span class="badge">Underworld Syndicates / Smugglers</span></td>
       <td>Opportunistic business partner; seller of secrets and relics.</td>
       <td class="gm-only-cell"><span class="gm-mask-text">Maintain control of subterranean Pit; profit from pre-Cataclysmic relics and extortion.</span></td>
-      <td><a href="#npcs/valenza" class="wiki-link">General Don Rodrigo</a></td>
+      <td><a href="#npcs/valenza" class="wiki-link">General Don Rodorigo</a></td>
     </tr>
     <tr>
       <td><strong><a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a></strong><br><small>Industrial Thrall Overseer</small></td>
@@ -469,7 +469,7 @@ def main():
     <tr>
       <td><strong><a href="#history/period-viii" class="wiki-link">VIII: Besieged Kingdom</a></strong></td>
       <td>Installation of PC Triumvirate by puppetmasters; growth of The Pit; multi-front threats.</td>
-      <td>The Triumvirate (PCs), <a href="#npcs/valenza" class="wiki-link">Valenza</a>, <a href="#npcs/sadoria" class="wiki-link">Mateo</a></td>
+      <td>The Triumvirate (PCs), <a href="#npcs/valenza" class="wiki-link">Valenza</a>, <a href="#npcs/sadoria" class="wiki-link">Murzio</a></td>
       <td>Modern campaign setting: bankrupt, besieged realm ruled by young rulers surrounded by wolves.</td>
     </tr>
   </tbody>
@@ -824,7 +824,7 @@ def main():
   </ul>
 </div>
 """,
-        "gmSecrets": "Duke Gonzalo de Guarralid will use pundonor challenges early in court to gauge whether the PCs have martial backbone.",
+        "gmSecrets": "Duke Gonzalgo de Guarralid will use pundonor challenges early in court to gauge whether the PCs have martial backbone.",
         "relatedIds": ["gonzalo-guarralid", "command-friction", "social-hierarchy"]
     })
 
@@ -1049,7 +1049,7 @@ def main():
   <li><strong>Longevity:</strong> Grants centuries of unaging vigor, making it the ultimate prize for aging Grandees and foreign kings.</li>
 </ul>
 """,
-        "gmSecrets": "Marquis Mateo poisoned a royal relative specifically to force the Triumvirate to locate this fountain.",
+        "gmSecrets": "Marquis Murzio poisoned a royal relative specifically to force the Triumvirate to locate this fountain.",
         "relatedIds": ["malachai", "falmouth", "rabirian-mountains", "church-of-nemeth"]
     })
 
@@ -1094,7 +1094,7 @@ def main():
          "The republicans offer the evidence in exchange for royal pardons and democratic concessions. However, agents of the underground Church of Nemeth intercept the meeting, demanding the evidence to clear their church's name. The PCs must decide whether to use the evidence to blackmail their handlers, hand it to the church, or side with the Council.",
          "DC 16 Stealth/Deception Check (slip away from royal handlers at gala); DC 14 Insight Check (detect double-dealing in church zealots).",
          "If the PCs hesitate or attempt to play all sides, the military chief's royal assassins strike the meeting place, attempting to burn the documents and silence all informants.",
-         "Secures absolute blackmail evidence against General Don Rodrigo and Marquis Mateo, allowing the PCs to purge their puppetmasters or force total political submission."),
+         "Secures absolute blackmail evidence against General Don Rodorigo and Marquis Murzio, allowing the PCs to purge their puppetmasters or force total political submission."),
 
         ("hook-pits-of-edmund", "The Reeking Pits of Edmund", "Section 8.1 / Section 7.2", ["The Triumvirate", "Restoration Council", "Grandee Coalitions", "Master Alchemist Vane"],
          "A crown-owned industrial zombie pit near Jerida collapses into an ancient river cavern, releasing hundreds of memory-retaining thralls who seize a vital iron mine. The Restoration Council uses the lost revenue as an excuse to cut the royal household's stipend, tightening their financial leash on the Triumvirate.",
@@ -1111,24 +1111,24 @@ def main():
          "Acquires waters from the Fountain of Youth in the Rabirian Mountains, providing an absolute cure for magical wasting poisons, disease, or necromantic decay affecting royal allies."),
 
         ("hook-concealed-order", "The Concealed Execution Order", "Section 7.1", ["Military Elite", "Republican Insurgents", "The Triumvirate"],
-         "General Don Rodrigo requests the Triumvirate sign an official royal decree mobilizing troops to purge a 'rebel encampment' in the Zingg Valley. In reality, the camp houses surviving witnesses to the Period VI assassination of the republican founder.",
-         "The PCs must decide whether to rubber-stamp the order to maintain Don Rodrigo's favor, or delay the decree to dispatch covert agents to investigate who is actually in the camp.",
+         "General Don Rodorigo requests the Triumvirate sign an official royal decree mobilizing troops to purge a 'rebel encampment' in the Zingg Valley. In reality, the camp houses surviving witnesses to the Period VI assassination of the republican founder.",
+         "The PCs must decide whether to rubber-stamp the order to maintain Don Rodorigo's favor, or delay the decree to dispatch covert agents to investigate who is actually in the camp.",
          "DC 15 Investigation/Insight (uncover true identity of target camp); DC 16 Command/Persuasion (countermand military orders).",
-         "If the PCs delay signing for more than 24 hours, Don Rodrigo executes the operation using his private household guard and places the royal quarters on protective lockdown.",
+         "If the PCs delay signing for more than 24 hours, Don Rodorigo executes the operation using his private household guard and places the royal quarters on protective lockdown.",
          "Saves key witnesses to Period VI state crimes, earning the secret allegiance of urban republican cells without triggering an immediate military coup."),
 
-        ("hook-treasury-lockout", "The Treasury Lockout", "Section 7.2", ["Restoration Council", "The Triumvirate", "Marquis Mateo"],
-         "When the Triumvirate attempts to allocate funds for independent city watch recruitment, Marquis Mateo calmly informs them that crown coffers are completely dry, citing foreign debt payments owed to Argos.",
-         "The PCs must find a way to finance their rule without Council permission: raid an illicit black-market smuggling den in The Pit, audit Mateo's private provincial tax records, or negotiate a risky loan with foreign merchants.",
-         "DC 16 Investigation (audit treasury scrolls to detect missing gold); DC 17 Persuasion/Intimidation (confront Mateo with proof of embezzled revenues).",
-         "If confronted directly without unassailable proof, Mateo retaliates by cutting the royal palace's servant and food budgets, claiming 'extreme wartime austerity.'",
+        ("hook-treasury-lockout", "The Treasury Lockout", "Section 7.2", ["Restoration Council", "The Triumvirate", "Marquis Murzio"],
+         "When the Triumvirate attempts to allocate funds for independent city watch recruitment, Marquis Murzio calmly informs them that crown coffers are completely dry, citing foreign debt payments owed to Argos.",
+         "The PCs must find a way to finance their rule without Council permission: raid an illicit black-market smuggling den in The Pit, audit Murzio's private provincial tax records, or negotiate a risky loan with foreign merchants.",
+         "DC 16 Investigation (audit treasury scrolls to detect missing gold); DC 17 Persuasion/Intimidation (confront Murzio with proof of embezzled revenues).",
+         "If confronted directly without unassailable proof, Murzio retaliates by cutting the royal palace's servant and food budgets, claiming 'extreme wartime austerity.'",
          "Exposes Council embezzlement and forces release of crown funds for an independent royal guard."),
 
         ("hook-tax-revolt-jerida", "The Tax Revolt of Jerida", "Section 7.2", ["Grandee Coalitions", "Restoration Council", "Barachan Pirates"],
-         "Duke Gonzalo orders his private garrison in Jerida to seize royal barges carrying timber and ore along the Thunder River, declaring an embargo until the crown cuts provincial customs tariffs.",
-         "The PCs must travel to Jerida to break the standoff through military intimidation, clever economic compromise, or covert sabotage of Gonzalo's supply lines.",
-         "DC 15 Intimidation (rally local merchants against Gonzalo's embargo); DC 14 Deception/Stealth (smuggle crown goods past the river blockade).",
-         "Failure to resolve the embargo within 3 days triggers an armed clash between royal army detachments and Gonzalo's retainers, threatening full civil war.",
+         "Duke Gonzalgo orders his private garrison in Jerida to seize royal barges carrying timber and ore along the Thunder River, declaring an embargo until the crown cuts provincial customs tariffs.",
+         "The PCs must travel to Jerida to break the standoff through military intimidation, clever economic compromise, or covert sabotage of Gonzalgo's supply lines.",
+         "DC 15 Intimidation (rally local merchants against Gonzalgo's embargo); DC 14 Deception/Stealth (smuggle crown goods past the river blockade).",
+         "Failure to resolve the embargo within 3 days triggers an armed clash between royal army detachments and Gonzalgo's retainers, threatening full civil war.",
          "Re-establishes crown trade tariffs along the lower Thunder River, generating independent income that frees the Triumvirate from the Council's financial leash."),
 
         ("hook-tomb-kalenius", "The Tomb of King Kalenius", "Section 7.3", ["Vesper the Key-Master", "Grandee Coalitions", "The Triumvirate"],
@@ -1199,8 +1199,8 @@ def main():
   <h4>2. Economic Recovery &amp; Thrall Labor Crises</h4>
   <ul>
     <li><strong><a href="#hooks/hook-pits-of-edmund" class="wiki-link">The Reeking Pits of Edmund</a>:</strong> Resolve a thrall revolt at Pit #4 near Jerida and find the Black Blade map.</li>
-    <li><strong><a href="#hooks/hook-tax-revolt-jerida" class="wiki-link">The Tax Revolt of Jerida</a>:</strong> Break Duke Gonzalo's river embargo on the lower Thunder River.</li>
-    <li><strong><a href="#hooks/hook-treasury-lockout" class="wiki-link">The Treasury Lockout</a>:</strong> Audit Marquis Mateo's ledgers to expose state gold embezzlement.</li>
+    <li><strong><a href="#hooks/hook-tax-revolt-jerida" class="wiki-link">The Tax Revolt of Jerida</a>:</strong> Break Duke Gonzalgo's river embargo on the lower Thunder River.</li>
+    <li><strong><a href="#hooks/hook-treasury-lockout" class="wiki-link">The Treasury Lockout</a>:</strong> Audit Marquis Murzio's ledgers to expose state gold embezzlement.</li>
     <li><strong><a href="#hooks/hook-treasury-heist" class="wiki-link">The Treasury Heist</a>:</strong> Infiltrate Council vaults with Vesper to reclaim hoarded state bullion.</li>
   </ul>
 

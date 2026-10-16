@@ -45,7 +45,8 @@
     selectedSearchIdx: 0,
     sessions: [],
     customArticles: loadJsonStorage('okc_custom_articles', []),
-    deletedArticleIds: loadJsonStorage('okc_deleted_articles', [])
+    deletedArticleIds: loadJsonStorage('okc_deleted_articles', []),
+    collapsedCategories: new Set(loadJsonStorage('okc_collapsed_cats', []))
   };
   window.AppState = AppState;
 
@@ -55,6 +56,10 @@
 
   function saveDeletedArticles() {
     safeStorage.setItem('okc_deleted_articles', JSON.stringify(AppState.deletedArticleIds));
+  }
+
+  function saveCollapsedCategories() {
+    safeStorage.setItem('okc_collapsed_cats', JSON.stringify([...AppState.collapsedCategories]));
   }
 
   // Dynamic Compendium Data Merge (Canonical + Custom Overrides - Deleted Articles)
@@ -167,7 +172,7 @@
 
     function processTextNode(node) {
       const parentTag = node.parentNode.nodeName.toLowerCase();
-      if (['a', 'h1', 'h2', 'h3', 'h4', 'button', 'script', 'style'].includes(parentTag)) {
+      if (['a', 'h1', 'h2', 'h3', 'button', 'script', 'style'].includes(parentTag)) {
         return;
       }
       if (node.parentNode.classList && node.parentNode.classList.contains('wiki-link')) {
@@ -244,13 +249,19 @@
 
     data.categories.forEach(cat => {
       const articlesInCat = data.articles.filter(a => a.category === cat.id);
-      const isExpanded = (AppState.currentCategory === cat.id);
+      const isCollapsed = AppState.collapsedCategories.has(cat.id);
 
       html += `
-        <div class="nav-group" data-cat-id="${cat.id}">
-          <div class="sidebar-section-header">
-            <span>${cat.icon} ${cat.name}</span>
-            <span class="nav-count">${cat.id === 'sessions' ? AppState.sessions.length : articlesInCat.length}</span>
+        <div class="nav-group ${isCollapsed ? 'collapsed' : ''}" data-cat-id="${cat.id}">
+          <div class="sidebar-section-header" role="button" tabindex="0" aria-expanded="${!isCollapsed}" title="Click to ${isCollapsed ? 'expand' : 'tuck closed'} ${cat.name}">
+            <div class="header-title-group">
+              <span class="nav-cat-icon">${cat.icon}</span>
+              <span class="nav-cat-title">${cat.name}</span>
+            </div>
+            <div class="header-meta-group">
+              <span class="nav-count">${cat.id === 'sessions' ? AppState.sessions.length : articlesInCat.length}</span>
+              <span class="nav-chevron" aria-hidden="true">${isCollapsed ? '▸' : '▾'}</span>
+            </div>
           </div>
           <div class="nav-group-items">
       `;
@@ -283,6 +294,39 @@
 
     navTreeContainer.innerHTML = html;
 
+    // Attach click and keyboard events to category headers for expand/collapse
+    navTreeContainer.querySelectorAll('.sidebar-section-header').forEach(header => {
+      function toggleCat(e) {
+        if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+        if (e.type === 'keydown') e.preventDefault();
+
+        const navGroup = header.closest('.nav-group');
+        if (!navGroup) return;
+        const catId = navGroup.getAttribute('data-cat-id');
+
+        navGroup.classList.toggle('collapsed');
+        const nowCollapsed = navGroup.classList.contains('collapsed');
+        header.setAttribute('aria-expanded', !nowCollapsed);
+        header.title = `Click to ${nowCollapsed ? 'expand' : 'tuck closed'} section`;
+
+        const chevron = header.querySelector('.nav-chevron');
+        if (chevron) {
+          chevron.textContent = nowCollapsed ? '▸' : '▾';
+        }
+
+        if (nowCollapsed) {
+          AppState.collapsedCategories.add(catId);
+        } else {
+          AppState.collapsedCategories.delete(catId);
+        }
+        saveCollapsedCategories();
+        updateTuckAllButtonState();
+      }
+
+      header.addEventListener('click', toggleCat);
+      header.addEventListener('keydown', toggleCat);
+    });
+
     // Attach click events to nav items
     navTreeContainer.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', (e) => {
@@ -293,6 +337,42 @@
         }
       });
     });
+
+    updateTuckAllButtonState();
+  }
+
+  function updateTuckAllButtonState() {
+    const btn = document.getElementById('btn-toggle-all-cats');
+    if (!btn) return;
+    const data = getWikiData();
+    if (!data || !data.categories) return;
+    const allCollapsed = data.categories.every(cat => AppState.collapsedCategories.has(cat.id));
+    if (allCollapsed) {
+      btn.innerHTML = '📂 Expand All';
+      btn.title = 'Expand all compendium categories';
+    } else {
+      btn.innerHTML = '📁 Tuck All';
+      btn.title = 'Tuck closed all compendium categories';
+    }
+  }
+
+  function initTuckAllButton() {
+    const btn = document.getElementById('btn-toggle-all-cats');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const data = getWikiData();
+      if (!data || !data.categories) return;
+      const allCollapsed = data.categories.every(cat => AppState.collapsedCategories.has(cat.id));
+      if (allCollapsed) {
+        AppState.collapsedCategories.clear();
+      } else {
+        data.categories.forEach(cat => AppState.collapsedCategories.add(cat.id));
+      }
+      saveCollapsedCategories();
+      renderSidebar();
+      updateTuckAllButtonState();
+    });
+    updateTuckAllButtonState();
   }
 
   function renderArticle(article) {
@@ -325,19 +405,67 @@
     // Cross-references
     let relatedHtml = '';
     if (article.relatedIds && article.relatedIds.length > 0) {
-      const relatedLinks = article.relatedIds.map(rid => {
-        const relArt = getArticle(rid);
-        if (relArt) {
-          return `<a href="#${relArt.category}/${relArt.id}" class="wiki-link" data-id="${relArt.id}">${relArt.title}</a>`;
-        }
-        return '';
-      }).filter(Boolean).join(' ');
+      const hookLinks = [];
+      const npcLinks = [];
+      const placeLinks = [];
+      const factionLinks = [];
+      const otherLinks = [];
 
-      if (relatedLinks) {
+      article.relatedIds.forEach(rid => {
+        const relArt = getArticle(rid);
+        if (!relArt) return;
+        if (relArt.category === 'hooks') {
+          hookLinks.push(`<a href="#${relArt.category}/${relArt.id}" class="wiki-link hook-link-pill" data-id="${relArt.id}" data-category="${relArt.category}">🎯 ${relArt.title}</a>`);
+        } else if (relArt.category === 'npcs') {
+          npcLinks.push(`<a href="#${relArt.category}/${relArt.id}" class="wiki-link" data-id="${relArt.id}" data-category="${relArt.category}">${relArt.title}</a>`);
+        } else if (relArt.category === 'gazetteer') {
+          placeLinks.push(`<a href="#${relArt.category}/${relArt.id}" class="wiki-link" data-id="${relArt.id}" data-category="${relArt.category}">${relArt.title}</a>`);
+        } else if (relArt.category === 'factions') {
+          factionLinks.push(`<a href="#${relArt.category}/${relArt.id}" class="wiki-link" data-id="${relArt.id}" data-category="${relArt.category}">${relArt.title}</a>`);
+        } else {
+          otherLinks.push(`<a href="#${relArt.category}/${relArt.id}" class="wiki-link" data-id="${relArt.id}" data-category="${relArt.category}">${relArt.title}</a>`);
+        }
+      });
+
+      let sectionsHtml = '';
+      if (hookLinks.length > 0) {
+        sectionsHtml += `
+          <div class="related-block">
+            <h5 class="related-subheading" style="color: var(--accent-gold);">🎯 Connected Plot Hooks &amp; Adventures</h5>
+            <div class="related-pills-list">${hookLinks.join('')}</div>
+          </div>
+        `;
+      }
+      if (npcLinks.length > 0 || factionLinks.length > 0) {
+        sectionsHtml += `
+          <div class="related-block">
+            <h5 class="related-subheading">👥 Dramatis Personae &amp; Power Blocs</h5>
+            <div class="related-pills-list">${[...npcLinks, ...factionLinks].join('')}</div>
+          </div>
+        `;
+      }
+      if (placeLinks.length > 0) {
+        sectionsHtml += `
+          <div class="related-block">
+            <h5 class="related-subheading">🗺️ Key Locations &amp; Regions</h5>
+            <div class="related-pills-list">${placeLinks.join('')}</div>
+          </div>
+        `;
+      }
+      if (otherLinks.length > 0) {
+        sectionsHtml += `
+          <div class="related-block">
+            <h5 class="related-subheading">📜 Lore, Relics &amp; Rules</h5>
+            <div class="related-pills-list">${otherLinks.join('')}</div>
+          </div>
+        `;
+      }
+
+      if (sectionsHtml) {
         relatedHtml = `
-          <div class="info-card" style="margin-top: 30px;">
-            <h4>Related Dossiers &amp; References</h4>
-            <p>${relatedLinks}</p>
+          <div class="info-card related-references-card" style="margin-top: 36px;">
+            <h4>Related Dossiers, Plot Hooks &amp; References</h4>
+            ${sectionsHtml}
           </div>
         `;
       }
@@ -349,6 +477,24 @@
       loreBadgeHtml = `<span class="badge-custom-lore">Custom Article</span>`;
     } else if (article._isModified) {
       loreBadgeHtml = `<span class="badge-modified-lore">Locally Modified</span>`;
+    }
+
+    // Quick top hooks bar for NPCs
+    let topHooksBarHtml = '';
+    if (article.category === 'npcs' && article.relatedIds && article.relatedIds.length > 0) {
+      const topHookArts = article.relatedIds
+        .map(rid => getArticle(rid))
+        .filter(a => a && a.category === 'hooks');
+      if (topHookArts.length > 0) {
+        topHooksBarHtml = `
+          <div class="npc-quick-hooks-bar">
+            <span class="quick-hooks-label">🎯 Connected Plot Hooks:</span>
+            <div class="quick-hooks-list">
+              ${topHookArts.map(h => `<a href="#hooks/${h.id}" class="wiki-link hook-link-pill" data-id="${h.id}" data-category="hooks" title="Open full plot hook dossier: ${h.title}">${h.title}</a>`).join('')}
+            </div>
+          </div>
+        `;
+      }
     }
 
     container.innerHTML = `
@@ -374,6 +520,7 @@
           <h1 class="article-title">${article.title}</h1>
           ${article.subtitle ? `<div class="article-subtitle">${article.subtitle}</div>` : ''}
           ${tagsHtml}
+          ${topHooksBarHtml}
         </div>
 
         <div class="article-body">
@@ -428,8 +575,26 @@
       `;
     }
 
+    let drawerHooksHtml = '';
+    if (article.relatedIds && article.relatedIds.length > 0) {
+      const drawerHooks = article.relatedIds
+        .map(rid => getArticle(rid))
+        .filter(a => a && a.category === 'hooks');
+      if (drawerHooks.length > 0) {
+        drawerHooksHtml = `
+          <div style="margin-top: 14px; padding: 10px 14px; background: rgba(192, 57, 43, 0.1); border-left: 3px solid var(--accent-crimson); border-radius: var(--radius-sm);">
+            <strong style="color: #ff9da8; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px;">🎯 Connected Plot Hooks:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              ${drawerHooks.map(h => `<a href="#hooks/${h.id}" class="wiki-link hook-link-pill" data-id="${h.id}" style="font-size: 0.82rem !important; padding: 3px 8px !important;">${h.title}</a>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
     bodyEl.innerHTML = `
       ${glanceHtml}
+      ${drawerHooksHtml}
       <h4>Summary</h4>
       <p>${article.summary}</p>
       ${article.gmSecrets ? `
@@ -441,6 +606,7 @@
       <p style="margin-top: 14px;"><small class="text-dim">Tap "Open Full Article" below to view complete background, plot hooks, and tactical encounters.</small></p>
     `;
 
+    attachWikiLinkEvents(bodyEl);
     drawer.classList.add('open');
   }
 
@@ -476,17 +642,24 @@
         }
 
         // Primary action: Navigate directly to the full article page!
+        e.preventDefault();
         closePreviewDrawer();
 
-        const targetHref = link.getAttribute('href');
-        // If clicking a link to the current article, re-scroll to top
-        if (targetHref && window.location.hash === targetHref) {
-          e.preventDefault();
-          const container = document.getElementById('content-area');
-          if (container) container.scrollTop = 0;
+        let targetHref = link.getAttribute('href');
+        if (!targetHref && id) {
+          const art = getArticle(id);
+          targetHref = `#${art ? art.category : 'hooks'}/${id}`;
         }
-        // Otherwise, allow standard browser navigation to href="#category/id",
-        // which triggers hashchange -> handleRoute() -> renders full article!
+
+        if (targetHref) {
+          if (window.location.hash === targetHref) {
+            const container = document.getElementById('content-area');
+            if (container) container.scrollTop = 0;
+          } else {
+            window.location.hash = targetHref;
+            handleRoute();
+          }
+        }
       });
     });
   }
@@ -687,20 +860,20 @@
             "title": "The Coronation on Crystal & The Handlers' Trap",
             "realDate": "Campaign Launch",
             "inGameDate": "Month of the Sun, Period VIII (Year 1 of the Triumvirate)",
-            "summary": "The Player Character Triumvirate was crowned in Kordava upon the famed floor of polished crystal. General Don Rodrigo de Valenza stationed his elite caballeros around the palace perimeter, pledging martial protection. High Chancellor Marquis Mateo de Sadoria assumed direct custody of all crown ledgers, officially declaring the state treasury bankrupt due to foreign debt obligations to Argos. The young monarchs received formal bows from the assembled Grandees, though Duke Gonzalo de Guarralid made several cutting remarks testing their martial mettle under pundonor. Underground intelligence confirms that republican cells in The Pit view the coronation as a farce, while the outlawed Church of Nemeth has stepped up nocturnal recruitment.",
+            "summary": "The Player Character Triumvirate was crowned in Kordava upon the famed floor of polished crystal. General Don Rodorigo de Valenza stationed his elite caballeros around the palace perimeter, pledging martial protection. High Chancellor Marquis Murzio de Sadoria assumed direct custody of all crown ledgers, officially declaring the state treasury bankrupt due to foreign debt obligations to Argos. The young monarchs received formal bows from the assembled Grandees, though Duke Gonzalgo de Guarralid made several cutting remarks testing their martial mettle under pundonor. Underground intelligence confirms that republican cells in The Pit view the coronation as a farce, while the outlawed Church of Nemeth has stepped up nocturnal recruitment.",
             "sovereigntyPoints": 0,
             "pundonorStatus": "Unstained (No penalties active)",
             "activeThreads": [
-              "The Empty Vaults: Marquis Mateo has refused royal requests for personal guard stipends.",
+              "The Empty Vaults: Marquis Murzio has refused royal requests for personal guard stipends.",
               "The Whispering Pit: Republican agitators are circulating pamphlets claiming the Restoration Council murdered the republican founder in Period VI.",
-              "The River Embargo: Rumors that Duke Gonzalo's retainers in Jerida are preparing to halt crown timber barges."
+              "The River Embargo: Rumors that Duke Gonzalgo's retainers in Jerida are preparing to halt crown timber barges."
             ],
             "npcDispositions": {
-              "General Don Rodrigo de Valenza": "Protective / Patronizing (+1 Martial Guard, -1 Freedom)",
-              "High Chancellor Marquis Mateo de Sadoria": "Cordial / Financially Restrictive",
-              "Fencing Master Lucia 'La Mariposa'": "Hostile / Curious (Awaiting royal action)",
+              "General Don Rodorigo de Valenza": "Protective / Patronizing (+1 Martial Guard, -1 Freedom)",
+              "High Chancellor Marquis Murzio de Sadoria": "Cordial / Financially Restrictive",
+              "Fencing Master Luzaia 'The Mariposa'": "Hostile / Curious (Awaiting royal action)",
               "Father Malachai the Blind": "Condemnatory (Demands destruction of zombie pits)",
-              "High Duke Gonzalo de Guarralid": "Dismissive / Challenging (Testing pundonor)"
+              "High Duke Gonzalgo de Guarralid": "Dismissive / Challenging (Testing pundonor)"
             }
           }
         ];
@@ -1757,6 +1930,7 @@
     initTools();
     initArticleEditor();
     initSyncEngine();
+    initTuckAllButton();
 
     // Sidebar Toggle
     document.getElementById('sidebar-toggle-btn')?.addEventListener('click', toggleSidebar);
@@ -1768,6 +1942,7 @@
       if (fullLink) {
         closePreviewDrawer();
         window.location.hash = fullLink;
+        handleRoute();
       }
     });
 

@@ -3,15 +3,15 @@ add_drowned_rat_to_wiki.py
 Expands the Our Kingdom Come campaign wiki with:
 1. Gazetteer Entry: The Drowned Rat Tavern (the-drowned-rat)
 2. NPC Entry: Old Mother Vespera (madre-vespera)
-3. NPC Entry: Pale Beatriz (beatriz-la-palida) - The Zombie Barmaid
+3. NPC Entry: Pale Beatriza (beatriz-la-palida) - The Zombie Barmaid
 4. Updates cross-links and relatedIds across:
-   - Joaquin 'El Grajo' Valiente (joaquin)
-   - Don Tristán de Revella (tristan-revella)
+   - Joachor 'The Jackdaw' Valiento (joaquin)
+   - Don Tristao de Revello (tristan-revella)
    - The Night Guild of Kordova (kordovan-thieves-guild)
    - The Pit (the-pit)
    - Kordava (kordava)
    - The Velasco Syndicate (velasco-thieves-guild)
-   - Maestra Valeria de Morata (valeria-morata)
+   - Maestra Valessa de Morato (valeria-morata)
    - Royal University of Kordava (royal-university-of-kordava)
 """
 
@@ -54,13 +54,13 @@ def main():
             "Drowned Rat",
             "Drowned Rat Dive"
         ],
-        "summary": "A squalid, semi-submerged dive clinging to the ancient stone sewer outfall where Kordova's Lower Ward empties into The Pit. Once an opulent Period V cabaret known as The Alabaster Swan, it is now a waterlogged underworld haven for cutpurses, fences, and smugglers—famed for its one-eyed mistress Old Mother Vespera, its gentle reanimated zombie barmaid Beatriz, and a secret sewer siphon connecting directly to the Night Guild's subterranean cisterns.",
+        "summary": "A squalid, semi-submerged dive clinging to the ancient stone sewer outfall where Kordova's Lower Ward empties into The Pit. Once an opulent Period V cabaret known as The Alabaster Swan, it is now a waterlogged underworld haven for cutpurses, fences, and smugglers—famed for its one-eyed mistress Old Mother Vespera, its gentle reanimated zombie barmaid Beatriza, and a secret sewer siphon connecting directly to the Night Guild's subterranean cisterns.",
         "content": """
 <div class="info-card">
   <p><strong>Establishment Type:</strong> Semi-Submerged Waterfront Tavern, Underworld Neutral Ground &amp; Smugglers' Clearinghouse</p>
   <p><strong>Location:</strong> Lower Ward of <a href="#gazetteer/kordava" class="wiki-link">Kordova</a>, perched over the great sluice outfall where the municipal storm conduits cascade into the sunken ruins of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a></p>
   <p><strong>Proprietress:</strong> <a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera ("La Balanza")</a>, veteran fence and retired cabaret dancer</p>
-  <p><strong>Notable Staff:</strong> <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriz</a> (Reanimated Zombie Barmaid), "Gordo" Basilio (Cook, Tapster &amp; Bilge-Pumper)</p>
+  <p><strong>Notable Staff:</strong> <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriza</a> (Reanimated Zombie Barmaid), "Gordo" Basilio (Cook, Tapster &amp; Bilge-Pumper)</p>
   <p><strong>Affiliated Factions:</strong> <a href="#factions/kordovan-thieves-guild" class="wiki-link">The Night Guild of Kordova</a> (primary street front), <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a> (hostile extortion target), <a href="#factions/republican-insurgents" class="wiki-link">Republican Insurgents</a> (occasional patrons)</p>
 </div>
 
@@ -97,13 +97,13 @@ def main():
     <tr>
       <td><strong>The Sump Booths</strong></td>
       <td>Four recessed alcoves carved from ancient sewer stone, draped with dripping, moldering canvas sails.</td>
-      <td>Private negotiation dens. Where <a href="#npcs/joaquin" class="wiki-link">Joaquin 'El Grajo'</a> met the PC Triumvirate. Whispered conversations cannot be overheard over the deafening roar of the adjacent sewer sluice.</td>
+      <td>Private negotiation dens. Where <a href="#npcs/joaquin" class="wiki-link">Joachor 'El Grajo'</a> met the PC Triumvirate. Whispered conversations cannot be overheard over the deafening roar of the adjacent sewer sluice.</td>
       <td>Grants +2 on Stealth / Hide in Shadows checks; immune to mundane eavesdropping.</td>
     </tr>
     <tr>
       <td><strong>The Bar &amp; Balanza</strong></td>
       <td>Massive counter carved from a salvaged galleon mast, pitted with knife gouges and coin tests.</td>
-      <td>The command post of <a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera</a>. Houses her brass scales, three loaded flintlock pistols beneath the rail, and a lead-weighted cudgel. Served by <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriz</a>.</td>
+      <td>The command post of <a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera</a>. Houses her brass scales, three loaded flintlock pistols beneath the rail, and a lead-weighted cudgel. Served by <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriza</a>.</td>
       <td>Heavy oak bar provides hard cover (+4 AC against missile fire).</td>
     </tr>
     <tr>
@@ -127,7 +127,7 @@ def main():
     <tr>
       <td><strong>The Flooded Vault of the Swan</strong></td>
       <td>Submerged cellar twenty feet beneath the floorboards, drowned under six feet of black tidal sewage.</td>
-      <td>The sealed strongroom from the tavern's Period V golden age. Said to contain the locked sea-chest of Captain Esteban de Morillo, holding pre-Cataclysmic reef charts.</td>
+      <td>The sealed strongroom from the tavern's Period V golden age. Said to contain the locked sea-chest of Captain Estevar de Morillo, holding pre-Cataclysmic reef charts.</td>
       <td>Completely submerged; requires underwater swimming checks and illumination; inhabited by giant sewer lampreys.</td>
     </tr>
   </tbody>
@@ -138,59 +138,59 @@ def main():
 <ul>
   <li><strong>The Bilge Broth (El Caldo del Fondo):</strong> Two copper bits per wooden bowl. A thick, gelatinous, bubbling stew prepared by Gordo Basilio from salt-dogfish heads, split yellow peas, wild canal celery, turnip skins, and generous splashes of vinegar to mask the rancidity. Surprisingly nourishing, but requires a <strong>DC 10 Constitution check</strong> for high-born stomachs to avoid mild nausea.</li>
   <li><strong>The Drowned Pint:</strong> One copper bit. Sour, cloudy ale brewed from grain sweepings discarded at the harbor wharves, cut with brackish water. Leaves a bitter copper tang on the tongue.</li>
-  <li><strong>Zingg Aguardiente:</strong> Three silver pieces per horn. Raw, fiery cane rum smuggled from the southern estates, hot enough to strip paint off a galleon's hull. The favored drink of <a href="#npcs/tristan-revella" class="wiki-link">Don Tristán de Revella</a> during his binges.</li>
-  <li><strong>The Copper for the Drowned:</strong> Gutter superstition dictates that every patron must flick their first copper bit into the stagnant water pooling around their boots before taking their first drink. The coin sinks into the floor silt "to pay the blind ferryman so he doesn't drag our heels down." At closing time, Pale Beatriz wades through the water with an iron dredge to harvest the coins.</li>
+  <li><strong>Zingg Aguardiente:</strong> Three silver pieces per horn. Raw, fiery cane rum smuggled from the southern estates, hot enough to strip paint off a galleon's hull. The favored drink of <a href="#npcs/tristan-revella" class="wiki-link">Don Tristao de Revello</a> during his binges.</li>
+  <li><strong>The Copper for the Drowned:</strong> Gutter superstition dictates that every patron must flick their first copper bit into the stagnant water pooling around their boots before taking their first drink. The coin sinks into the floor silt "to pay the blind ferryman so he doesn't drag our heels down." At closing time, Pale Beatriza wades through the water with an iron dredge to harvest the coins.</li>
 </ul>
 
 <h3>4. Notable Staff</h3>
 <ul>
   <li><strong><a href="#npcs/madre-vespera" class="wiki-link">Old Mother Vespera ("La Balanza")</a> — Proprietress &amp; Master Fence:</strong> A sixty-seven-year-old one-eyed underworld veteran who has survived four kings, three sieges, and two plague years. She treats monarchs and cutpurses with equal, biting cynicism and keeps the tavern neutral ground under <em>El Pundonor del Arroyo</em>.</li>
-  <li><strong><a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriz</a> — The Undead Barmaid:</strong> The legendary singing barmaid of the tavern who died of canal typhus during the civil war. Reanimated by a renegade university necromancer at Vespera's expense, she glides silently through the flooded taproom in an antique lace apron, powdered with dried lavender, carrying tankards with terrifying undead balance and breaking the bones of rowdy brawlers with 18 Strength rigor mortis.</li>
+  <li><strong><a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriza</a> — The Undead Barmaid:</strong> The legendary singing barmaid of the tavern who died of canal typhus during the civil war. Reanimated by a renegade university necromancer at Vespera's expense, she glides silently through the flooded taproom in an antique lace apron, powdered with dried lavender, carrying tankards with terrifying undead balance and breaking the bones of rowdy brawlers with 18 Strength rigor mortis.</li>
   <li><strong>"Gordo" Basilio — Cook, Tapster &amp; Bilge-Pumper:</strong> A half-deaf, four-hundred-pound former whaling harpooner missing his left ear and three fingers. Basilio tends the fire, chops fish with a rusted flensing cleaver, and works the bilge pump like a tireless iron engine. If a fight turns lethal, Basilio hurls scalding chowder or swings a heavy oak pump handle (1d8+3 damage).</li>
 </ul>
 
 <h3>5. Habitual Patrons &amp; Street Fixtures</h3>
 <ul>
-  <li><strong><a href="#npcs/joaquin" class="wiki-link">Joaquin 'El Grajo' Valiente</a>:</strong> The desperate cutpurse who practically lives in the rearmost Sump Booth, nursing a single pint of sour ale for six hours while watching the door for Night Guild enforcers or Velascan assassins.</li>
-  <li><strong><a href="#npcs/tristan-revella" class="wiki-link">Don Tristán de Revella y Montalbán</a>:</strong> The PC Necromancer's aristocratic college fraternity brother, frequently found passed out face-down on a corner trestle table, clutching an empty bottle of plum brandy and singing student songs while creditors circle like gulls.</li>
+  <li><strong><a href="#npcs/joaquin" class="wiki-link">Joachor 'The Jackdaw' Valiento</a>:</strong> The desperate cutpurse who practically lives in the rearmost Sump Booth, nursing a single pint of sour ale for six hours while watching the door for Night Guild enforcers or Velascan assassins.</li>
+  <li><strong><a href="#npcs/tristan-revella" class="wiki-link">Don Tristao de Revello y Montalvo</a>:</strong> The PC Necromancer's aristocratic college fraternity brother, frequently found passed out face-down on a corner trestle table, clutching an empty bottle of plum brandy and singing student songs while creditors circle like gulls.</li>
   <li><strong>Tía Moros ("The Harbor Hag"):</strong> An eighty-year-old former smuggler with a narwhal-horn peg leg who sits on a dry salt barrel by the peat stove. She sells waterproof tallow candles, dried marsh tobacco, and flawless tide schedules of the subterranean sea-caves for a few copper bits.</li>
-  <li><strong>Cristóbal "El Aguja" (The Needle):</strong> A twitching, ink-stained former copyist dismissed from <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo's</a> treasury for selling tax duplicates. From a dim booth, Cristóbal uses forged seals to draft counterfeit grain manifests, travel passes, and pawn receipts for two silver pieces each.</li>
-  <li><strong>"Gato Salado" (Mateo de Velasco):</strong> A silent, scar-faced scout for the <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a>. Clad in salt-stained oilskins, he sips rum near the entrance, covertly recording the faces of Night Guild runners using the sewer trapdoor.</li>
+  <li><strong>Cristóbal "El Aguja" (The Needle):</strong> A twitching, ink-stained former copyist dismissed from <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio's</a> treasury for selling tax duplicates. From a dim booth, Cristóbal uses forged seals to draft counterfeit grain manifests, travel passes, and pawn receipts for two silver pieces each.</li>
+  <li><strong>"Gato Salado" (Murzio de Velasco):</strong> A silent, scar-faced scout for the <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a>. Clad in salt-stained oilskins, he sips rum near the entrance, covertly recording the faces of Night Guild runners using the sewer trapdoor.</li>
 </ul>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; THE PALACE CHIMNEY &amp; THE SUBMERGED VAULT</div>
-  <p><strong>The Alcázar Kitchen Conduit:</strong> The Drowned Rat's cellar connects to an ancient Thurian drainage siphon that ascends 300 vertical feet directly into the dry larder beneath Maestro Bartolomeo's royal kitchens in the <a href="#gazetteer/palace-of-kordava" class="wiki-link">High Alcázar</a>. Joaquin Valiente discovered it while fleeing watchmen; Mother Vespera also knows of it, but keeps it secret as her ultimate emergency escape route.</p>
-  <p><strong>The Sealed Chest of Captain Morillo:</strong> Deep inside the flooded sub-cellar lies the water-locked iron chest of Captain Esteban de Morillo, lost during Period V. If recovered, the chest contains 450 ancient minted gold sovereigns, a gold-plated sextant, and a vellum chart revealing the underwater sea-gate into the <a href="#gazetteer/mausoleum-kalenius" class="wiki-link">Submerged Mausoleum of King Kalenius</a>.</p>
+  <p><strong>The Alcázar Kitchen Conduit:</strong> The Drowned Rat's cellar connects to an ancient Thurian drainage siphon that ascends 300 vertical feet directly into the dry larder beneath Maestro Bartorzo's royal kitchens in the <a href="#gazetteer/palace-of-kordava" class="wiki-link">High Alcázar</a>. Joachor Valiento discovered it while fleeing watchmen; Mother Vespera also knows of it, but keeps it secret as her ultimate emergency escape route.</p>
+  <p><strong>The Sealed Chest of Captain Estevar:</strong> Deep inside the flooded sub-cellar lies the water-locked iron chest of Captain Estevar de Morillo, lost during Period V. If recovered, the chest contains 450 ancient minted gold sovereigns, a gold-plated sextant, and a vellum chart revealing the underwater sea-gate into the <a href="#gazetteer/mausoleum-kalenius" class="wiki-link">Submerged Mausoleum of King Kalenius</a>.</p>
 </div>
 
 <h3>6. Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Preservation Crisis (The Barmaid's Mortuary Run)</h4>
-  <p><strong>Premise:</strong> Pale Beatriz's preservation is breaking down. Cheap Zingg embalming salts used during her reanimation have decayed in the tavern's humid dampness; her wrist tendons are turning brittle and grey necrosis is spreading across her neck. Mother Vespera has only 48 hours before Beatriz collapses into mindless zombie rot. She begs the PCs—specifically the PC Necromancer—for help.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> Stabilizing Beatriz requires half a gallon of refined <em>Galvanic Mercurial Brine</em>. This controlled alchemical agent is held in only two places in Kordova: the secured dissecting vats of <a href="#npcs/valeria-morata" class="wiki-link">Maestra Valeria</a> at the <a href="#gazetteer/royal-university-of-kordava" class="wiki-link">Royal University</a>, or the heavily guarded state corpse-distilleries of <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a>. The PCs must decide whether to call in a favor from their university mentor <a href="#npcs/dean-baltasar-argote" class="wiki-link">Dean Argote</a>, stage a covert heist of Master Vane's warehouse, or synthesize an unstable herbal alternative using toxic marsh reeds from the Zingg mudflats.</p>
-  <div class="dc-box"><strong>Key Checks:</strong> Intelligence / Alchemy or Medicine check (or Necromancer class ability) to properly administer the brine and re-stitch the neck tendons; Charisma / Reaction roll to persuade Maestra Valeria to release the restricted reagents.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the brine is not procured in time, Beatriz suffers necrotic spasm: her Strength surges to 19, she enters a homicidal feral frenzy, and she begins strangling patrons in the taproom until put down or bound.</p>
+  <p><strong>Premise:</strong> Pale Beatriza's preservation is breaking down. Cheap Zingg embalming salts used during her reanimation have decayed in the tavern's humid dampness; her wrist tendons are turning brittle and grey necrosis is spreading across her neck. Mother Vespera has only 48 hours before Beatriza collapses into mindless zombie rot. She begs the PCs—specifically the PC Necromancer—for help.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> Stabilizing Beatriza requires half a gallon of refined <em>Galvanic Mercurial Brine</em>. This controlled alchemical agent is held in only two places in Kordova: the secured dissecting vats of <a href="#npcs/valeria-morata" class="wiki-link">Maestra Valessa</a> at the <a href="#gazetteer/royal-university-of-kordava" class="wiki-link">Royal University</a>, or the heavily guarded state corpse-distilleries of <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a>. The PCs must decide whether to call in a favor from their university mentor <a href="#npcs/dean-baltasar-argote" class="wiki-link">Dean Argoto</a>, stage a covert heist of Master Vane's warehouse, or synthesize an unstable herbal alternative using toxic marsh reeds from the Zingg mudflats.</p>
+  <div class="dc-box"><strong>Key Checks:</strong> Intelligence / Alchemy or Medicine check (or Necromancer class ability) to properly administer the brine and re-stitch the neck tendons; Charisma / Reaction roll to persuade Maestra Valessa to release the restricted reagents.</div>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the brine is not procured in time, Beatriza suffers necrotic spasm: her Strength surges to 19, she enters a homicidal feral frenzy, and she begins strangling patrons in the taproom until put down or bound.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Velascan Arson Ultimatum</h4>
-  <p><strong>Premise:</strong> Capitán <a href="#npcs/casimiro-velasco" class="wiki-link">Casimiro de Velasco</a> has delivered an ultimatum to Mother Vespera: pay a weekly "maritime protection tax" of 25 silver sovereigns and hand over the sewer trapdoor keys, or his syndicates will burn The Drowned Rat to the water's edge with Greek fire. Vespera refused, spitting on their messenger's boots.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> Tonight at midnight, three Velascan firebugs armed with pitch-pots and incendiary flasks are slipping through the canal flues to firebomb the whale-rib rafters. Vespera and Joaquin alert the PCs. The PCs can set an ambush in the flooded taproom, out-duel the arson squad silently before they ignite their pots, or track the arsonists back to the Velasco Syndicate's dock warehouse to burn <em>their</em> contraband instead.</p>
+  <p><strong>Premise:</strong> Capitán <a href="#npcs/casimiro-velasco" class="wiki-link">Cazmiro de Velasko</a> has delivered an ultimatum to Mother Vespera: pay a weekly "maritime protection tax" of 25 silver sovereigns and hand over the sewer trapdoor keys, or his syndicates will burn The Drowned Rat to the water's edge with Greek fire. Vespera refused, spitting on their messenger's boots.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> Tonight at midnight, three Velascan firebugs armed with pitch-pots and incendiary flasks are slipping through the canal flues to firebomb the whale-rib rafters. Vespera and Joachor alert the PCs. The PCs can set an ambush in the flooded taproom, out-duel the arson squad silently before they ignite their pots, or track the arsonists back to the Velasco Syndicate's dock warehouse to burn <em>their</em> contraband instead.</p>
   <div class="dc-box"><strong>Key Checks:</strong> Dexterity / Move Silently to ambush the saboteurs in pitch darkness; Strength / Athletics check to wrestle live Greek fire pots into the flooded bilge before they detonate.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If a single pitch pot is smashed, the whale-rib rafters ignite into an alchemical firestorm. The PCs have 3 combat rounds to evacuate the patrons, carry the heavy iron ledger chest, and lead Beatriz to safety through the rising smoke.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If a single pitch pot is smashed, the whale-rib rafters ignite into an alchemical firestorm. The PCs have 3 combat rounds to evacuate the patrons, carry the heavy iron ledger chest, and lead Beatriza to safety through the rising smoke.</p>
 </div>
 
 <div class="hook-card info-card">
-  <h4>Hook 3: Don Tristán's Pawned Heritage</h4>
-  <p><strong>Premise:</strong> In the throes of a three-day aguardiente bender, <a href="#npcs/tristan-revella" class="wiki-link">Don Tristán de Revella</a> ran up an astronomical 14-silver-piece bar tab. Lacking coin, he pawned his ancestral signet ring and a hand-drawn map of the secret ventilation tunnels of the <a href="#gazetteer/revella" class="wiki-link">Revella Tin Mines</a> to Mother Vespera. Now, <a href="#npcs/demetrio-phokas" class="wiki-link">Factor Demetrio Phokas</a> (the Argossean grain factor) has caught wind of the map and offered Vespera 60 gold sovereigns to buy it so Argos can legally foreclose on the mines.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> Vespera is an underworld woman of honor: she gives the PCs 12 hours to settle Tristán's debt and claim the map before she sells it to Argos. The PCs must scrounge or steal the 14 silver, intimidate Phokas's debt agents out of the tavern, or convince Vespera that crown favor is worth far more than foreign gold.</p>
+  <h4>Hook 3: Don Tristao's Pawned Heritage</h4>
+  <p><strong>Premise:</strong> In the throes of a three-day aguardiente bender, <a href="#npcs/tristan-revella" class="wiki-link">Don Tristao de Revello</a> ran up an astronomical 14-silver-piece bar tab. Lacking coin, he pawned his ancestral signet ring and a hand-drawn map of the secret ventilation tunnels of the <a href="#gazetteer/revella" class="wiki-link">Revella Tin Mines</a> to Mother Vespera. Now, <a href="#npcs/demetrio-phokas" class="wiki-link">Factor Demetrio Phokas</a> (the Argossean grain factor) has caught wind of the map and offered Vespera 60 gold sovereigns to buy it so Argos can legally foreclose on the mines.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> Vespera is an underworld woman of honor: she gives the PCs 12 hours to settle Tristao's debt and claim the map before she sells it to Argos. The PCs must scrounge or steal the 14 silver, intimidate Phokas's debt agents out of the tavern, or convince Vespera that crown favor is worth far more than foreign gold.</p>
   <div class="dc-box"><strong>Key Checks:</strong> Charisma / Pundonor check (or 14 silver cash) to settle the tab; DC 14 Intimidation check to send Phokas's clerks fleeing back to the docks empty-handed.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> Phokas sends four armed Argossean marine crossbowmen to seize the map by force if Vespera hesitates, sparking a close-quarters shootout in the narrow, flooded booths.</p>
 </div>
 """,
-        "gmSecrets": "The Drowned Rat's flooded sub-cellar contains the sealed chest of Captain Esteban de Morillo, holding pre-Cataclysmic gold and reef maps to King Kalenius's sunken tomb. A secret flue leads directly from behind the bar into the High Alcázar's kitchens.",
+        "gmSecrets": "The Drowned Rat's flooded sub-cellar contains the sealed chest of Captain Estevar de Morillo, holding pre-Cataclysmic gold and reef maps to King Kalenius's sunken tomb. A secret flue leads directly from behind the bar into the High Alcázar's kitchens.",
         "relatedIds": [
             "joaquin",
             "madre-vespera",
@@ -217,14 +217,14 @@ def main():
     vespera_article = {
         "id": "madre-vespera",
         "category": "npcs",
-        "title": "Old Mother Vespera (Vespera 'La Balanza')",
+        "title": "Old Mother Vespera (Vespera 'The Scales')",
         "subtitle": "Mistress of The Drowned Rat • Master Fence & Underworld Matriarch",
         "tags": ["Royal Court", "NPC", "Fence", "The Drowned Rat", "Kordava", "The Pit", "Night Guild", "Underworld", "Period VIII"],
         "aliases": [
             "Old Mother Vespera",
             "Mother Vespera",
             "Madre Vespera",
-            "Vespera La Balanza",
+            "Vespera The Scales",
             "Vespera the One-Eyed",
             "Vespera la Tuerta",
             "Vespera Valiente",
@@ -237,8 +237,8 @@ def main():
             "quote": "Kings lose their crowns and grandees lose their heads, but a thirst for bad wine and a need to unload hot silver? That outlasts every dynasty in Zingara. Welcome to the Rat, heart of mine. Keep your steel in its scabbard, your silver on the wood, and your boots out of the deep end.",
             "courtDCs": "Morale: 9 (Stubborn survivor); Initial Reaction: Neutral (wary of guards and new faces; +2 if shown high-grade stolen jewelry or offered unclipped silver); Charisma check (or paying off a regular's tab) to unlock her confidential street intelligence.",
             "publicStance": "Presents herself as a cantankerous, exhausted old dive-keeper constantly complaining about rising salt taxes, leaky roofs, and deadbeat cutpurses.",
-            "secretAgenda": "Quietly hoarding pre-Cataclysmic bullion in a lead-lined chest beneath the bilge pump, hoping to buy a peaceful olive orchard in the upper Zingg Valley before Kordova sinks into the sea; fiercely protective of Pale Beatriz, whom she views as her surrogate daughter.",
-            "rival": "Capitán Casimiro de Velasco (demanding extortion) & Tax Bailiff Escovedo (threatening closure for unpaid wharf duties)",
+            "secretAgenda": "Quietly hoarding pre-Cataclysmic bullion in a lead-lined chest beneath the bilge pump, hoping to buy a peaceful olive orchard in the upper Zingg Valley before Kordova sinks into the sea; fiercely protective of Pale Beatriza, whom she views as her surrogate daughter.",
+            "rival": "Capitán Cazmiro de Velasco (demanding extortion) & Tax Bailiff Escovador (threatening closure for unpaid wharf duties)",
             "classLevel": "6th-Level Thief (Master Fence & Smuggler)",
             "combatStats": "AC 7 (AAC 12, Padded Silk & Ring of Protection) | HP 22 | THAC0 17 | Atk +3 (1d4+1, Concealed Silver Stiletto / Lead-Weighted Balance) | Saves: 12/12/11/14/12"
         },
@@ -266,17 +266,17 @@ def main():
 
 <p>She enforces <strong>El Pundonor del Arroyo</strong> with absolute firmness:
 <ul>
-  <li><strong>No Blood on the Planks:</strong> Anyone who draws steel or attacks another patron within the tavern is immediately clubbed unconscious by Gordo Basilio or grappled by Pale Beatriz, stripped of their purse, and dumped into the sewer flues.</li>
+  <li><strong>No Blood on the Planks:</strong> Anyone who draws steel or attacks another patron within the tavern is immediately clubbed unconscious by Gordo Basilio or grappled by Pale Beatriza, stripped of their purse, and dumped into the sewer flues.</li>
   <li><strong>The Sacred Ledger:</strong> Vespera never reveals who pawned an item or who purchased fenced goods—unless the Crown or the Guild meets her price or threatens her tavern.</li>
-  <li><strong>Sanctuary for the Starving:</strong> Down-on-their-luck cutpurses like <a href="#npcs/joaquin" class="wiki-link">Joaquin</a> are allowed to nurse a single pint of sour ale for hours without harassment, provided they cause no trouble and share street rumors.</li>
+  <li><strong>Sanctuary for the Starving:</strong> Down-on-their-luck cutpurses like <a href="#npcs/joaquin" class="wiki-link">Joachor</a> are allowed to nurse a single pint of sour ale for hours without harassment, provided they cause no trouble and share street rumors.</li>
 </ul>
 </p>
 
 <h3>3. Levers of Influence &amp; GM Intrigue</h3>
 <ul>
-  <li><strong>The Pawned Noble Heirlooms:</strong> Vespera's locked iron chest in her private snug contains proof of devastating aristocratic indiscretions: pawned signet rings belonging to <a href="#npcs/gonzalo-guarralid" class="wiki-link">Duke Gonzalo's</a> household officers, forged debt notes signed by <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo's</a> clerks, and Don Tristán's original Revella mining maps.</li>
-  <li><strong>The Secret Sluice:</strong> Vespera holds the only key to the iron gate in the sub-cellar leading to the <em>Cistern of the Blind Saint</em>. If the PCs win her trust, she can grant them covert ingress to <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrán's</a> council chamber without having to navigate the monster-infested public sewers.</li>
-  <li><strong>Protective Love for Beatriz:</strong> Vespera's sole emotional vulnerability is <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriz</a>. If anyone threatens, insults, or attempts to damage the undead barmaid, Vespera's cynical detachment evaporates into cold, murderous fury. Anyone who assists in preserving Beatriz's physical form earns Vespera's eternal, unshakeable loyalty.</li>
+  <li><strong>The Pawned Noble Heirlooms:</strong> Vespera's locked iron chest in her private snug contains proof of devastating aristocratic indiscretions: pawned signet rings belonging to <a href="#npcs/gonzalo-guarralid" class="wiki-link">Duke Gonzalgo's</a> household officers, forged debt notes signed by <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio's</a> clerks, and Don Tristao's original Revella mining maps.</li>
+  <li><strong>The Secret Sluice:</strong> Vespera holds the only key to the iron gate in the sub-cellar leading to the <em>Cistern of the Blind Saint</em>. If the PCs win her trust, she can grant them covert ingress to <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano's</a> council chamber without having to navigate the monster-infested public sewers.</li>
+  <li><strong>Protective Love for Beatriza:</strong> Vespera's sole emotional vulnerability is <a href="#npcs/beatriz-la-palida" class="wiki-link">Pale Beatriza</a>. If anyone threatens, insults, or attempts to damage the undead barmaid, Vespera's cynical detachment evaporates into cold, murderous fury. Anyone who assists in preserving Beatriza's physical form earns Vespera's eternal, unshakeable loyalty.</li>
 </ul>
 """,
         "gmSecrets": "Vespera knows the exact location of the underwater chimney leading into the royal kitchens of the High Alcázar. She keeps 300 pre-Cataclysmic gold sovereigns hidden inside the hollowed-out wooden piston of the tavern's bilge pump.",
@@ -302,20 +302,20 @@ def main():
     beatriz_article = {
         "id": "beatriz-la-palida",
         "category": "npcs",
-        "title": "Pale Beatriz (Beatriz la Pálida)",
+        "title": "Pale Beatrizaa (Beatriza the Pale)",
         "subtitle": "The Undead Barmaid of The Drowned Rat • Gentle Thrall of the Canal District",
         "tags": ["Royal Court", "NPC", "Undead", "Zombie", "The Drowned Rat", "Kordava", "The Pit", "Necromancy", "Underworld", "Period VIII"],
         "aliases": [
-            "Pale Beatriz",
-            "Beatriz la Pálida",
-            "Beatriz",
+            "Pale Beatriza",
+            "Beatriza the Pale",
+            "Beatriza",
             "The Zombie Barmaid",
-            "La Bella Beatriz",
+            "La Bella Beatriza",
             "The Pale Barmaid",
-            "Beatriz the Silent",
+            "Beatriza the Silent",
             "The Undead Barmaid"
         ],
-        "summary": "Once the singing darling of the canal district who died of the canal plague during the civil war, Beatriz was lovingly preserved and reanimated by Mother Vespera through illicit university necromancy. Powdered with dried lavender and moving with eerie, silent grace, she serves sour ale to cutpurses, crushes the bones of rowdy brawlers with unyielding rigor mortis, and remains a poignant symbol of Kordova's tragic decay.",
+        "summary": "Once the singing darling of the canal district who died of the canal plague during the civil war, Beatriza was lovingly preserved and reanimated by Mother Vespera through illicit university necromancy. Powdered with dried lavender and moving with eerie, silent grace, she serves sour ale to cutpurses, crushes the bones of rowdy brawlers with unyielding rigor mortis, and remains a poignant symbol of Kordova's tragic decay.",
         "atAGlance": {
             "appearance": "A slender, ethereal young Zingaran woman in her early twenties with porcelain-pale, waxy skin dusted with white rice powder and crushed lavender to mask the faint, sharp tang of embalming salts. Her throat bears a delicate, neat row of black silk mortuary stitches. She wears a faded scarlet flamenco dress frayed at the hem, a clean lace apron patched with eel-leather, and her dark hair is woven with dried purple marsh blossoms.",
             "mannerisms": "Utterly silent; moves with uncanny, floating balance across flooded, slippery floorboards without splashing; tilts her head with sorrowful curiosity when listening to conversations; wipes the same wet table ring repeatedly until gently touched; offers a slow, tragic curtsy when tipped a copper.",
@@ -342,31 +342,31 @@ def main():
 </div>
 
 <h3>1. Origin &amp; The Tragic Reanimation</h3>
-<p>In life, Beatriz was the radiant daughter of a drowned fisherman, endowed with an enchanting contralto voice and a radiant spirit that brought laughter to the darkest corners of Kordova's canal slums. When Mother Vespera opened <em>The Drowned Rat</em>, Beatriz became its heart—singing mournful Zingaran ballads and defusing violent knife fights with a sharp jest and a bright smile.</p>
+<p>In life, Beatriza was the radiant daughter of a drowned fisherman, endowed with an enchanting contralto voice and a radiant spirit that brought laughter to the darkest corners of Kordova's canal slums. When Mother Vespera opened <em>The Drowned Rat</em>, Beatriza became its heart—singing mournful Zingaran ballads and defusing violent knife fights with a sharp jest and a bright smile.</p>
 
-<p>During the brutal winter siege of <a href="#history/period-vii" class="wiki-link">Period VII</a>, the deadly "Grey Shivers" (canal typhus) swept through the Lower Ward. When Beatriz succumbed, municipal bailiffs arrived with carts to fling her into Master Vane's mass lime pits. Heartbroken and fiercely defiant, Mother Vespera hid the girl's corpse in the cold beer cellar. She liquidated thirty silver sovereigns—her emergency savings—to hire a renegade student from <a href="#gazetteer/royal-university-of-kordava" class="wiki-link">The Royal University of Kordava</a>, who had studied advanced flesh-preservation under <a href="#npcs/valeria-morata" class="wiki-link">Maestra Valeria de Morata</a>.</p>
+<p>During the brutal winter siege of <a href="#history/period-vii" class="wiki-link">Period VII</a>, the deadly "Grey Shivers" (canal typhus) swept through the Lower Ward. When Beatriza succumbed, municipal bailiffs arrived with carts to fling her into Master Vane's mass lime pits. Heartbroken and fiercely defiant, Mother Vespera hid the girl's corpse in the cold beer cellar. She liquidated thirty silver sovereigns—her emergency savings—to hire a renegade student from <a href="#gazetteer/royal-university-of-kordava" class="wiki-link">The Royal University of Kordava</a>, who had studied advanced flesh-preservation under <a href="#npcs/valeria-morata" class="wiki-link">Maestra Valessa de Morato</a>.</p>
 
-<p>Unlike the mindless, decomposing brutes produced in Master Vane's industrial pits, Beatriz underwent an intricate anatomical preservation: her blood was replaced with sweet almond oil, zinc chloride, and lead-sugar brine; her lungs and vocal cords were sealed; and her spinal marrow was charged with galvanic mercury. When she opened her amber eyes, she was dead—yet serene, graceful, and endowed with the muscle memory of her living duties.</p>
+<p>Unlike the mindless, decomposing brutes produced in Master Vane's industrial pits, Beatriza underwent an intricate anatomical preservation: her blood was replaced with sweet almond oil, zinc chloride, and lead-sugar brine; her lungs and vocal cords were sealed; and her spinal marrow was charged with galvanic mercury. When she opened her amber eyes, she was dead—yet serene, graceful, and endowed with the muscle memory of her living duties.</p>
 
 <h3>2. Presence in the Taproom</h3>
-<p>To the patrons of <em>The Drowned Rat</em>, Beatriz is not a monster; she is a cherished, permanent fixture of their world. She glides through the knee-deep brackish water without splashing, balancing iron trays laden with heavy ceramic mugs of sour ale. When a patron places a coin on the table, she collects it with delicate, cool fingers, wipes the wood with clean rag-cotton, and offers a slow, dignified curtsy.</p>
+<p>To the patrons of <em>The Drowned Rat</em>, Beatriza is not a monster; she is a cherished, permanent fixture of their world. She glides through the knee-deep brackish water without splashing, balancing iron trays laden with heavy ceramic mugs of sour ale. When a patron places a coin on the table, she collects it with delicate, cool fingers, wipes the wood with clean rag-cotton, and offers a slow, dignified curtsy.</p>
 
 <p>Her undead physiology makes her the tavern's most terrifyingly effective bouncer:
 <ul>
-  <li><strong>The Iron Grip of Rigor Mortis:</strong> Because her muscular tissues are locked in perpetual rigor, Beatriz possesses the unyielding physical strength of a siege laborer (STR 18). If a patron draws a weapon, strikes a woman, or attempts to touch her improperly, Beatriz calmly reaches out and takes the offender by the wrist. She does not scream or scowl; she simply squeezes with inexorable, cold hydraulic pressure (1d6+3 damage), bringing the largest dockworker to his knees screaming in agony until he drops his weapon.</li>
-  <li><strong>Water Immunity:</strong> While living patrons stumble on the slick floorboards, Beatriz walks across submerged flagstones and slippery catwalks with flawless, unnatural equilibrium.</li>
+  <li><strong>The Iron Grip of Rigor Mortis:</strong> Because her muscular tissues are locked in perpetual rigor, Beatriza possesses the unyielding physical strength of a siege laborer (STR 18). If a patron draws a weapon, strikes a woman, or attempts to touch her improperly, Beatriza calmly reaches out and takes the offender by the wrist. She does not scream or scowl; she simply squeezes with inexorable, cold hydraulic pressure (1d6+3 damage), bringing the largest dockworker to his knees screaming in agony until he drops his weapon.</li>
+  <li><strong>Water Immunity:</strong> While living patrons stumble on the slick floorboards, Beatriza walks across submerged flagstones and slippery catwalks with flawless, unnatural equilibrium.</li>
 </ul>
 </p>
 
 <h3>3. The Residual Soul &amp; The Preservation Clock</h3>
-<p>Unlike standard mindless zombies created by low-tier necromancy, Beatriz retains fragmented shards of her living soul—a phenomenon known among academic thanatologists as <em>Post-Mortem Resonance</em>:</p>
+<p>Unlike standard mindless zombies created by low-tier necromancy, Beatriza retains fragmented shards of her living soul—a phenomenon known among academic thanatologists as <em>Post-Mortem Resonance</em>:</p>
 <ul>
-  <li><strong>The Secret Coin Stash:</strong> When patrons tip her copper bits, Beatriz slips them into a secret knot-hole beneath the center of the bar counter. She does not spend them; she is hoarding them, driven by the subconscious memory of saving coin to buy her fisherman father a new boat.</li>
-  <li><strong>The Sea Grating Vigil:</strong> Between 3:00 AM and dawn, when the taproom empties, Beatriz stands motionless by the rear sewer grating, staring through the iron bars toward the open waters of Kordova's harbor where her betrothed perished at sea.</li>
+  <li><strong>The Secret Coin Stash:</strong> When patrons tip her copper bits, Beatriza slips them into a secret knot-hole beneath the center of the bar counter. She does not spend them; she is hoarding them, driven by the subconscious memory of saving coin to buy her fisherman father a new boat.</li>
+  <li><strong>The Sea Grating Vigil:</strong> Between 3:00 AM and dawn, when the taproom empties, Beatriza stands motionless by the rear sewer grating, staring through the iron bars toward the open waters of Kordova's harbor where her betrothed perished at sea.</li>
   <li><strong>The Preservative Decay:</strong> The humid, salty air of the sewer outfall is gradually breaking down her embalming matrix. Her joints require periodic injections of refined mercurial brine to prevent stiffness and necrotic collapse, providing the PCs with an urgent, emotional quest to secure arcane supplies from the Royal University or Master Vane.</li>
 </ul>
 """,
-        "gmSecrets": "If a necromancer of 5th level or higher casts Speak with Dead on Beatriz or attunes to her galvanic spinal charge, she can whisper three sentences of crucial intelligence: she overheard Marquis Mateo's debt-bailiff whispering the combination to the royal tax-barge strongbox to a Velasco Syndicate captain.",
+        "gmSecrets": "If a necromancer of 5th level or higher casts Speak with Dead on Beatriza or attunes to her galvanic spinal charge, she can whisper three sentences of crucial intelligence: she overheard Marquis Murzio's debt-bailiff whispering the combination to the royal tax-barge strongbox to a Velasco Syndicate captain.",
         "relatedIds": [
             "the-drowned-rat",
             "madre-vespera",
@@ -393,13 +393,13 @@ def main():
     # 4. CROSS-LINKING & UPDATING EXISTING ARTICLES
     # -------------------------------------------------------------
 
-    # Update Joaquin
+    # Update Joachor
     if 'joaquin' in art_dict:
         joaquin_art = art_dict['joaquin']
         for nid in ['the-drowned-rat', 'madre-vespera', 'beatriz-la-palida']:
             if nid not in joaquin_art['relatedIds']:
                 joaquin_art['relatedIds'].append(nid)
-        print("Updated Joaquin with Drowned Rat links.")
+        print("Updated Joachor with Drowned Rat links.")
 
     # Update Tristan de Revella
     if 'tristan-revella' in art_dict:
@@ -441,13 +441,13 @@ def main():
                 velasco_art['relatedIds'].append(nid)
         print("Updated Velasco Thieves Guild with Drowned Rat links.")
 
-    # Update Valeria Morata & University
+    # Update Valessa Morato & University
     if 'valeria-morata' in art_dict:
         valeria_art = art_dict['valeria-morata']
         for nid in ['the-drowned-rat', 'beatriz-la-palida', 'madre-vespera']:
             if nid not in valeria_art['relatedIds']:
                 valeria_art['relatedIds'].append(nid)
-        print("Updated Valeria Morata with Drowned Rat links.")
+        print("Updated Valessa Morato with Drowned Rat links.")
 
     # Reconstruct article list
     data['articles'] = list(art_dict.values())

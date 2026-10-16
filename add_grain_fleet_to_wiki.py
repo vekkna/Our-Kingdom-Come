@@ -53,7 +53,7 @@ def main():
             "courtDCs": "Morale: 10 (Hardened naval veteran); Initial Reaction: Hostile / Wary (-1 on 2d6 Reaction Rolls due to Zingara's notorious bankruptcy). DC 16 Diplomacy to lower asking price; DC 17 Insight to realize he is under secret orders from Ambassador Tiberio; DC 15 Intimidation to shake his nerve (requires credible threat of naval or arcane violence).",
             "publicStance": "Presents himself as a legitimate commercial naval officer upholding international maritime contracts and demanding fair market bullion for his cargo.",
             "secretAgenda": "Voros invested his personal life savings (a 20% equity stake) into this grain shipment. If the cargo rots or is confiscated, he faces debtor's prison in Messantia. Furthermore, Ambassador Tiberio secretly instructed him to stall negotiations until bread riots force the Triumvirate to cede naval rights in the Baracha Strait. However, Voros despises being Tiberio's political pawn and fears his ships being trapped by winter storms or Barachan corsairs.",
-            "rival": "Ambassador Tiberio (Manipulative Handler) & Capitán Don Casimiro (Velascan Corsair Rival)",
+            "rival": "Ambassador Tiberio (Manipulative Handler) & Capitán Don Cazmiro (Velascan Corsair Rival)",
             "classLevel": "9th-Level Fighter (Argossean Corsair Commander & Fleet Commodore)",
             "combatStats": "AC 1 (AAC 18) | HP 58 | THAC0 13 | Atk +10 (1d8+4) | Saves: 8/9/10/10/12"
         },
@@ -61,7 +61,7 @@ def main():
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">The Argossean Grain Fleet &bull; Fleet Command</span>
-    <span class="badge rival-badge">Rivals: Ambassador Tiberio &amp; Capitán Don Casimiro</span>
+    <span class="badge rival-badge">Rivals: Ambassador Tiberio &amp; Capitán Don Cazmiro</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A broad-shouldered, barrel-chested mariner of forty-eight with weathered bronze skin, a close-cropped grizzled beard, and a crooked broken nose earned on the boarding deck of a Barachan pirate caravel. He wears an Argossean naval officer's dark sea-green coat with bullion epaulets over a cuirass of polished sea-bronze, calfskin sea-boots, and an embroidered silk sash holding an ivory-stocked wheellock pistol and a massive naval backsword.</div>
@@ -151,7 +151,7 @@ def main():
 
 <h3>1. Public Persona &amp; Court Presentation</h3>
 <p>To the court of Kordova, Commodore Nikolos Voros presents himself as the archetype of the incorruptible, hard-bitten Hyborian sea captain. He stands with ramrod posture, bowing with formal punctilio to the PC Triumvirate while making it abundantly clear that he answers not to Zingaran crowns, but to the High Admiralty of Messantia and the written clauses of the Rhodian Sea Code.</p>
-<p>He displays supreme indifference to Zingaran chivalric pageantry and <a href="#rules/pundonor" class="wiki-link">Pundonor</a>. When grandees boast of ancient lineages, Voros calmly replies with cargo tallies and draft depths. He insists that his fleet came to Kordova in good faith to save the realm from starvation—and that if the capital starves, the blood is solely upon the hands of <a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Mateo</a>, who refuses to unlock the royal treasury.</p>
+<p>He displays supreme indifference to Zingaran chivalric pageantry and <a href="#rules/pundonor" class="wiki-link">Pundonor</a>. When grandees boast of ancient lineages, Voros calmly replies with cargo tallies and draft depths. He insists that his fleet came to Kordova in good faith to save the realm from starvation—and that if the capital starves, the blood is solely upon the hands of <a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Murzio</a>, who refuses to unlock the royal treasury.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDAS &amp; HIDDEN LEVERS</div>
@@ -164,17 +164,17 @@ def main():
 <p>While Voros ostensibly scorns Zingaran criminals, his presence has galvanized the entire maritime underworld of Kordova:</p>
 <ul>
   <li><strong><a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>:</strong> His political master. Tiberio communicates with Voros via nocturnal courier skiffs carrying blue lantern signals. However, Voros secretly suspects Tiberio would happily sacrifice Voros's ships if it gave Argos a pretext to annex Zingara's ports.</li>
-  <li><strong><a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Don Casimiro</a> &amp; The Velasco Syndicate:</strong> Casimiro recognizes Voros's flagship from their old privateering days in the southern sea lanes. Casimiro considers Voros an arrogant Hyborian interloper and has already approached the PCs through dockside contacts, offering his exiled cutthroats to board and seize the grain fleet.</li>
-  <li><strong><a href="#npcs/joaquin" class="wiki-link">Joaquin 'El Grajo' Valiente</a>:</strong> Joaquin has been scouting the landing jetty where Voros's longboat docks. Joaquin knows the exact patrol routes of Voros's shore marines and has spotted the locked iron case carried by Factor Demetrio.</li>
-  <li><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodrigo de Valenza</a>:</strong> Rodrigo views Voros's presence as an intolerable foreign provocation. He has urged the Triumvirate to allow the Royal Army to storm the ships and hang Voros from his own yardarm, but fears an open war with Argos.</li>
+  <li><strong><a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Don Cazmiro</a> &amp; The Velasco Syndicate:</strong> Cazmiro recognizes Voros's flagship from their old privateering days in the southern sea lanes. Cazmiro considers Voros an arrogant Hyborian interloper and has already approached the PCs through dockside contacts, offering his exiled cutthroats to board and seize the grain fleet.</li>
+  <li><strong><a href="#npcs/joaquin" class="wiki-link">Joachor 'The Jackdaw' Valiento</a>:</strong> Joachor has been scouting the landing jetty where Voros's longboat docks. Joachor knows the exact patrol routes of Voros's shore marines and has spotted the locked iron case carried by Factor Demetrio.</li>
+  <li><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodorigo de Valenza</a>:</strong> Rodorigo views Voros's presence as an intolerable foreign provocation. He has urged the Triumvirate to allow the Royal Army to storm the ships and hang Voros from his own yardarm, but fears an open war with Argos.</li>
 </ul>
 
 <h3>3. Player-Led Plot Hooks &amp; Table Encounters</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Throne Room Showdown &amp; The Boot-Lining Secret</h4>
-  <p><strong>Premise:</strong> During the formal price negotiations in the High Alcázar, Commodore Voros demands an exorbitant 45,000 gold sovereigns upfront, sneering at Marquis Mateo's empty vaults. The PCs must break his haughty posture before the court.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs can use raw social leverage, psychological pressure, or physical subterfuge. If they orchestrate a distraction (e.g., spilling wine, a faked duel, or <a href="#npcs/joaquin" class="wiki-link">Joaquin</a> picking his pocket) to discover or expose the secret dispatch from <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>, Voros's legal immunity collapses. The PCs can confront him with the conspiracy: prove he is an agent provocateur rather than an honest merchant, justifying his arrest under Zingaran high treason laws without violating <a href="#rules/pundonor" class="wiki-link">Pundonor</a>!</p>
+  <p><strong>Premise:</strong> During the formal price negotiations in the High Alcázar, Commodore Voros demands an exorbitant 45,000 gold sovereigns upfront, sneering at Marquis Murzio's empty vaults. The PCs must break his haughty posture before the court.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs can use raw social leverage, psychological pressure, or physical subterfuge. If they orchestrate a distraction (e.g., spilling wine, a faked duel, or <a href="#npcs/joaquin" class="wiki-link">Joachor</a> picking his pocket) to discover or expose the secret dispatch from <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>, Voros's legal immunity collapses. The PCs can confront him with the conspiracy: prove he is an agent provocateur rather than an honest merchant, justifying his arrest under Zingaran high treason laws without violating <a href="#rules/pundonor" class="wiki-link">Pundonor</a>!</p>
   <div class="dc-box"><strong>Key Checks:</strong> DC 15 Sleight of Hand to extract or read the dispatch; DC 16 Insight to detect his anxiety over his 20% equity stake; DC 16 Diplomacy/Intimidation to force him into a secret royal side-deal.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If threatened with crude violence without legal pretexts, Voros blows his <em>Signal Whistle of Triton</em>, ordering his marines to shoot and his fleet to clear for battle.</p>
 </div>
@@ -182,7 +182,7 @@ def main():
 <div class="hook-card info-card">
   <h4>Hook 2: The Gilded Sheaf Heist (Cutting the Cables)</h4>
   <p><strong>Premise:</strong> While Voros is detained in the High Alcázar under protracted 'treaty negotiations', the PCs launch a daring night raid into the Outer Roadstead to board and commandeer the grain armada.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must decide which underworld ally to trust to pilot the ships: <a href="#npcs/joaquin" class="wiki-link">Joaquin</a> and the <a href="#factions/kordovan-thieves-guild" class="wiki-link">Night Guild</a> (who demand grain for the lower wards and silver to pay debts), or <a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Casimiro</a> (who demands royal letters of marque and 10% of the fleet's cargo).</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must decide which underworld ally to trust to pilot the ships: <a href="#npcs/joaquin" class="wiki-link">Joachor</a> and the <a href="#factions/kordovan-thieves-guild" class="wiki-link">Night Guild</a> (who demand grain for the lower wards and silver to pay debts), or <a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Cazmiro</a> (who demands royal letters of marque and 10% of the fleet's cargo).</p>
   <div class="dc-box"><strong>Key Checks:</strong> DC 14 Stealth to row past the war-galleass <em>The Talon of Bel</em>; DC 15 Open Locks/Climb Walls to scale the carrack's tallow-greased hull; DC 16 Sailing to pilot the heavy cogs over the harbor bar at midnight high tide.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If an alarm rocket explodes over the water, Centurion Korinna fires incendiary catapult pots into the nearest grain cog, forcing the PCs to extinguish burning wheat while fighting elite marines.</p>
 </div>
@@ -218,7 +218,7 @@ def main():
             "courtDCs": "Morale: 4 (Unarmed coward); Initial Reaction: Neutral (0 on 2d6). DC 13 Intimidation to cause him to babble confidential cargo numbers; DC 15 Insight to spot him glancing nervously at Ambassador Tiberio; DC 14 Sleight of Hand to pickpocket the ledger key from his sash.",
             "publicStance": "Presents himself as a detached, professional mercantile agent who cares only for contract law, certified weight seals, and prompt coin settlement.",
             "secretAgenda": "Embezzled 2,000 bushels of grain back in Messantia by falsifying moisture loss on the bills of lading. Terrified of an official crown audit or physical torture; if threatened with imprisonment in The Pit or being handed over to Master Vane, he will readily forge or sign whatever documents the PCs place before him.",
-            "rival": "High Chancellor Marquis Mateo (Fiscal Competitor)",
+            "rival": "High Chancellor Marquis Murzio (Fiscal Competitor)",
             "classLevel": "3rd-Level Specialist / Merchant (Civilian Factor)",
             "combatStats": "AC 9 (AAC 10) | HP 9 | THAC0 20 | Atk +0 (1d4-1 concealed stiletto) | Saves: 14/15/16/17/17"
         },
@@ -226,7 +226,7 @@ def main():
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">The Golden Pelican Syndicate of Messantia</span>
-    <span class="badge rival-badge">Primary Rival: High Chancellor Marquis Mateo</span>
+    <span class="badge rival-badge">Primary Rival: High Chancellor Marquis Murzio</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A gaunt, nervous Argossean burgher of forty-two with a sallow complexion, twitching cheek muscles, and fingertips perpetually stained with iron-gall ink. He wears an expensive amber velvet robe trimmed with marten fur that hangs loosely on his frame, round spectacles with polished quartz lenses, and clutches a heavy, brass-bound iron ledger box as if it were a talisman against violence.</div>
@@ -274,7 +274,7 @@ def main():
 </div>
 
 <h3>1. Public Persona &amp; Court Role</h3>
-<p>Demetrio sits at Commodore Voros's left hand during royal audiences, dipping a swan-feather quill into black ink and rattling his abacus with infuriating rhythm. Whenever <a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Mateo</a> argues that Zingara cannot pay in bullion, Demetrio smoothly recites international banking statutes, interest accruals, and demurrage penalties.</p>
+<p>Demetrio sits at Commodore Voros's left hand during royal audiences, dipping a swan-feather quill into black ink and rattling his abacus with infuriating rhythm. Whenever <a href="#npcs/sadoria" class="wiki-link">High Chancellor Marquis Murzio</a> argues that Zingara cannot pay in bullion, Demetrio smoothly recites international banking statutes, interest accruals, and demurrage penalties.</p>
 <p>He views the PC Triumvirate as desperate children playing at sovereignty. Yet unlike Voros, who is shielded by martial courage, Demetrio is profoundly terrified of Zingaran savagery. The rumors of <a href="#npcs/vane" class="wiki-link">Master Vane</a>'s flesh-pits and the guillotine in <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> give him sleepless nightmares.</p>
 
 <div class="gm-callout">
@@ -338,7 +338,7 @@ def main():
 <h3>2. The Strategic Deadlock: Why Are They Waiting?</h3>
 <p>The fleet arrived off Kordova eight days ago. To the starving commoners gazing from the sea-bastions of the Lower Wards, the ships appear as floating mountains of salvation. Yet not a single sack of flour has crossed the harbor boom. Why?</p>
 <ul>
-  <li><strong>The Bankruptcy Barrier:</strong> High Chancellor <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a> has formally refused to pay the consortium's asking price of 45,000 gold sovereigns, claiming the state vaults hold only worthless promissory scrip.</li>
+  <li><strong>The Bankruptcy Barrier:</strong> High Chancellor <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> has formally refused to pay the consortium's asking price of 45,000 gold sovereigns, claiming the state vaults hold only worthless promissory scrip.</li>
   <li><strong>Ambassador Tiberio's Economic Strangulation:</strong> In truth, the delay is artificially manufactured. <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a> has privately instructed <a href="#npcs/nikolos-voros" class="wiki-link">Commodore Voros</a> to reject all Zingaran compromises. Tiberio is weaponizing the city's hunger. He calculates that within four days, bread riots will explode in <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>, forcing the desperate PC Triumvirate to sign the <strong>Baracha Strait Navigation Concordat</strong>—surrendering Zingara's maritime sovereignty and handing Argos control over coastal trade routes.</li>
 </ul>
 
@@ -387,7 +387,7 @@ def main():
         "summary": "The complete tactical and political blueprint for the PC Triumvirate's plan to seize the 50,000 bushels of grain from the Argossean fleet waiting offshore, detailing both the court-based legal trap (trumped-up charges) and the midnight maritime piracy operation.",
         "content": """
 <div class="info-card">
-  <p><strong>Involved Factions:</strong> The PC Triumvirate, The Argossean Grain Fleet, <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>, <a href="#factions/kordovan-thieves-guild" class="wiki-link">The Night Guild</a>, <a href="#factions/velasco-thieves-guild" class="wiki-link">The Velasco Syndicate</a>, <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo</a>, <a href="#npcs/valenza" class="wiki-link">General Don Rodrigo</a></p>
+  <p><strong>Involved Factions:</strong> The PC Triumvirate, The Argossean Grain Fleet, <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>, <a href="#factions/kordovan-thieves-guild" class="wiki-link">The Night Guild</a>, <a href="#factions/velasco-thieves-guild" class="wiki-link">The Velasco Syndicate</a>, <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio</a>, <a href="#npcs/valenza" class="wiki-link">General Don Rodorigo</a></p>
   <p><strong>Strategic Stakes:</strong> 50,000 bushels of grain; immediate relief of Kordova's starvation; +2 Sovereignty Points; potential war with the Kingdom of Argos if botched.</p>
 </div>
 
@@ -402,19 +402,19 @@ def main():
 <p><strong>Concept:</strong> The PCs use their royal authority within the High Alcázar to entrap, arrest, or legally sequester Commodore Voros and his fleet, manufacturing lawful pretexts to bypass foreign diplomatic immunity and preserve their royal <a href="#rules/pundonor" class="wiki-link">Pundonor</a>.</p>
 
 <h4>Step 1: Setting the Stage in the High Alcázar</h4>
-<p>Commodore Voros arrives in the Throne Room flanked by 4 veteran Argossean marines and <a href="#npcs/demetrio-phokas" class="wiki-link">Factor Demetrio Phokas</a> clutching his cargo ledgers. General Don Rodrigo's caballeros line the walls. High Chancellor Marquis Mateo looks visibly distressed, while Ambassador Tiberio watches smugly from the grand balcony.</p>
+<p>Commodore Voros arrives in the Throne Room flanked by 4 veteran Argossean marines and <a href="#npcs/demetrio-phokas" class="wiki-link">Factor Demetrio Phokas</a> clutching his cargo ledgers. General Don Rodorigo's caballeros line the walls. High Chancellor Marquis Murzio looks visibly distressed, while Ambassador Tiberio watches smugly from the grand balcony.</p>
 
 <h4>Step 2: Deploying the Trumped-Up Pretexts (The Levers)</h4>
 <p>The PCs can employ one or more of the following manufactured charges:</p>
 <ul>
   <li><strong>Pretext 1: Contraband &amp; High Treason (Planting Evidence):</strong>
-    <br>Prior to or during the audience, the PCs or an allied cutpurse (<a href="#npcs/joaquin" class="wiki-link">Joaquin Valiente</a>) secretly plant contraband into Voros's landing longboat or the grain sample sacks brought to court. Examples: prohibited alchemical fire-pitch, forged letters linking Voros to the <a href="#factions/republican-insurgents" class="wiki-link">Republican Insurgents</a> in The Pit, or outlawed Gnostic devotional texts of the <a href="#factions/church-of-nemeth" class="wiki-link">Church of Nemeth</a>.
+    <br>Prior to or during the audience, the PCs or an allied cutpurse (<a href="#npcs/joaquin" class="wiki-link">Joachor Valiento</a>) secretly plant contraband into Voros's landing longboat or the grain sample sacks brought to court. Examples: prohibited alchemical fire-pitch, forged letters linking Voros to the <a href="#factions/republican-insurgents" class="wiki-link">Republican Insurgents</a> in The Pit, or outlawed Gnostic devotional texts of the <a href="#factions/church-of-nemeth" class="wiki-link">Church of Nemeth</a>.
     <br><em>Skill Checks:</em> DC 15 Sleight of Hand / Stealth to plant the evidence without alerting Voros's marines; DC 16 Court Law / Charisma to dramatically reveal the contraband and declare the fleet guilty of conspiracy against the Crown.</li>
   <li><strong>Pretext 2: The Ancient Roadstead Tithe of King Ancillus I:</strong>
     <br>Resurrecting an obscure royal maritime edict from Period I: any foreign vessel carrying weapons of war that anchors within three leagues of the Black River mouth without paying the ancient "Pearl Anchor-Tax" forfeits all cargo to the royal granaries under sovereign maritime right.
-    <br><em>Skill Checks:</em> DC 15 History / Heraldry to cite the statute; DC 17 Intimidation / Pundonor to shout down Marquis Mateo's objections and silence Ambassador Tiberio's treaty protests.</li>
+    <br><em>Skill Checks:</em> DC 15 History / Heraldry to cite the statute; DC 17 Intimidation / Pundonor to shout down Marquis Murzio's objections and silence Ambassador Tiberio's treaty protests.</li>
   <li><strong>Pretext 3: The Black Grain Rot Quarantine:</strong>
-    <br>With the assistance of royal physician <a href="#npcs/escovedo" class="wiki-link">Dr. Horatio Escovedo</a> or <a href="#npcs/vane" class="wiki-link">Master Vane</a>, the PCs produce an official medical finding claiming the grain samples show symptoms of toxic ergot or foreign sea-plague. By royal sanitary decree, the entire fleet must be impounded immediately, the crew restricted to quarters, and the grain transferred to royal silos for "alchemical cleansing."
+    <br>With the assistance of royal physician <a href="#npcs/escovedo" class="wiki-link">Dr. Horasto Escovador</a> or <a href="#npcs/vane" class="wiki-link">Master Vane</a>, the PCs produce an official medical finding claiming the grain samples show symptoms of toxic ergot or foreign sea-plague. By royal sanitary decree, the entire fleet must be impounded immediately, the crew restricted to quarters, and the grain transferred to royal silos for "alchemical cleansing."
     <br><em>Skill Checks:</em> DC 14 Medicine / Deception to convincingly stage the diagnosis; DC 13 Insight to notice that Factor Demetrio is already terrified of grain moisture spoilage.</li>
 </ul>
 
@@ -423,7 +423,7 @@ def main():
 
 <h4>Step 4: Managing Pundonor &amp; Diplomatic Fallout</h4>
 <div class="dc-box">
-  <strong>Pundonor Check:</strong> Arresting an invited guest violates chivalric hospitality unless the PCs publicly prove the foreigner acted dishonorably first. If the PCs succeed on their Deception/Law checks, their Pundonor remains <strong>Unstained (+1 Sovereignty)</strong>. If they botch the charges and simply butcher or lock up Voros without proof, they suffer <strong>-1 Pundonor</strong> and face accusations of tyranny from Duke Gonzalo.
+  <strong>Pundonor Check:</strong> Arresting an invited guest violates chivalric hospitality unless the PCs publicly prove the foreigner acted dishonorably first. If the PCs succeed on their Deception/Law checks, their Pundonor remains <strong>Unstained (+1 Sovereignty)</strong>. If they botch the charges and simply butcher or lock up Voros without proof, they suffer <strong>-1 Pundonor</strong> and face accusations of tyranny from Duke Gonzalgo.
 </div>
 
 ---
@@ -434,8 +434,8 @@ def main():
 <h4>Phase 1: Assembling the Strike Force</h4>
 <p>The PCs must choose their underworld cutthroats:</p>
 <ul>
-  <li><strong>The Night Guild Option (<a href="#npcs/joaquin" class="wiki-link">Joaquin</a> &amp; <a href="#npcs/beltran-desoto" class="wiki-link">Don Beltrán</a>):</strong> Joaquin procures 4 muffled rowing skiffs, grappling hooks, and guides the strike team through the subterranean sea-caves of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> directly into the Outer Roadstead. Cost: 80 gold sovereigns to cancel Joaquin's blood-tithe.</li>
-  <li><strong>The Velasco Syndicate Option (<a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Don Casimiro</a>):</strong> Casimiro provides 20 hardened corsair veterans who specialize in cutting anchor cables and steering heavy cogs in pitch darkness. Cost: Casimiro demands 10% of the grain and royal letters of marque.</li>
+  <li><strong>The Night Guild Option (<a href="#npcs/joaquin" class="wiki-link">Joachor</a> &amp; <a href="#npcs/beltran-desoto" class="wiki-link">Don Beltrano</a>):</strong> Joachor procures 4 muffled rowing skiffs, grappling hooks, and guides the strike team through the subterranean sea-caves of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> directly into the Outer Roadstead. Cost: 80 gold sovereigns to cancel Joachor's blood-tithe.</li>
+  <li><strong>The Velasco Syndicate Option (<a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Don Cazmiro</a>):</strong> Cazmiro provides 20 hardened corsair veterans who specialize in cutting anchor cables and steering heavy cogs in pitch darkness. Cost: Cazmiro demands 10% of the grain and royal letters of marque.</li>
   <li><strong>Master Vane's Undead Divers:</strong> <a href="#npcs/vane" class="wiki-link">Master Vane</a> offers 12 memory-retaining zombie sailors who walk across the ocean floor, climb the anchor cables from below the waterline, and quietly strangle the deck watches without making a sound! Cost: Vane demands the corpses of any marines killed during the raid.</li>
 </ul>
 
@@ -463,7 +463,7 @@ def main():
 <ul>
   <li><strong>The Lantern Alarm:</strong> If an alarm rocket is fired from <em>The Gilded Sheaf</em>, Marine Centurion Korinna orders the galleass to ram the nearest hijacked cog and begins firing incendiary pots at the harbor wharves.</li>
   <li><strong>Ambassador Tiberio's Retaliation:</strong> If Tiberio realizes the PCs are seizing the fleet, he activates his 8 elite Messantian marines stationed at the foreign embassy to attempt to assassinate Factor Demetrio (to silence him) or set fire to the royal granaries.</li>
-  <li><strong>The Grandee Backlash:</strong> If the grain is secured, High Chancellor Marquis Mateo attempts to claim custody of the grain to sell it at market prices to pay foreign debts. The PCs must publicly override him, distributing it directly to the poor to cement their Crown Sovereignty!</li>
+  <li><strong>The Grandee Backlash:</strong> If the grain is secured, High Chancellor Marquis Murzio attempts to claim custody of the grain to sell it at market prices to pay foreign debts. The PCs must publicly override him, distributing it directly to the poor to cement their Crown Sovereignty!</li>
 </ul>
 """,
         "gmSecrets": "If the players use Master Vane's underwater zombies to hijack the ships, some commoners will see undead hands hauling grain sacks onto the wharves at dawn. Republican agitators in The Pit will seize on this to spread rumors that the grain has been cursed by necromancy, forcing the PCs to publicly eat bread baked from the flour to dispel panic.",
@@ -495,13 +495,13 @@ def main():
                 tiberio_art.setdefault('relatedIds', []).append(rid)
 
     # -------------------------------------------------------------
-    # 6. UPDATE EXISTING ARTICLE: sadoria (Marquis Mateo)
+    # 6. UPDATE EXISTING ARTICLE: sadoria (Marquis Murzio)
     # -------------------------------------------------------------
     sadoria_art = next((a for a in data['articles'] if a['id'] == 'sadoria'), None)
     if sadoria_art:
         sadoria_expansion = """
 <h3>The Grain Fleet Panic &amp; The Empty Treasury</h3>
-<p>The arrival of the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a> has thrown High Chancellor Marquis Mateo into a cold panic. With the royal vaults empty and provincial tax revenues halted, Mateo is terrified that the haughty <a href="#npcs/nikolos-voros" class="wiki-link">Commodore Voros</a> will sail away, leaving Kordova to starve. Yet he is equally terrified of the PCs' reckless schemes to 'steal' or legally sequester the grain. Mateo warns the Triumvirate that seizing foreign cargo will trigger an immediate trade embargo from all Hyborian nations, ruin his personal banking partners in Messantia, and permanently destroy Zingara's international credit.</p>
+<p>The arrival of the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a> has thrown High Chancellor Marquis Murzio into a cold panic. With the royal vaults empty and provincial tax revenues halted, Murzio is terrified that the haughty <a href="#npcs/nikolos-voros" class="wiki-link">Commodore Voros</a> will sail away, leaving Kordova to starve. Yet he is equally terrified of the PCs' reckless schemes to 'steal' or legally sequester the grain. Murzio warns the Triumvirate that seizing foreign cargo will trigger an immediate trade embargo from all Hyborian nations, ruin his personal banking partners in Messantia, and permanently destroy Zingara's international credit.</p>
 """
         if 'The Grain Fleet Panic &amp; The Empty Treasury' not in sadoria_art['content']:
             sadoria_art['content'] += sadoria_expansion
@@ -511,13 +511,13 @@ def main():
                 sadoria_art.setdefault('relatedIds', []).append(rid)
 
     # -------------------------------------------------------------
-    # 7. UPDATE EXISTING ARTICLE: valenza (General Don Rodrigo)
+    # 7. UPDATE EXISTING ARTICLE: valenza (General Don Rodorigo)
     # -------------------------------------------------------------
     valenza_art = next((a for a in data['articles'] if a['id'] == 'valenza'), None)
     if valenza_art:
         valenza_expansion = """
 <h3>Military Assessment of the Offshore Grain Fleet</h3>
-<p>General Don Rodrigo views the presence of the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a> as an insulting foreign provocation. While he despises the idea of 'vulgar dockside piracy'—which he claims tarnishes royal <a href="#rules/pundonor" class="wiki-link">Pundonor</a>—he is desperate to feed his royal caballeros and city garrison. Rodrigo has privately informed the PCs that if they can establish an ironclad legal pretext or royal edict of sequester, he will personally order 30 elite Royal Armored Marines to board and secure the grain ships under royal military law.</p>
+<p>General Don Rodorigo views the presence of the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a> as an insulting foreign provocation. While he despises the idea of 'vulgar dockside piracy'—which he claims tarnishes royal <a href="#rules/pundonor" class="wiki-link">Pundonor</a>—he is desperate to feed his royal caballeros and city garrison. Rodorigo has privately informed the PCs that if they can establish an ironclad legal pretext or royal edict of sequester, he will personally order 30 elite Royal Armored Marines to board and secure the grain ships under royal military law.</p>
 """
         if 'Military Assessment of the Offshore Grain Fleet' not in valenza_art['content']:
             valenza_art['content'] += valenza_expansion
@@ -533,7 +533,7 @@ def main():
     if joaquin_art:
         joaquin_expansion = """
 <h3>The Grain Heist Opportunity: Wiping the Blood-Tithe</h3>
-<p>When Joaquin learned that the PC Triumvirate invited <a href="#npcs/nikolos-voros" class="wiki-link">Commodore Voros</a> to court and planned to seize the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a>, his eyes lit with desperate ambition. Joaquin sees this operation as his golden ticket to survival. In exchange for the PCs paying off his 80-sovereign debt to <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrán</a>, Joaquin offers to:</p>
+<p>When Joachor learned that the PC Triumvirate invited <a href="#npcs/nikolos-voros" class="wiki-link">Commodore Voros</a> to court and planned to seize the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a>, his eyes lit with desperate ambition. Joachor sees this operation as his golden ticket to survival. In exchange for the PCs paying off his 80-sovereign debt to <a href="#npcs/beltran-desoto" class="wiki-link">Guildmaster Don Beltrano</a>, Joachor offers to:</p>
 <ul>
   <li>Procure muffled rowing skiffs from the old smuggler caves beneath <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>.</li>
   <li>Slip aboard Voros's landing skiff to plant incriminating contraband (forged insurgent treaties or outlawed Gnostic texts) to support trumped-up criminal charges.</li>
@@ -554,7 +554,7 @@ def main():
     if casimiro_art:
         casimiro_expansion = """
 <h3>The Corsair's Ambition: Seizing the Argossean Carrack</h3>
-<p>Capitán Don Casimiro has fought Argossean merchantmen in the Baracha Strait for twenty years. Hearing of the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a> anchored in the roadstead, Casimiro has sent word to the palace offering the veteran privateers of the <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a> to board, butcher the marine skeleton crews, and pilot the grain cogs onto the docks. In return, Casimiro demands 10% of the grain, royal letters of marque recognizing him as a Crown Privateer, and full pardons for his exiled men.</p>
+<p>Capitán Don Cazmiro has fought Argossean merchantmen in the Baracha Strait for twenty years. Hearing of the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a> anchored in the roadstead, Cazmiro has sent word to the palace offering the veteran privateers of the <a href="#factions/velasco-thieves-guild" class="wiki-link">Velasco Syndicate</a> to board, butcher the marine skeleton crews, and pilot the grain cogs onto the docks. In return, Cazmiro demands 10% of the grain, royal letters of marque recognizing him as a Crown Privateer, and full pardons for his exiled men.</p>
 """
         if 'The Corsair\'s Ambition' not in casimiro_art['content']:
             casimiro_art['content'] += casimiro_expansion
@@ -570,7 +570,7 @@ def main():
     if beltran_art:
         beltran_expansion = """
 <h3>Underworld Grain Distribution &amp; Black-Market Leverage</h3>
-<p>Don Beltrán de Soto understands the power of bread better than any grandee in the High Alcázar. If the PCs succeed in seizing the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a>, Beltrán's <a href="#factions/kordovan-thieves-guild" class="wiki-link">Night Guild</a> is the only organization in Kordova with the covert warehousing and street-level bakery networks capable of distributing 50,000 bushels without triggering rioting or theft. In exchange for managing the distribution, Beltrán demands an exclusive 5% distribution rake and the cancellation of all City Watch arrest warrants against his senior fences.</p>
+<p>Don Beltrano de Zoto understands the power of bread better than any grandee in the High Alcázar. If the PCs succeed in seizing the <a href="#factions/argossean-grain-fleet" class="wiki-link">Argossean Grain Fleet</a>, Beltrano's <a href="#factions/kordovan-thieves-guild" class="wiki-link">Night Guild</a> is the only organization in Kordova with the covert warehousing and street-level bakery networks capable of distributing 50,000 bushels without triggering rioting or theft. In exchange for managing the distribution, Beltrano demands an exclusive 5% distribution rake and the cancellation of all City Watch arrest warrants against his senior fences.</p>
 """
         if 'Underworld Grain Distribution' not in beltran_art['content']:
             beltran_art['content'] += beltran_expansion
@@ -598,7 +598,7 @@ def main():
     <ul>
       <li><strong>Path 1 (Diplomatic Submission):</strong> Pay 45,000 sovereigns or sign the Baracha Strait treaty (Averts famine; costs sovereignty and -1 Pundonor).</li>
       <li><strong>Path 2 (The Legal Ambush):</strong> Plant contraband or cite ancient maritime statutes to arrest Voros and sequester the fleet (+1 Sovereignty, risks Argossean trade sanctions).</li>
-      <li><strong>Path 3 (Black-Flag Piracy):</strong> Partner with <a href="#npcs/joaquin" class="wiki-link">Joaquin</a> or <a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Casimiro</a> to board and hijack the cogs at midnight (+2 Sovereignty, immediate bread riot relief, risks direct naval clash with <em>The Talon of Bel</em>).</li>
+      <li><strong>Path 3 (Black-Flag Piracy):</strong> Partner with <a href="#npcs/joaquin" class="wiki-link">Joachor</a> or <a href="#npcs/casimiro-velasco" class="wiki-link">Capitán Cazmiro</a> to board and hijack the cogs at midnight (+2 Sovereignty, immediate bread riot relief, risks direct naval clash with <em>The Talon of Bel</em>).</li>
     </ul>
   </div>
 </div>

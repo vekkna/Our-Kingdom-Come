@@ -122,10 +122,10 @@ def main():
         {
             "id": "obregon",
             "category": "npcs",
-            "title": "Lord Belisario de Obregon",
+            "title": "Lord Belbroso de Obregor",
             "subtitle": "Grand Seneschal of Precedent & Master of the Royal Hours &bull; Palace Household / Traditionalists",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "Court Intrigue"],
-            "aliases": ["Lord Belisario", "Belisario de Obregon", "Grand Seneschal", "The Decrepit", "Master of Precedent"],
+            "aliases": ["Lord Belbroso", "Belbroso de Obregor", "Grand Seneschal", "The Decrepit", "Master of Precedent"],
             "summary": "The ninety-year-old, parchment-skinned Grand Seneschal who rules the daily life of the Alcázar with terrifying ceremonial pedantry. Armed with the 900-page Book of the Royal Hours, he forces the Triumvirate through suffocating ancestral rituals while hoarding forgotten dynastic secrets.",
             "stats": {
                 "classLevel": "9th-Level Cleric / Savant",
@@ -167,7 +167,7 @@ def main():
                     "The Libro de las Horas Reales (Indestructible iron-bound calfskin tome containing unredacted genealogies and ancestral edicts)",
                     "Pectoral of Sacred Wardenship (+2 to AC, included in stats)"
                 ],
-                "tactics": "<strong>Ancestral Invocation:</strong> Belisario never draws a blade himself. If physically confronted, he strikes his cane upon the stone to cast <em>Silence 15' Radius</em> or <em>Hold Person</em> while shrieking for the guard.<br><strong>Guard of the Precedent:</strong> Attended at all times by 4 veteran Palace Halberdiers (Fighters Level 4, AC 3, 22 HP each, Morale 9) and two adolescent herald-pages who carry his lectern.",
+                "tactics": "<strong>Ancestral Invocation:</strong> Belbroso never draws a blade himself. If physically confronted, he strikes his cane upon the stone to cast <em>Silence 15' Radius</em> or <em>Hold Person</em> while shrieking for the guard.<br><strong>Guard of the Precedent:</strong> Attended at all times by 4 veteran Palace Halberdiers (Fighters Level 4, AC 3, 22 HP each, Morale 9) and two adolescent herald-pages who carry his lectern.",
                 "pcComparison": "Physically frail (38 HP, movement 30'), but an insurmountable legal barrier. If the PCs defy or dismiss him, court protocol grinds to a halt: grandees refuse audience, royal edicts lose legal legitimacy, and the Church of Nemeth accuses the young rulers of apostasy."
             },
             "atAGlance": {
@@ -177,17 +177,17 @@ def main():
                 "courtDCs": "Morale: 10 (Fanatical traditionalist); Initial Reaction: Suspicious (-1 on 2d6 Reaction Rolls). Charisma check (or reciting correct 4th-epoch etiquette) to alter any morning ceremonial without inciting a court scandal.",
                 "publicStance": "Strictly neutral toward the Restoration Council and Grandees, claiming allegiance only to the immortal, unchanging Precedent of the Crown.",
                 "secretAgenda": "To preserve the absolute purity of ancient Zingaran dynastic ritual against the vulgar militarism of Valenza and the mercantile corruptions of Sadoria. He secretly guards the unredacted Testament of King Daedalus, which proves the Restoration Council's legal charter is an eighty-year-old fraud.",
-                "rival": "High Chancellor Marquis Mateo de Sadoria",
+                "rival": "High Chancellor Marquis Murzio de Sadoria",
                 "classLevel": "9th-Level Cleric / Savant",
                 "combatStats": "AC 5 (AAC 14) | HP 38 | THAC0 15 | Atk +4 (1d6) | Saves: 13/7/9/10/11"
             },
-            "gmSecrets": "Hidden inside the hollow spine of the *Libro de las Horas Reales* is the original Imperial Charter of Period IV, proving that the Triumvirate possess the absolute legal authority to dismiss the Restoration Council without grandee assent. Belisario will only surrender this secret if convinced the PCs intend to restore the true liturgical dignity of the monarchy.",
+            "gmSecrets": "Hidden inside the hollow spine of the *Libro de las Horas Reales* is the original Imperial Charter of Period IV, proving that the Triumvirate possess the absolute legal authority to dismiss the Restoration Council without grandee assent. Belbroso will only surrender this secret if convinced the PCs intend to restore the true liturgical dignity of the monarchy.",
             "relatedIds": ["palace-of-kordava", "sadoria", "valenza", "court-matrix", "silveira", "ignacio"],
             "content": """
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">Palace Household &bull; Grand Seneschal</span>
-    <span class="badge rival-badge">Primary Rival: High Chancellor Marquis Mateo de Sadoria</span>
+    <span class="badge rival-badge">Primary Rival: High Chancellor Marquis Murzio de Sadoria</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A withered, ninety-year-old skeleton wrapped in stiff cloth-of-gold robes encrusted with dead jewel-beetles and tarnished bullion. His skin is spotted parchment; his milky eyes glare with terrifying genealogical zeal.</div>
@@ -198,35 +198,35 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Lord Belisario has held the office of Grand Seneschal through three monarchs, four rebellions, and the ascension of the Triumvirate. He embodies the suffocating, baroque ritualism of the High Alcázar. Every aspect of daily life in the palace—from the exact angle at which a royal cupbearer must tilt a silver ewer, to the mandatory four-hour ceremonial dressing of the sovereigns—is governed by his iron whim and his monstrous calfskin tome, the <em>Libro de las Horas Reales</em>.</p>
+<p>Lord Belbroso has held the office of Grand Seneschal through three monarchs, four rebellions, and the ascension of the Triumvirate. He embodies the suffocating, baroque ritualism of the High Alcázar. Every aspect of daily life in the palace—from the exact angle at which a royal cupbearer must tilt a silver ewer, to the mandatory four-hour ceremonial dressing of the sovereigns—is governed by his iron whim and his monstrous calfskin tome, the <em>Libro de las Horas Reales</em>.</p>
 <p>To the young PC rulers, he is an infuriating, immovable obstacle: he refuses to allow the PCs to hold emergency midnight war councils because "the Edict of 648 expressly limits sovereign assemblies to daylight hours," and insists that provincial petitions be filed in triplicate upon consecrated sheepskin.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Belisario despises <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a> and <a href="#npcs/valenza" class="wiki-link">General Don Rodrigo de Valenza</a>, regarding them as vulgar, parvenu usurpers who treat the sacred bloodline of Ancillus I as puppets. Hidden within the hollow binding of his ancient ceremonial volume is the unredacted <em>Testament of King Daedalus</em>, which legally invalidates the Restoration Council's charter. If the PCs demonstrate true reverence for royal dignity and ancestral law, Belisario can become their most formidable constitutional weapon against their handlers.</p>
+  <p>Belbroso despises <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> and <a href="#npcs/valenza" class="wiki-link">General Don Rodorigo de Valenza</a>, regarding them as vulgar, parvenu usurpers who treat the sacred bloodline of Ancillus I as puppets. Hidden within the hollow binding of his ancient ceremonial volume is the unredacted <em>Testament of King Daedalus</em>, which legally invalidates the Restoration Council's charter. If the PCs demonstrate true reverence for royal dignity and ancestral law, Belbroso can become their most formidable constitutional weapon against their handlers.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
-  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a>:</strong> A venomous mutual hatred. Sadoria repeatedly attempts to retire Belisario to a monastery; Belisario uses ancient procedural points to block Sadoria's financial appropriations.</li>
-  <li><strong><a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a>:</strong> An uneasy, prickly alliance of ancient traditionalists. While they squabble over who has precedence when opening royal bedchamber doors, both are fiercely loyal to the Ancillus bloodline.</li>
-  <li><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo</a>:</strong> Belisario considers the kitchen master a disgusting, unwashed swine whose greasy existence defiles the court.</li>
+  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a>:</strong> A venomous mutual hatred. Sadoria repeatedly attempts to retire Belbroso to a monastery; Belbroso uses ancient procedural points to block Sadoria's financial appropriations.</li>
+  <li><strong><a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a>:</strong> An uneasy, prickly alliance of ancient traditionalists. While they squabble over who has precedence when opening royal bedchamber doors, both are fiercely loyal to the Ancillus bloodline.</li>
+  <li><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartorzo</a>:</strong> Belbroso considers the kitchen master a disgusting, unwashed swine whose greasy existence defiles the court.</li>
 </ul>
 
 <h3>Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Imperial Veto of Ancillus I</h4>
-  <p><strong>Premise:</strong> <a href="#npcs/valenza" class="wiki-link">General Valenza</a> demands the Triumvirate sign an edict declaring martial law in Kordava to crush the republican agitators in The Pit. Lord Belisario publicly halts the signing, declaring that under the Edicts of Period IV, no martial decree can take effect without the ceremonial Consecration of the Silver Calipers—which must be conducted at high noon following a three-day fast.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must decide whether to side with Belisario's infuriating procedural stall (buying them 72 hours to investigate The Pit peacefully, while enraging Valenza's officer corps), or overrule the ancient Seneschal (pleasing the army, but triggering a crippling religious strike by the palace heralds and scribes).</p>
+  <p><strong>Premise:</strong> <a href="#npcs/valenza" class="wiki-link">General Valenza</a> demands the Triumvirate sign an edict declaring martial law in Kordava to crush the republican agitators in The Pit. Lord Belbroso publicly halts the signing, declaring that under the Edicts of Period IV, no martial decree can take effect without the ceremonial Consecration of the Silver Calipers—which must be conducted at high noon following a three-day fast.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must decide whether to side with Belbroso's infuriating procedural stall (buying them 72 hours to investigate The Pit peacefully, while enraging Valenza's officer corps), or overrule the ancient Seneschal (pleasing the army, but triggering a crippling religious strike by the palace heralds and scribes).</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to placate the military without alienating the traditionalist grandees; Intelligence check (roll 1d20 under Int) to uncover an obscure legal loophole in the <em>Libro de las Horas Reales</em>.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs support Belisario, Valenza cuts off royal palace wine rations, stationing cavalry outside the Alcázar gates to starve out the Seneschal's heralds.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs support Belbroso, Valenza cuts off royal palace wine rations, stationing cavalry outside the Alcázar gates to starve out the Seneschal's heralds.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Theft of the Golden Hours</h4>
-  <p><strong>Premise:</strong> In the dead of night, the 900-page <em>Libro de las Horas Reales</em> is stolen from Belisario's high lectern in the Hall of Precedent. Belisario collapses into hysterical weeping, halting all official royal government until the sacred relic is recovered.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs discover that <a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a> stole the book on behalf of <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>, who intends to burn the pages containing the royal veto. The PCs must sneak through the palace service flues to recover the tome before sunrise without triggering a public scandal.</p>
+  <p><strong>Premise:</strong> In the dead of night, the 900-page <em>Libro de las Horas Reales</em> is stolen from Belbroso's high lectern in the Hall of Precedent. Belbroso collapses into hysterical weeping, halting all official royal government until the sacred relic is recovered.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs discover that <a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a> stole the book on behalf of <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>, who intends to burn the pages containing the royal veto. The PCs must sneak through the palace service flues to recover the tome before sunrise without triggering a public scandal.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Thief Move Silently or Dexterity check (roll 1d20 under Dex) to infiltrate Sadoria's private salon; Wisdom check (roll 1d20 under Wis) to identify the genuine parchment from forged substitutes.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If Sadoria discovers the PCs recovering the book, he accuses them of breaking into state archives, demanding an immediate Council tribunal.</p>
 </div>
@@ -235,10 +235,10 @@ def main():
         {
             "id": "basto",
             "category": "npcs",
-            "title": "Maestro Bartolomeo 'El Basto'",
+            "title": "Maestro Bartorzo 'The Cleaver'",
             "subtitle": "Master Cook of the Cavernous Kitchens & Scullery Despot &bull; Palace Household / Domestic Guilds",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "The Pit"],
-            "aliases": ["Maestro Bartolomeo", "El Basto", "The Cleaver", "Master Cook", "Bartolomeo"],
+            "aliases": ["Maestro Bartorzo", "El Basto", "The Cleaver", "Master Cook", "Bartorzo"],
             "summary": "The gargantuan, sweat-drenched culinary despot who rules the sweltering subterranean kitchens of the Alcázar with an iron cleaver and boiling fat. Beneath his despotic kitchen empire, he controls the dumbwaiters and grease flues connecting the palace directly to the black market of The Pit.",
             "stats": {
                 "classLevel": "10th-Level Fighter (Scullery Despot)",
@@ -273,8 +273,8 @@ def main():
                     "Vials of Chef's Nightshade (x3 doses of odorless, tasteless paralytic poison; save vs Poison or paralyzed 2d6 turns)",
                     "The Cauldron Key (Opens the subterranean grease flues and dumbwaiters dropping into The Pit)"
                 ],
-                "tactics": "<strong>Boiling Tallow Splash:</strong> Once per encounter, Bartolomeo can hurl a copper ladle of boiling fat in a 10' arc (2d6 fire damage; targets must roll 1d20 under Dex or fall prone on the grease-slicked stones).<br><strong>Kitchen Retinue:</strong> In his domain, he is surrounded by 6 burly turnspits (Fighters Level 2, AC 7, 12 HP each) and 4 shambling zombie kitchen thralls who turn spit-roasts without feeling heat.",
-                "pcComparison": "A martial powerhouse with 68 HP and STR 18. In melee, he deals damage comparable to High Duke Gonzalo. Fighting him inside his sweltering subterranean kitchens—with boiling cauldrons, iron hooks, and slippery grease—gives him massive environmental advantage."
+                "tactics": "<strong>Boiling Tallow Splash:</strong> Once per encounter, Bartorzo can hurl a copper ladle of boiling fat in a 10' arc (2d6 fire damage; targets must roll 1d20 under Dex or fall prone on the grease-slicked stones).<br><strong>Kitchen Retinue:</strong> In his domain, he is surrounded by 6 burly turnspits (Fighters Level 2, AC 7, 12 HP each) and 4 shambling zombie kitchen thralls who turn spit-roasts without feeling heat.",
+                "pcComparison": "A martial powerhouse with 68 HP and STR 18. In melee, he deals damage comparable to High Duke Gonzalgo. Fighting him inside his sweltering subterranean kitchens—with boiling cauldrons, iron hooks, and slippery grease—gives him massive environmental advantage."
             },
             "atAGlance": {
                 "appearance": "A colossal, mountainously obese brute weighing 340 pounds, glistening with sweat, pork lard, and wine stains. His hairy forearm is as thick as a ham, tattooed with a grinning sea-boar. He wields an iron ox-cleaver like a switch.",
@@ -283,17 +283,17 @@ def main():
                 "courtDCs": "Morale: 9 (Kitchen warlord); Initial Reaction: Gruff (0 on 2d6 Reaction Rolls). Charisma or Constitution check (eating his volcanic pepper-stew) to win his respect or secure covert passage down the dumbwaiters.",
                 "publicStance": "Feigns uneducated rudeness and exhaustion, complaining endlessly about royal food budgets while secretly skimming thousands of gold pieces in luxury rations.",
                 "secretAgenda": "To maintain his subterranean smuggling racket with Vesper the Key-Master in The Pit, exporting stolen palace silver, foreign truffles, and vintage wines in exchange for rare lotus extracts and underworld gold.",
-                "rival": "Don Fernao de Silveira",
+                "rival": "Don Fernazo de Silvero",
                 "classLevel": "10th-Level Fighter (Scullery Despot)",
                 "combatStats": "AC 3 (AAC 16) | HP 68 | THAC0 12 | Atk +11 (1d10+4) | Saves: 10/8/9/10/11"
             },
-            "gmSecrets": "The great meat lifts and dumbwaiters behind the scullery hearths descend two hundred feet directly into the upper tunnels of <a href=\"#gazetteer/the-pit\" class=\"wiki-link\">The Pit</a>. Bartolomeo uses this secret elevator to smuggle fugitive duelists, stolen delicacies, and black-market gold. The PCs can use this shaft to bypass General Valenza's surface checkpoints entirely—if they pay Bartolomeo's price in rare spices or gold.",
+            "gmSecrets": "The great meat lifts and dumbwaiters behind the scullery hearths descend two hundred feet directly into the upper tunnels of <a href=\"#gazetteer/the-pit\" class=\"wiki-link\">The Pit</a>. Bartorzo uses this secret elevator to smuggle fugitive duelists, stolen delicacies, and black-market gold. The PCs can use this shaft to bypass General Valenza's surface checkpoints entirely—if they pay Bartorzo's price in rare spices or gold.",
             "relatedIds": ["palace-of-kordava", "the-pit", "vesper", "silveira", "escovedo", "court-matrix"],
             "content": """
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">Palace Household &bull; Master Cook</span>
-    <span class="badge rival-badge">Primary Rival: Don Fernao de Silveira</span>
+    <span class="badge rival-badge">Primary Rival: Don Fernazo de Silvero</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A colossal, mountainously obese brute weighing 340 pounds, glistening with sweat, pork lard, and wine stains. His hairy forearm is as thick as a ham, tattooed with a grinning sea-boar. He wields an iron ox-cleaver like a switch.</div>
@@ -304,34 +304,34 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Deep within the subterranean foundation of the High Alcázar lies the Great Scullery and Cavernous Kitchens—a sweltering, roaring inferno of iron cauldrons, charcoal smoke, and spitting tallow. Maestro Bartolomeo rules this subterranean empire as an absolute monarch. Eighty scullery boys, pastry apprentices, turnspits, and memory-retaining zombie scullions tremble before his thunderous voice and notched butcher's cleaver, <em>El Verdugo de las Reses</em>.</p>
-<p>While the nobility feast on gilded pheasants and spun-sugar galleons on the crystal floors above, Bartolomeo controls what actually enters their bellies. He knows every grandee's culinary weaknesses, food allergies, and secret gluttonies.</p>
+<p>Deep within the subterranean foundation of the High Alcázar lies the Great Scullery and Cavernous Kitchens—a sweltering, roaring inferno of iron cauldrons, charcoal smoke, and spitting tallow. Maestro Bartorzo rules this subterranean empire as an absolute monarch. Eighty scullery boys, pastry apprentices, turnspits, and memory-retaining zombie scullions tremble before his thunderous voice and notched butcher's cleaver, <em>El Verdugo de las Reses</em>.</p>
+<p>While the nobility feast on gilded pheasants and spun-sugar galleons on the crystal floors above, Bartorzo controls what actually enters their bellies. He knows every grandee's culinary weaknesses, food allergies, and secret gluttonies.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Bartolomeo is no simple cook: he is a key linchpin between the palace and <a href="#gazetteer/the-pit" class="wiki-link\">The Pit</a>. Behind the cavernous walk-in roasting chimneys are two massive, counter-weighted dumbwaiters originally designed to hoist coal from pre-Cataclysmic cellars. Bartolomeo uses these shafts to run a lucrative smuggling pipeline with <a href="#npcs/vesper" class="wiki-link">Vesper the Key-Master</a>. He can smuggle the PCs (or their covert agents) out of the palace past Valenza's perimeter guards in less than ten minutes—or dump an inconvenient assassin's corpse down the grease chute.</p>
+  <p>Bartorzo is no simple cook: he is a key linchpin between the palace and <a href="#gazetteer/the-pit" class="wiki-link\">The Pit</a>. Behind the cavernous walk-in roasting chimneys are two massive, counter-weighted dumbwaiters originally designed to hoist coal from pre-Cataclysmic cellars. Bartorzo uses these shafts to run a lucrative smuggling pipeline with <a href="#npcs/vesper" class="wiki-link">Vesper the Key-Master</a>. He can smuggle the PCs (or their covert agents) out of the palace past Valenza's perimeter guards in less than ten minutes—or dump an inconvenient assassin's corpse down the grease chute.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
-  <li><strong><a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a>:</strong> An epic, thirty-year blood feud. Bartolomeo considers Fernao a "rattling bag of dry twigs" who starves on punctilio; Fernao considers Bartolomeo a slovenly, treasonous swine who tracks lard across royal carpets. They carry daggers whenever they pass in the corridors.</li>
-  <li><strong><a href="#npcs/vesper" class="wiki-link">Vesper the Key-Master</a>:</strong> Business partners. Bartolomeo supplies Vesper with vintage royal reserve brandies and palace gossip; Vesper pays in untraceable silver and subterranean truffles.</li>
-  <li><strong><a href="#npcs/escovedo" class="wiki-link">Dr. Horatio Escovedo</a>:</strong> A nervous truce. Escovedo frequently inspects the kitchen larders for suspected poisons; Bartolomeo retaliates by feeding the doctor fiery curries that upset his delicate stomach.</li>
+  <li><strong><a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a>:</strong> An epic, thirty-year blood feud. Bartorzo considers Fernazo a "rattling bag of dry twigs" who starves on punctilio; Fernazo considers Bartorzo a slovenly, treasonous swine who tracks lard across royal carpets. They carry daggers whenever they pass in the corridors.</li>
+  <li><strong><a href="#npcs/vesper" class="wiki-link">Vesper the Key-Master</a>:</strong> Business partners. Bartorzo supplies Vesper with vintage royal reserve brandies and palace gossip; Vesper pays in untraceable silver and subterranean truffles.</li>
+  <li><strong><a href="#npcs/escovedo" class="wiki-link">Dr. Horasto Escovador</a>:</strong> A nervous truce. Escovador frequently inspects the kitchen larders for suspected poisons; Bartorzo retaliates by feeding the doctor fiery curries that upset his delicate stomach.</li>
 </ul>
 
 <h3>Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Banquet of the Black River Sturgeon</h4>
-  <p><strong>Premise:</strong> A crucial state gala for foreign grandees and the Argossean envoy is scheduled. Three hours before the feast, Maestro Bartolomeo storms into the Triumvirate's private solar, declaring that the royal treasury has failed to pay the butcher guild, and the scullions are staging a sit-down strike over their cold broth rations.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must either pay 500 gold pieces from their personal purse, use martial intimidation, or mediate between Bartolomeo and the scullions before the foreign ambassadors arrive to find cold bread and empty platters.</p>
-  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to negotiate with Bartolomeo; Strength check (roll 1d20 under Str) to win a drinking contest or physical arm-wrestle against the cook.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs fail to resolve the strike, Bartolomeo serves salted hardtack and vinegar to <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>, who interprets it as a deliberate diplomatic insult against Argos.</p>
+  <p><strong>Premise:</strong> A crucial state gala for foreign grandees and the Argossean envoy is scheduled. Three hours before the feast, Maestro Bartorzo storms into the Triumvirate's private solar, declaring that the royal treasury has failed to pay the butcher guild, and the scullions are staging a sit-down strike over their cold broth rations.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must either pay 500 gold pieces from their personal purse, use martial intimidation, or mediate between Bartorzo and the scullions before the foreign ambassadors arrive to find cold bread and empty platters.</p>
+  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to negotiate with Bartorzo; Strength check (roll 1d20 under Str) to win a drinking contest or physical arm-wrestle against the cook.</div>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs fail to resolve the strike, Bartorzo serves salted hardtack and vinegar to <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a>, who interprets it as a deliberate diplomatic insult against Argos.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Corpse in the Dumbwaiter</h4>
-  <p><strong>Premise:</strong> At midnight, Bartolomeo frantically signals the PCs via a secret kitchen bell. Stuck halfway down the subterranean meat shaft between the palace and The Pit is the body of a royal courier carrying an intercepted cipher signed by <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>.</p>
+  <p><strong>Premise:</strong> At midnight, Bartorzo frantically signals the PCs via a secret kitchen bell. Stuck halfway down the subterranean meat shaft between the palace and The Pit is the body of a royal courier carrying an intercepted cipher signed by <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must descend into the greasy, vertical chimney flue to retrieve the body and the cipher before morning kitchen preparations begin, avoiding the mechanical counterweights and zombie thralls patrolling below.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Dexterity check (roll 1d20 under Dex) or Thief Climb Walls to rappel down the grease-slicked flue; Strength check (roll 1d20 under Str) to pry open the jammed bronze pulley gears.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the winch collapses, the crashing dumbwaiter alerts General Valenza's guards in the sub-cellar, who believe an underworld invasion is underway.</p>
@@ -341,10 +341,10 @@ def main():
         {
             "id": "silveira",
             "category": "npcs",
-            "title": "Don Fernao de Silveira",
+            "title": "Don Fernazo de Silvero",
             "subtitle": "Lord of the Royal Bedchamber & Master of the Three Hundred Keys &bull; Palace Household / Loyalists",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "Court Intrigue"],
-            "aliases": ["Don Fernao", "Fernao de Silveira", "Lord Chamberlain", "Keeper of the Keys", "The Clicking Lord"],
+            "aliases": ["Don Fernazo", "Fernazo de Silvero", "Lord Chamberlain", "Keeper of the Keys", "The Clicking Lord"],
             "summary": "The gaunt, severe Lord of the Bedchamber whose dry knee joints click rhythmically with every step. Unbribable and fanatically loyal to the Ancillus bloodline, he wanders the draughty corridors at 3:00 AM carrying a chatelaine of three hundred keys, hunting assassins and protecting the young Triumvirate.",
             "stats": {
                 "classLevel": "10th-Level Thief / Royal Retainer",
@@ -388,8 +388,8 @@ def main():
                     "Boots of the Shadow Walk (Muffles the clicking of his dry knee joint when moving silently in darkness)",
                     "Amulet of Non-Detection (Shields his location from magical scrying and divination spells)"
                 ],
-                "tactics": "<strong>Tapestry Ambush:</strong> Fernao never attacks from the open. He strikes from behind velvet arras (Backstab x4 for 4d6+8 damage), blinds foes with thrown pepper-dust, or fires his poisoned sleeve crossbow before retreating through concealed jib-doors.<br><strong>Master of the Locks:</strong> Can lock or bar any door in the Alcázar in 1 combat segment, dividing attacking forces.",
-                "pcComparison": "While not a frontline tank like Valenza or Bartolomeo, Fernao's intimate mastery of palace secret doors, acoustic spy-tubes, and master keys makes him the PCs' most invaluable protector within the walls."
+                "tactics": "<strong>Tapestry Ambush:</strong> Fernazo never attacks from the open. He strikes from behind velvet arras (Backstab x4 for 4d6+8 damage), blinds foes with thrown pepper-dust, or fires his poisoned sleeve crossbow before retreating through concealed jib-doors.<br><strong>Master of the Locks:</strong> Can lock or bar any door in the Alcázar in 1 combat segment, dividing attacking forces.",
+                "pcComparison": "While not a frontline tank like Valenza or Bartorzo, Fernazo's intimate mastery of palace secret doors, acoustic spy-tubes, and master keys makes him the PCs' most invaluable protector within the walls."
             },
             "atAGlance": {
                 "appearance": "A tall, skeletal figure in threadbare, impeccably brushed black velvet. He has high, flint-like cheekbones, hollow eyes, and silver hair tied back with a black ribbon. His left knee joint pops with a dry, rhythmic click (*crack... crack...*) as he walks.",
@@ -398,17 +398,17 @@ def main():
                 "courtDCs": "Morale: 11 (Unyielding protector); Initial Reaction: Gruff Respect (+1 on 2d6 Reaction Rolls for true Ancillus descendants). Wisdom check to spot him shadowing the PCs through corridors.",
                 "publicStance": "Treats all grandees, ministers, and foreign ambassadors with frigid, contemptuous formality, acknowledging only the direct blood of King Ancillus I.",
                 "secretAgenda": "To purge the Restoration Council's spies from the royal bedchambers, preserve the Triumvirate from assassination, and maintain royal control over the Sealed Solares (the walled-off apartments of the ancient kings).",
-                "rival": "Maestro Bartolomeo 'El Basto'",
+                "rival": "Maestro Bartorzo 'The Cleaver'",
                 "classLevel": "10th-Level Thief / Royal Retainer",
                 "combatStats": "AC 2 (AAC 17) | HP 44 | THAC0 14 | Atk +8 (1d6+2) | Backstab x4 | Saves: 13/10/9/11/12"
             },
-            "gmSecrets": "Fernao possesses the only working master key to the *Sealed Solares*—the royal apartments walled off eighty years ago after the Black Solstice massacre. Inside lies the private treasury and genealogical vault of the old kings. Furthermore, Fernao knows a secret acoustic peephole behind a tapestry in the Queen's Gallery that looks directly down into Marquis Sadoria's private salon.",
+            "gmSecrets": "Fernazo possesses the only working master key to the *Sealed Solares*—the royal apartments walled off eighty years ago after the Black Solstice massacre. Inside lies the private treasury and genealogical vault of the old kings. Furthermore, Fernazo knows a secret acoustic peephole behind a tapestry in the Queen's Gallery that looks directly down into Marquis Sadoria's private salon.",
             "relatedIds": ["palace-of-kordava", "basto", "obregon", "sadoria", "valenza", "court-matrix"],
             "content": """
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">Palace Household &bull; Lord Chamberlain</span>
-    <span class="badge rival-badge">Primary Rival: Maestro Bartolomeo 'El Basto'</span>
+    <span class="badge rival-badge">Primary Rival: Maestro Bartorzo 'The Cleaver'</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A tall, skeletal figure in threadbare, impeccably brushed black velvet. He has high, flint-like cheekbones, hollow eyes, and silver hair tied back with a black ribbon. His left knee joint pops with a dry, rhythmic click (<em>crack... crack...</em>) as he walks.</div>
@@ -419,34 +419,34 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Don Fernao de Silveira is the guardian of the sovereigns' sleep. While the military guards of <a href="#npcs/valenza" class="wiki-link">General Valenza</a> stand watch at outer portcullises and palace gates, Don Fernao controls the interior corridors, bedchambers, and private solares of the High Alcázar. Gaunt, severe, and incorruptible, he carries the Great Chatelaine of Kalenius—a cluster of three hundred iron, brass, and obsidian keys that unlock every private lock in the citadel.</p>
-<p>He is legendary for his nocturnal vigils. Between the hours of midnight and dawn, Fernao patrols the draughty stone halls in felt slippers, accompanied only by the dry, rhythmic clicking of his damaged knee joint (<em>crack... crack...</em>), hunting unauthorized courtiers, listening at spyholes, and verifying that every deadbolt is thrown.</p>
+<p>Don Fernazo de Silvero is the guardian of the sovereigns' sleep. While the military guards of <a href="#npcs/valenza" class="wiki-link">General Valenza</a> stand watch at outer portcullises and palace gates, Don Fernazo controls the interior corridors, bedchambers, and private solares of the High Alcázar. Gaunt, severe, and incorruptible, he carries the Great Chatelaine of Kalenius—a cluster of three hundred iron, brass, and obsidian keys that unlock every private lock in the citadel.</p>
+<p>He is legendary for his nocturnal vigils. Between the hours of midnight and dawn, Fernazo patrols the draughty stone halls in felt slippers, accompanied only by the dry, rhythmic clicking of his damaged knee joint (<em>crack... crack...</em>), hunting unauthorized courtiers, listening at spyholes, and verifying that every deadbolt is thrown.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Fernao owes no allegiance to <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a> or the Restoration Council. He views them as parasitic opportunists who stole the crown's authority. He has dedicated his remaining years to keeping the young Triumvirate alive. He knows that Sadoria has planted two dagger-wielding assassins among the palace footmen; he has not killed them yet because he is waiting for them to receive written orders from Sadoria to provide the PCs with unassailable proof of high treason.</p>
+  <p>Fernazo owes no allegiance to <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> or the Restoration Council. He views them as parasitic opportunists who stole the crown's authority. He has dedicated his remaining years to keeping the young Triumvirate alive. He knows that Sadoria has planted two dagger-wielding assassins among the palace footmen; he has not killed them yet because he is waiting for them to receive written orders from Sadoria to provide the PCs with unassailable proof of high treason.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
-  <li><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo</a>:</strong> A vicious feud. Fernao believes Bartolomeo's greasy kitchen empire is a cesspool of republican smuggling and gluttony; Bartolomeo once hurled a roasted turnip at Fernao's head during a state dinner.</li>
-  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a>:</strong> Cold, silent war. Sadoria has tried four times to replace Fernao with a pliable courtier; Fernao routinely locks Sadoria's clerks out of royal ante-rooms using forgotten municipal fire codes.</li>
-  <li><strong><a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a>:</strong> Deep suspicion. Fernao recognizes that Ignacio climbs through palace flues and knows too many secrets, and is actively seeking an excuse to hang the young scrivener from the sea-ramparts.</li>
+  <li><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartorzo</a>:</strong> A vicious feud. Fernazo believes Bartorzo's greasy kitchen empire is a cesspool of republican smuggling and gluttony; Bartorzo once hurled a roasted turnip at Fernazo's head during a state dinner.</li>
+  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a>:</strong> Cold, silent war. Sadoria has tried four times to replace Fernazo with a pliable courtier; Fernazo routinely locks Sadoria's clerks out of royal ante-rooms using forgotten municipal fire codes.</li>
+  <li><strong><a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a>:</strong> Deep suspicion. Fernazo recognizes that Ignako climbs through palace flues and knows too many secrets, and is actively seeking an excuse to hang the young scrivener from the sea-ramparts.</li>
 </ul>
 
 <h3>Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Whispering Gallery of Sadoria</h4>
-  <p><strong>Premise:</strong> At two in the morning, Don Fernao taps on the Triumvirate's bedchamber door. He leads the PCs through a narrow masonry crawlspace behind the tapestries to a hollow decorative frieze positioned directly above Marquis Sadoria's private salon, where Sadoria is currently meeting with a foreign conspirator.</p>
+  <p><strong>Premise:</strong> At two in the morning, Don Fernazo taps on the Triumvirate's bedchamber door. He leads the PCs through a narrow masonry crawlspace behind the tapestries to a hollow decorative frieze positioned directly above Marquis Sadoria's private salon, where Sadoria is currently meeting with a foreign conspirator.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs can listen to the conspiracy (discovering that Sadoria is embezzling crown naval timber for foreign merchant cartels), but an acoustic draft threatens to extinguish their candle or blow soot into the salon below.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Thief Move Silently or Dexterity check (roll 1d20 under Dex) to hold motionless inside the stone crawlspace; Wisdom check (roll 1d20 under Wis) to transcribe the ciphered dialect.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If discovered, Sadoria's guards rush the crawlspace; Fernao must lock the iron fire-door behind the PCs, holding off the attackers alone with his rapier.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If discovered, Sadoria's guards rush the crawlspace; Fernazo must lock the iron fire-door behind the PCs, holding off the attackers alone with his rapier.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Key to the Sealed Solares</h4>
-  <p><strong>Premise:</strong> Facing imminent bankruptcy and unable to pay the city watch, Don Fernao offers the PCs his most dangerous secret: the heavy obsidian key to the *Sealed Solares*, a wing of the palace walled up eighty years ago after the Black Solstice massacre, where the private emergency bullion of King Daedalus is rumored to remain.</p>
+  <p><strong>Premise:</strong> Facing imminent bankruptcy and unable to pay the city watch, Don Fernazo offers the PCs his most dangerous secret: the heavy obsidian key to the *Sealed Solares*, a wing of the palace walled up eighty years ago after the Black Solstice massacre, where the private emergency bullion of King Daedalus is rumored to remain.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must breach the bricked-up entryway in secret, explore the dust-choked, trap-ridden apartments, and retrieve the royal bullion chests while contending with the restless spectral remnants of the slaughtered court.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Thief Find/Remove Traps or Dexterity check (roll 1d20 under Dex) to disarm pre-deluvial spring-scythe traps; Cleric Turn Undead (or Wisdom check) to banish the wailing phantoms of the Black Solstice.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> Breaching the sealed wing releases eighty years of accumulated necrotic gas into the ventilation flues, causing palace servants in the wing below to suffer violent hallucinations.</p>
@@ -456,10 +456,10 @@ def main():
         {
             "id": "escovedo",
             "category": "npcs",
-            "title": "Dr. Horatio Escovedo",
+            "title": "Dr. Horasto Escovador",
             "subtitle": "Chief Royal Chirurgeon & Court Toxicologist &bull; Palace Household / Scholarly Guilds",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "Alchemy"],
-            "aliases": ["Dr. Escovedo", "Horatio Escovedo", "Royal Chirurgeon", "Court Toxicologist", "The Doctor"],
+            "aliases": ["Dr. Escovador", "Horasto Escovador", "Royal Chirurgeon", "Court Toxicologist", "The Doctor"],
             "summary": "The hyper-kinetic, smoked-quartz-bespectacled chief court physician whose manic giggles and torrent of Latin circumlocutions conceal a terrifyingly sharp clinical intellect. He tests the Triumvirate's food for venom, analyzes necrotic tissue, and secretly brews life-saving antidotes for the PCs.",
             "stats": {
                 "classLevel": "10th-Level Magic-User / Physician",
@@ -501,7 +501,7 @@ def main():
                     "Cane of the Two-Headed Viper (Hollow cane containing 6 doses of fast-acting belladonna antidote)",
                     "Ring of Shielding (+1 bonus to Armor Class, included in stats)"
                 ],
-                "tactics": "<strong>Flash-Globe & Vanish:</strong> If attacked, Escovedo smashes a phosphorus globe onto the stones (all within 10' must save vs Wands or be blinded 1d4 rounds), then immediately casts <em>Invisibility</em> or <em>Mirror Image</em>.<br><strong>Toxicological Defense:</strong> Wields an alchemically treated silver scalpel coated in paralyzing manticore secretion.",
+                "tactics": "<strong>Flash-Globe & Vanish:</strong> If attacked, Escovador smashes a phosphorus globe onto the stones (all within 10' must save vs Wands or be blinded 1d4 rounds), then immediately casts <em>Invisibility</em> or <em>Mirror Image</em>.<br><strong>Toxicological Defense:</strong> Wields an alchemically treated silver scalpel coated in paralyzing manticore secretion.",
                 "pcComparison": "Frail in prolonged physical combat (32 HP), but possessor of 5th-circle arcane magic (matching Master Alchemist Vane) and genius-level intelligence (INT 18). He is the only person in Kordava capable of neutralizing Sadoria's subtle metabolic poisons."
             },
             "atAGlance": {
@@ -510,12 +510,12 @@ def main():
                 "quote": "A slight constriction of the radial pulse, Sire! Most delightful! Either Your Majesty has ingested three grains of dried wyvern gallbladder in your morning pheasant, or your aunt is visiting. Let us administer the black hellebore at once!",
                 "courtDCs": "Morale: 7 (Nervous intellectual); Initial Reaction: Friendly (+2 on 2d6 Reaction Rolls for anyone discussing medicine or anatomy). Intelligence check to translate his rambling diagnostic advice into practical clues.",
                 "publicStance": "Plays the part of an eccentric, harmless academic who is completely oblivious to power politics and interested only in bile, humors, and rare herbs.",
-                "secretAgenda": "Tortured by guilt because Marquis Sadoria coerced him into brewing the slow-acting heart tincture that murdered the previous regent. Escovedo is fanatically determined to protect the Triumvirate, slipping antidotes into their wine disguised as 'restorative digestive elixirs.'",
+                "secretAgenda": "Tortured by guilt because Marquis Sadoria coerced him into brewing the slow-acting heart tincture that murdered the previous regent. Escovador is fanatically determined to protect the Triumvirate, slipping antidotes into their wine disguised as 'restorative digestive elixirs.'",
                 "rival": "Master Alchemist Vane",
                 "classLevel": "10th-Level Magic-User / Physician",
                 "combatStats": "AC 4 (AAC 15) | HP 32 | THAC0 17 | Atk +6 (1d4 + Elixir) | Saves: 13/11/11/11/12"
             },
-            "gmSecrets": "Escovedo keeps a locked lead-lined journal beneath the flagstones of his dissecting theater. It contains detailed forensic records proving that the late King Daedalus's brother was poisoned with concentrated nightshade supplied by <a href=\"#npcs/sadoria\" class=\"wiki-link\">Marquis Sadoria</a>. Escovedo lives in perpetual terror that Sadoria's cutthroats will slit his throat, which is why he always carries three doses of universal antitoxin on his person.",
+            "gmSecrets": "Escovador keeps a locked lead-lined journal beneath the flagstones of his dissecting theater. It contains detailed forensic records proving that the late King Daedalus's brother was poisoned with concentrated nightshade supplied by <a href=\"#npcs/sadoria\" class=\"wiki-link\">Marquis Sadoria</a>. Escovador lives in perpetual terror that Sadoria's cutthroats will slit his throat, which is why he always carries three doses of universal antitoxin on his person.",
             "relatedIds": ["palace-of-kordava", "sadoria", "vane", "basto", "court-matrix"],
             "content": """
 <div class="npc-header-card">
@@ -532,35 +532,35 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Dr. Horatio Escovedo is the court physician, chief toxicologist, and master of the royal apothecary. Perched in the breezy Dissecting Tower above the sea-ramparts, he treats the ailments of the royal household, tastes official sovereign medicines, and delivers grand, bewildering medical lectures at the drop of a hat. Courtiers treat him as an amusing eccentric, chuckling at his frantic gesticulations and shrill laughter.</p>
-<p>Behind this comic veneer lies one of the sharpest analytical minds in ancient Zingara. Escovedo can diagnose a poison by the smell of a sweat-soaked handkerchief, detect concealed daggers with his lodestone rods, and deduce a courtier's secret vices from the color of their tongue.</p>
+<p>Dr. Horasto Escovador is the court physician, chief toxicologist, and master of the royal apothecary. Perched in the breezy Dissecting Tower above the sea-ramparts, he treats the ailments of the royal household, tastes official sovereign medicines, and delivers grand, bewildering medical lectures at the drop of a hat. Courtiers treat him as an amusing eccentric, chuckling at his frantic gesticulations and shrill laughter.</p>
+<p>Behind this comic veneer lies one of the sharpest analytical minds in ancient Zingara. Escovador can diagnose a poison by the smell of a sweat-soaked handkerchief, detect concealed daggers with his lodestone rods, and deduce a courtier's secret vices from the color of their tongue.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Escovedo is haunted by his past. Six months before the campaign began, <a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a> threatened to have Escovedo's sister burned as a witch by the Church of Nemeth unless the doctor prepared a slow, undetectable metabolic poison for the Regent Don Carlos. Escovedo complied, and Carlos died in his sleep of "cardiac melancholy." Consumed by remorse, Escovedo now views the PC Triumvirate as his only chance for redemption. He secretly spikes their morning tea with preventative broad-spectrum antidotes and constantly monitors their vitals for signs of Council tampering.</p>
+  <p>Escovador is haunted by his past. Six months before the campaign began, <a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a> threatened to have Escovador's sister burned as a witch by the Church of Nemeth unless the doctor prepared a slow, undetectable metabolic poison for the Regent Don Karlo. Escovador complied, and Carlos died in his sleep of "cardiac melancholy." Consumed by remorse, Escovador now views the PC Triumvirate as his only chance for redemption. He secretly spikes their morning tea with preventative broad-spectrum antidotes and constantly monitors their vitals for signs of Council tampering.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
-  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a>:</strong> A relationship of terrified subordination. Sadoria believes he owns the doctor; Escovedo smiles obsequiously while hoarding toxicological evidence against the Chancellor.</li>
-  <li><strong><a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a>:</strong> Bitter academic rivalry. Escovedo despises Vane's crude, necrotic reanimation rites as "vulgar butcher's necromancy," whereas Vane considers Escovedo an effete herbalist who lacks the courage to master true death-magic.</li>
-  <li><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo</a>:</strong> A combative working relationship. Escovedo inspects the royal kitchens three times a week with silver testing-spoons, driving Bartolomeo into apoplectic rages.</li>
+  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a>:</strong> A relationship of terrified subordination. Sadoria believes he owns the doctor; Escovador smiles obsequiously while hoarding toxicological evidence against the Chancellor.</li>
+  <li><strong><a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a>:</strong> Bitter academic rivalry. Escovador despises Vane's crude, necrotic reanimation rites as "vulgar butcher's necromancy," whereas Vane considers Escovador an effete herbalist who lacks the courage to master true death-magic.</li>
+  <li><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartorzo</a>:</strong> A combative working relationship. Escovador inspects the royal kitchens three times a week with silver testing-spoons, driving Bartorzo into apoplectic rages.</li>
 </ul>
 
 <h3>Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Venom in the Communion Chalice</h4>
-  <p><strong>Premise:</strong> During morning Mass in the Palace Chapel, Dr. Escovedo franticly spills the sacramental wine across the altar flagstones, screaming that the wine has turned "an improper shade of lilac." Father Malachai's priests accuse the doctor of sacrilegious blasphemy and demand his arrest.</p>
+  <p><strong>Premise:</strong> During morning Mass in the Palace Chapel, Dr. Escovador franticly spills the sacramental wine across the altar flagstones, screaming that the wine has turned "an improper shade of lilac." Father Malachai's priests accuse the doctor of sacrilegious blasphemy and demand his arrest.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must protect their trembling physician from the Church of Nemeth while helping him perform a field chemical test on the spilled wine to prove it was laced with concentrated nightshade intended for the Triumvirate.</p>
-  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to restrain the angry temple guards; Intelligence check (roll 1d20 under Int) to assist Escovedo in identifying the alchemical signature of the poison.</div>
+  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to restrain the angry temple guards; Intelligence check (roll 1d20 under Int) to assist Escovador in identifying the alchemical signature of the poison.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the poison is proven, the trail leads directly to a trusted royal cupbearer bribed by a rival provincial grandee, sparking an immediate palace-wide witch hunt.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Necrotic Autopsy</h4>
-  <p><strong>Premise:</strong> Escovedo secretly summons the PCs to his dissecting theater at midnight. On the slab is a deceased zombie thrall recovered from the palace foundations, whose marrow has begun crystallizing into glowing, explosive black glass—identical to the residue found in the ruins of the pre-deluvial academy.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> Escovedo warns that the alchemical catalyst being used by <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a> in The Pit is unstable; within weeks, hundreds of working thralls beneath Kordava could spontaneously detonate, collapsing the city's foundations into the sea.</p>
+  <p><strong>Premise:</strong> Escovador secretly summons the PCs to his dissecting theater at midnight. On the slab is a deceased zombie thrall recovered from the palace foundations, whose marrow has begun crystallizing into glowing, explosive black glass—identical to the residue found in the ruins of the pre-deluvial academy.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> Escovador warns that the alchemical catalyst being used by <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a> in The Pit is unstable; within weeks, hundreds of working thralls beneath Kordava could spontaneously detonate, collapsing the city's foundations into the sea.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Wisdom check (roll 1d20 under Wis) to extract the fragile crystal gland without detonating it (inflicts 4d6 damage on failure); Charisma check to convince Vane or the Council to pause thrall production.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the Council ignores the warning, a micro-tremor shakes the Alcázar, shattering twenty feet of the Throne Room's crystal floor.</p>
 </div>
@@ -569,10 +569,10 @@ def main():
         {
             "id": "ignacio",
             "category": "npcs",
-            "title": "Ignacio Mora",
+            "title": "Ignako Morasto",
             "subtitle": "The Climbing Scrivener & Scribe of the Sump &bull; Low Palace Bureaucracy / Master Infiltrator",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "Underworld"],
-            "aliases": ["Ignacio Mora", "Ignacio", "The Climbing Scrivener", "Scribe of the Sump", "The Climber"],
+            "aliases": ["Ignako Morasto", "Ignako", "The Climbing Scrivener", "Scribe of the Sump", "The Climber"],
             "summary": "A pale, wiry, deceptively deferential young clerk who climbs the dizzying exterior sea-cliffs and interior ventilation flues of the Alcázar. Knowing every crawlspace and secret in the citadel, he plays all factions against each other as he ruthlessly schemes to rise from gutter to Grand Chancellor.",
             "stats": {
                 "classLevel": "9th-Level Thief / Palace Infiltrator",
@@ -616,7 +616,7 @@ def main():
                     "Chime of Opening (Ancient silver cylinder, 4 charges remaining; opens barred doors and heavy iron grates silently)",
                     "Grappling Line of Kalenius (Unbreakable 100' spider-silk cord, coils itself on command)"
                 ],
-                "tactics": "<strong>Vertical Ambush & Vanish:</strong> Ignacio never fights on open ground. He drops from ceiling rafters, chandeliers, or chimney cornices (Backstab x4 for 4d4+12 damage + lotus poison), then scurries up a sheer flue or out an arrow-slit into the ocean gale.<br><strong>Flue-Running:</strong> Can navigate the palace's network of masonry flues and acoustic shafts at full running speed (120' per round).",
+                "tactics": "<strong>Vertical Ambush & Vanish:</strong> Ignako never fights on open ground. He drops from ceiling rafters, chandeliers, or chimney cornices (Backstab x4 for 4d4+12 damage + lotus poison), then scurries up a sheer flue or out an arrow-slit into the ocean gale.<br><strong>Flue-Running:</strong> Can navigate the palace's network of masonry flues and acoustic shafts at full running speed (120' per round).",
                 "pcComparison": "A lethally agile rogue (DEX 18, Climb Walls 96%). While he cannot withstand a pitched battle with the PC Warrior, his ability to enter any room in the Alcázar unannounced makes him an existential intelligence threat or an invaluable spy."
             },
             "atAGlance": {
@@ -626,17 +626,17 @@ def main():
                 "courtDCs": "Morale: 8 (Cold pragmatist); Initial Reaction: Fawning / Calculating (0 on 2d6 Reaction Rolls). Charisma or Intelligence check to detect that his humble stammering is an act.",
                 "publicStance": "The humble, overworked junior assistant in the Bureau of Salt & Wax Receipts who quietly files requisitions and runs errands for high-ranking nobles.",
                 "secretAgenda": "To climb ruthlessly to supreme power over the kingdom's bureaucracy by playing the Council, the Church, the Republicans, and the Triumvirate against each other until he alone holds the reins of the state.",
-                "rival": "Don Fernao de Silveira",
+                "rival": "Don Fernazo de Silvero",
                 "classLevel": "9th-Level Thief / Palace Infiltrator",
                 "combatStats": "AC 1 (AAC 18) | HP 40 | THAC0 15 | Atk +9 (1d4+3 + Venom) | Backstab x4 | Saves: 13/11/10/12/13"
             },
-            "gmSecrets": "Ignacio has discovered a forgotten pre-Cataclysmic mechanical chamber in the sub-cellars beneath the palace that controls the bronze sluice gates beneath the Crystal Floor. With the turn of a corroded wheel, he can drain the defensive moat, flood the lower dungeons, or vent toxic subterranean vapors from The Pit directly into the Grand Ballroom.",
+            "gmSecrets": "Ignako has discovered a forgotten pre-Cataclysmic mechanical chamber in the sub-cellars beneath the palace that controls the bronze sluice gates beneath the Crystal Floor. With the turn of a corroded wheel, he can drain the defensive moat, flood the lower dungeons, or vent toxic subterranean vapors from The Pit directly into the Grand Ballroom.",
             "relatedIds": ["palace-of-kordava", "silveira", "sadoria", "lucia", "vesper", "court-matrix"],
             "content": """
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">Palace Household &bull; Bureau of Receipts</span>
-    <span class="badge rival-badge">Primary Rival: Don Fernao de Silveira</span>
+    <span class="badge rival-badge">Primary Rival: Don Fernazo de Silvero</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A pale, slender youth of twenty-two with soot-stained knuckles, dark intelligent eyes, and quiet, cat-like footfalls. Wears a slightly frayed ink-spotted scribe's robe over supple, oil-treated leather. Outwardly bows until his forehead brushes his knees.</div>
@@ -647,47 +647,47 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Officially, Ignacio Mora is the least significant person in the High Alcázar. As the third junior scrivener in the Bureau of Wax &amp; Salt Receipts, his official duties consist of counting tallow candles, filing provincial grain vouchers, and carrying bundles of parchment between ministry offices. He bows frantically to every passing grandee, stammering apologies for breathing the same air as his betters.</p>
-<p>In reality, Ignacio is the supreme climber of Kordava—a prodigy of acrobatics, infiltration, and psychological manipulation who knows every flue, duct, chimney, and secret crawlspace in the citadel. By night, he strips off his scribe's gown, dons cat-skin leather, and runs across the dizzying slate roofs and gargoyles high above the crashing ocean surf, slipping into locked state apartments to read private correspondence.</p>
+<p>Officially, Ignako Morasto is the least significant person in the High Alcázar. As the third junior scrivener in the Bureau of Wax &amp; Salt Receipts, his official duties consist of counting tallow candles, filing provincial grain vouchers, and carrying bundles of parchment between ministry offices. He bows frantically to every passing grandee, stammering apologies for breathing the same air as his betters.</p>
+<p>In reality, Ignako is the supreme climber of Kordava—a prodigy of acrobatics, infiltration, and psychological manipulation who knows every flue, duct, chimney, and secret crawlspace in the citadel. By night, he strips off his scribe's gown, dons cat-skin leather, and runs across the dizzying slate roofs and gargoyles high above the crashing ocean surf, slipping into locked state apartments to read private correspondence.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Ignacio is the Steerpike of Zingara. Born in the gutters of The Pit, he is animated by a ferocious, icy hatred of the hereditary aristocracy. He sells Council eavesdrops to <a href="#npcs/lucia" class="wiki-link">Lucia's republicans</a>, passes forged invoices to <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>, and reports guard rotations to <a href="#npcs/vesper" class="wiki-link">Vesper</a>. His ultimate objective is not wealth, but total, unassailable administrative control: he intends to manufacture a catastrophic court scandal that wipes out both Valenza and Sadoria, positioning himself as the indispensable Chief Minister to the Triumvirate.</p>
+  <p>Ignako is the Steerpike of Zingara. Born in the gutters of The Pit, he is animated by a ferocious, icy hatred of the hereditary aristocracy. He sells Council eavesdrops to <a href="#npcs/lucia" class="wiki-link">Luzaia's republicans</a>, passes forged invoices to <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>, and reports guard rotations to <a href="#npcs/vesper" class="wiki-link">Vesper</a>. His ultimate objective is not wealth, but total, unassailable administrative control: he intends to manufacture a catastrophic court scandal that wipes out both Valenza and Sadoria, positioning himself as the indispensable Chief Minister to the Triumvirate.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
-  <li><strong><a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a>:</strong> Mortal enemies in the shadows. Fernao knows someone is climbing through the palace flues and has laid poisoned caltrops in several chimney shafts; Ignacio enjoys outmaneuvering the old Chamberlain by inches.</li>
-  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a>:</strong> Ignacio plays the role of Sadoria's eager, terrified informant, feeding the Chancellor just enough true information to win his trust while copying Sadoria's most incriminating ciphers.</li>
-  <li><strong><a href="#npcs/lucia" class="wiki-link">Fencing Master Lucia</a>:</strong> Clandestine informant. Ignacio provides Lucia's rebel cells with maps of palace guard rotations, though Lucia distrusts his cold, amoral ambition.</li>
+  <li><strong><a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a>:</strong> Mortal enemies in the shadows. Fernazo knows someone is climbing through the palace flues and has laid poisoned caltrops in several chimney shafts; Ignako enjoys outmaneuvering the old Chamberlain by inches.</li>
+  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a>:</strong> Ignako plays the role of Sadoria's eager, terrified informant, feeding the Chancellor just enough true information to win his trust while copying Sadoria's most incriminating ciphers.</li>
+  <li><strong><a href="#npcs/lucia" class="wiki-link">Fencing Master Luzaia</a>:</strong> Clandestine informant. Ignako provides Luzaia's rebel cells with maps of palace guard rotations, though Luzaia distrusts his cold, amoral ambition.</li>
 </ul>
 
 <h3>Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Scrivener's Bargain</h4>
-  <p><strong>Premise:</strong> While the Triumvirate is meeting in their private solar, a ceiling grate slides open and Ignacio drops soundlessly onto the carpet. Bowing low, he produces a wax-sealed packet containing the secret minutes of last night's Restoration Council meeting, in which Sadoria proposed mortgaging the royal palace to the Kingdom of Argos.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> Ignacio offers to become the PCs' personal secret agent inside the bureaucracy—for a price: a royal patent appointing him Chief Clerk of the Treasury and diplomatic immunity from Don Fernao's watch.</p>
+  <p><strong>Premise:</strong> While the Triumvirate is meeting in their private solar, a ceiling grate slides open and Ignako drops soundlessly onto the carpet. Bowing low, he produces a wax-sealed packet containing the secret minutes of last night's Restoration Council meeting, in which Sadoria proposed mortgaging the royal palace to the Kingdom of Argos.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> Ignako offers to become the PCs' personal secret agent inside the bureaucracy—for a price: a royal patent appointing him Chief Clerk of the Treasury and diplomatic immunity from Don Fernazo's watch.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Wisdom check (roll 1d20 under Wis) to discern if the documents are genuine or a double-agent trap; Charisma check (roll 1d20 under Cha) to extract additional secrets without signing over legal immunity.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs reject him, Ignacio sells the documents to foreign ambassadors, precipitating an immediate international financial panic.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs reject him, Ignako sells the documents to foreign ambassadors, precipitating an immediate international financial panic.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Sluice of the Pit</h4>
-  <p><strong>Premise:</strong> Ignacio discovers that republican insurgents from The Pit are preparing to detonate black powder beneath the Palace Cauldron Courtyard. Rather than informing the guard, Ignacio offers to guide the PCs through the sheer sea-cliff flues to disarm the sappers personally.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must climb the exterior face of the sea-ramparts at midnight during an ocean gale, following Ignacio across narrow masonry ledges where one slip means death on the jagged reefs three hundred feet below.</p>
+  <p><strong>Premise:</strong> Ignako discovers that republican insurgents from The Pit are preparing to detonate black powder beneath the Palace Cauldron Courtyard. Rather than informing the guard, Ignako offers to guide the PCs through the sheer sea-cliff flues to disarm the sappers personally.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must climb the exterior face of the sea-ramparts at midnight during an ocean gale, following Ignako across narrow masonry ledges where one slip means death on the jagged reefs three hundred feet below.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Dexterity check (roll 1d20 under Dex) or Thief Climb Walls to traverse the gale-swept parapets; Strength check (roll 1d20 under Str) to dismantle the powder kegs before the fuses burn down.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> During the climb, Ignacio attempts to pickpocket a royal signet ring from one of the PCs to seal his own forged promotion decrees.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> During the climb, Ignako attempts to pickpocket a royal signet ring from one of the PCs to seal his own forged promotion decrees.</p>
 </div>
 """
         },
         {
             "id": "elvira",
             "category": "npcs",
-            "title": "Doña Elvira de Ancillus-Moreno",
+            "title": "Doña Elvissa de Ancillus-Morando",
             "subtitle": "The Dowager Infanta & Keeper of the White Falcons &bull; Royal Bloodline / Reclusive Aristocracy",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "Court Intrigue"],
-            "aliases": ["Doña Elvira", "Elvira de Ancillus", "The Dowager Infanta", "Mistress of Falcons", "The Infanta"],
+            "aliases": ["Doña Elvissa", "Elvissa de Ancillus", "The Dowager Infanta", "Mistress of Falcons", "The Infanta"],
             "summary": "Great-aunt to the Triumvirate and sole surviving elder of the Ancillus dynasty. She lives in self-imposed exile in the windswept topmost spires of the Hanging Aviary, surrounded by forty white sea-falcons and sixty temple cats, utterly contemptuous of human politics yet possessing a lethal airborne spy network.",
             "stats": {
                 "classLevel": "9th-Level Magic-User / Beastmistress",
@@ -729,7 +729,7 @@ def main():
                     "Mantle of the Ermine Sovereign (+2 to Armor Class, grants total immunity to normal cold and gale-force winds)",
                     "Signet of Queen Sancha (Ancient royal seal granting access to high palace vaults)"
                 ],
-                "tactics": "<strong>The Falcon Squall:</strong> Elvira never engages in melee. She sounds her whistle to unleash a screaming vortex of 20 white sea-falcons (swarms attack as 5 HD monster, dealing 3d6 slashing damage per round and blinding foes) while casting <em>Web</em>, <em>Hold Person</em>, or <em>Confusion</em> from high balconies.<br><strong>Palace Mastiffs:</strong> Accompanied in her spires by two massive Zingaran Mastiffs (HD 4, AC 6, 22 HP, 2d4 bite).",
+                "tactics": "<strong>The Falcon Squall:</strong> Elvissa never engages in melee. She sounds her whistle to unleash a screaming vortex of 20 white sea-falcons (swarms attack as 5 HD monster, dealing 3d6 slashing damage per round and blinding foes) while casting <em>Web</em>, <em>Hold Person</em>, or <em>Confusion</em> from high balconies.<br><strong>Palace Mastiffs:</strong> Accompanied in her spires by two massive Zingaran Mastiffs (HD 4, AC 6, 22 HP, 2d4 bite).",
                 "pcComparison": "A formidable spellcaster with high Charisma (CHA 17) and untouchable social immunity. Because she is the elder sister of King Ancillus I, neither Valenza nor Sadoria dare arrest or execute her without triggering immediate civil war among the loyalist grandees."
             },
             "atAGlance": {
@@ -739,17 +739,17 @@ def main():
                 "courtDCs": "Morale: 10 (Regal sovereign); Initial Reaction: Cold / Imperial (0 on 2d6 Reaction Rolls; +2 for PCs showing proper deference to her birds). Charisma check to win her affection or gain access to her intercepted letters.",
                 "publicStance": "Openly disdains the entire court, the Restoration Council, and the Church of Nemeth, living in high seclusion and refusing to set foot on the lower floors.",
                 "secretAgenda": "Her hunting falcons patrol the skies over Kordava harbor and the Baracha Strait, routinely intercepting carrier pigeons, message ravens, and courier gulls. She hoards hundreds of intercepted ciphers in gilded birdcages, casually using them for cage linings or tossing them to the PCs when amused.",
-                "rival": "General Don Rodrigo de Valenza",
+                "rival": "General Don Rodorigo de Valenza",
                 "classLevel": "9th-Level Magic-User / Beastmistress",
                 "combatStats": "AC 5 (AAC 14) | HP 34 | THAC0 17 | Atk +5 (1d6) | Saves: 14/12/12/12/13"
             },
-            "gmSecrets": "Doña Elvira possesses an intercepted carrier raven dispatch sent by <a href=\"#npcs/tiberio\" class=\"wiki-link\">Ambassador Tiberio</a> to the naval admirals of Argos, confirming that Argos intends to finance an amphibious blockade of Kordava within the month. She also holds the ancestral signet ring of Queen Sancha, which unlocks the high treasury vault in the North Spire.",
+            "gmSecrets": "Doña Elvissa possesses an intercepted carrier raven dispatch sent by <a href=\"#npcs/tiberio\" class=\"wiki-link\">Ambassador Tiberio</a> to the naval admirals of Argos, confirming that Argos intends to finance an amphibious blockade of Kordava within the month. She also holds the ancestral signet ring of Queen Sancha, which unlocks the high treasury vault in the North Spire.",
             "relatedIds": ["palace-of-kordava", "valenza", "sadoria", "tiberio", "court-matrix"],
             "content": """
 <div class="npc-header-card">
   <div class="npc-meta">
     <span class="badge faction-badge">Royal Bloodline &bull; Dowager Infanta</span>
-    <span class="badge rival-badge">Primary Rival: General Don Rodrigo de Valenza</span>
+    <span class="badge rival-badge">Primary Rival: General Don Rodorigo de Valenza</span>
   </div>
   <div class="at-a-glance-grid">
     <div class="glance-item"><strong>Visual Appearance:</strong> A massive, imperious matriarch of sixty-five draped in frayed silver damask, moth-eaten ermine, and pearls the size of pigeon eggs. She smells of sea salt, cedarwood, and birdlime. Perched on her leather gauntlet is a pure-white sea-falcon named 'Don Alfonso.'</div>
@@ -760,18 +760,18 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Doña Elvira is the Countess Gertrude of Kordava. The elder sister of the late King and great-aunt to the PC Triumvirate, she is the highest-ranking surviving matriarch of the Ancillus dynasty. Thirty years ago, sickened by court hypocrisy and dynastic assassinations, she withdrew entirely from human court life, moving into the topmost windswept spires of the Hanging Aviary and Solarium.</p>
+<p>Doña Elvissa is the Countess Gertrude of Kordava. The elder sister of the late King and great-aunt to the PC Triumvirate, she is the highest-ranking surviving matriarch of the Ancillus dynasty. Thirty years ago, sickened by court hypocrisy and dynastic assassinations, she withdrew entirely from human court life, moving into the topmost windswept spires of the Hanging Aviary and Solarium.</p>
 <p>Here, perched between the clouds and the crashing sea, she lives surrounded by forty pure-white Zingaran sea-falcons, screech-owls, and sixty fat, pampered temple cats that sleep on antique tapestry cushions. She refuses to attend court galas, treats ministers like begging serfs, and addresses <a href="#npcs/valenza" class="wiki-link">General Valenza</a> and <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a> with magnificent, blistering insults.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>While she affects total indifference to the realm, Elvira is fiercely protective of the young Triumvirate, viewing them as the last innocent blood of her house. Her white falcons are not decorative pets: they are trained aerial raptors that hunt messenger birds over Kordava harbor, the Baracha Strait, and the inland roads. Her gilded birdcages are stuffed with intercepted foreign ciphers, pirate trade manifests, and Council conspiracy letters. If the PCs climb to her high eyrie and bring her fresh quail or treat her pets with genuine reverence, she casually hands them intelligence that can break Council plots wide open.</p>
+  <p>While she affects total indifference to the realm, Elvissa is fiercely protective of the young Triumvirate, viewing them as the last innocent blood of her house. Her white falcons are not decorative pets: they are trained aerial raptors that hunt messenger birds over Kordava harbor, the Baracha Strait, and the inland roads. Her gilded birdcages are stuffed with intercepted foreign ciphers, pirate trade manifests, and Council conspiracy letters. If the PCs climb to her high eyrie and bring her fresh quail or treat her pets with genuine reverence, she casually hands them intelligence that can break Council plots wide open.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
-  <li><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodrigo de Valenza</a>:</strong> Absolute contempt. She views Valenza as an arrogant plebeian who usurped military command, and routinely commands her falcons to defecate on his gilded ceremonial parade armor.</li>
-  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Mateo de Sadoria</a>:</strong> Sadoria once attempted to audit the aviary's poultry expenses; Elvira set two mastiffs on his clerks and threatened to have Sadoria thrown into the ocean surf from the high terrace.</li>
+  <li><strong><a href="#npcs/valenza" class="wiki-link">General Don Rodorigo de Valenza</a>:</strong> Absolute contempt. She views Valenza as an arrogant plebeian who usurped military command, and routinely commands her falcons to defecate on his gilded ceremonial parade armor.</li>
+  <li><strong><a href="#npcs/sadoria" class="wiki-link">Marquis Murzio de Sadoria</a>:</strong> Sadoria once attempted to audit the aviary's poultry expenses; Elvissa set two mastiffs on his clerks and threatened to have Sadoria thrown into the ocean surf from the high terrace.</li>
   <li><strong>The PC Triumvirate:</strong> Gruff, eccentric affection. She mocks their youth and lack of iron, but will use every ounce of her dynastic prestige and falcon-network to keep them from being poisoned by their handlers.</li>
 </ul>
 
@@ -779,28 +779,28 @@ def main():
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Intercepted Naval Cipher</h4>
-  <p><strong>Premise:</strong> A dead messenger raven falls onto the Triumvirate's balcony, its throat torn out by talons. Attached to its leg is a wax capsule containing an encoded message from <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a> to an Argossean war fleet. Shortly after, a palace servant arrives with an invitation to tea from Doña Elvira in the High Aviary.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must climb the three hundred steps to the windy spires, endure Elvira's sharp tongue and haughty tests, and convince her to decode the cipher using an ancient genealogical cipher-wheel in her possession.</p>
-  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to impress the Dowager Infanta; Wisdom check (roll 1d20 under Wis) or Animal Handling to soothe her aggressive lead falcon, 'Don Alfonso.'</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs anger Elvira, she feeds the cipher to an owl, forcing the rulers to search the aviary's guano-covered rafters at midnight.</p>
+  <p><strong>Premise:</strong> A dead messenger raven falls onto the Triumvirate's balcony, its throat torn out by talons. Attached to its leg is a wax capsule containing an encoded message from <a href="#npcs/tiberio" class="wiki-link">Ambassador Tiberio</a> to an Argossean war fleet. Shortly after, a palace servant arrives with an invitation to tea from Doña Elvissa in the High Aviary.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must climb the three hundred steps to the windy spires, endure Elvissa's sharp tongue and haughty tests, and convince her to decode the cipher using an ancient genealogical cipher-wheel in her possession.</p>
+  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (roll 1d20 under Cha) to impress the Dowager Infanta; Wisdom check (roll 1d20 under Wis) or Animal Handling to soothe her aggressive lead falcon, 'Don Alfonzo.'</div>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the PCs anger Elvissa, she feeds the cipher to an owl, forcing the rulers to search the aviary's guano-covered rafters at midnight.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Sacking of the Spire</h4>
-  <p><strong>Premise:</strong> Suspicious of Elvira's carrier-bird intercepts, Marquis Sadoria sends six armed bailiffs to 'requisition' the High Aviary under the pretext of fortifying the sea-ramparts against pirate raids.</p>
+  <p><strong>Premise:</strong> Suspicious of Elvissa's carrier-bird intercepts, Marquis Sadoria sends six armed bailiffs to 'requisition' the High Aviary under the pretext of fortifying the sea-ramparts against pirate raids.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs hear the alarm bells and must decide whether to personally intervene against Sadoria's bailiffs (risking an open political confrontation with the Restoration Council), or let the aviary be raided, losing their premier aerial intelligence source.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Charisma check (or 2d6 Reaction Roll) to command the bailiffs to stand down under royal authority; Fighter Attack roll vs. AC 4 if swordplay erupts on the narrow stone stairways.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If swordplay breaks out, Elvira unleashes her entire flock of twenty hunting birds, creating total chaos on the high roofs that threatens to topple courtiers into the sea.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If swordplay breaks out, Elvissa unleashes her entire flock of twenty hunting birds, creating total chaos on the high roofs that threatens to topple courtiers into the sea.</p>
 </div>
 """
         },
         {
             "id": "pascual",
             "category": "npcs",
-            "title": "Hermano Pascual",
+            "title": "Hermano Pasqualo",
             "subtitle": "Master Custodian of the Crystal Pavement &bull; Palace Household / Monastic Laborers",
             "tags": ["Royal Court", "NPC", "Palace Staff", "Period VIII", "Gormenghast", "The Pit"],
-            "aliases": ["Hermano Pascual", "Pascual", "Custodian of the Crystal Floor", "The Polisher", "Brother Pascual"],
+            "aliases": ["Hermano Pasqualo", "Pasqualo", "Custodian of the Crystal Floor", "The Polisher", "Brother Pasqualo"],
             "summary": "The quiet, half-blind custodian who has spent fifty years on his knees buffing the three-inch transparent quartz floor of the Grand Throne Room. By pressing his ear to the glass, he can hear the movements of creatures and rebels in The Pit two hundred feet below, and holds the secret release lever to the crystal dais.",
             "stats": {
                 "classLevel": "7th-Level Fighter / Custodian",
@@ -834,7 +834,7 @@ def main():
                     "Salve of True Friction (Can turn a 20'x20' section of polished crystal either completely frictionless [as Grease spell] or completely slip-proof for 1 hour)",
                     "The Lens of Flaw-Finding (Magnifying loupe revealing structural micro-fractures and stress points in stone and crystal)"
                 ],
-                "tactics": "<strong>The Friction Trap:</strong> If threatened in the Throne Room, Pascual coats the quartz beneath attackers' boots with friction-nullifying whale oil (save vs Petrify or slide 30' across the floor and fall prone), then strikes with his staff.<br><strong>Dais Runic Release:</strong> Can throw the hidden bronze floor-switch beneath the throne dais, causing the transparent quartz to turn mirror-opaque or flash with blinding ancient Thurian luminescence.",
+                "tactics": "<strong>The Friction Trap:</strong> If threatened in the Throne Room, Pasqualo coats the quartz beneath attackers' boots with friction-nullifying whale oil (save vs Petrify or slide 30' across the floor and fall prone), then strikes with his staff.<br><strong>Dais Runic Release:</strong> Can throw the hidden bronze floor-switch beneath the throne dais, causing the transparent quartz to turn mirror-opaque or flash with blinding ancient Thurian luminescence.",
                 "pcComparison": "A humble, unassuming servant (38 HP) who is treated as part of the architecture by nobles, giving him complete immunity from court suspicion while granting him unmatched acoustic intelligence from the underworld."
             },
             "atAGlance": {
@@ -848,7 +848,7 @@ def main():
                 "classLevel": "7th-Level Fighter / Custodian",
                 "combatStats": "AC 6 (AAC 13) | HP 38 | THAC0 15 | Atk +6 (1d6+2) | Saves: 13/10/11/12/13"
             },
-            "gmSecrets": "Hidden beneath the third step of the Obsidian Dais is an ancient Thurian mechanical lever that Pascual has maintained in secret for thirty years. Pushing the lever activates pre-deluvial refraction prisms, causing the transparent quartz floor to flash with blinding white light (all in the room blinded 2d4 rounds, save vs Spells) or polarizing the glass completely black so no one can peer down into The Pit.",
+            "gmSecrets": "Hidden beneath the third step of the Obsidian Dais is an ancient Thurian mechanical lever that Pasqualo has maintained in secret for thirty years. Pushing the lever activates pre-deluvial refraction prisms, causing the transparent quartz floor to flash with blinding white light (all in the room blinded 2d4 rounds, save vs Spells) or polarizing the glass completely black so no one can peer down into The Pit.",
             "relatedIds": ["palace-of-kordava", "the-pit", "mausoleum-kalenius", "court-matrix"],
             "content": """
 <div class="npc-header-card">
@@ -865,26 +865,26 @@ def main():
 </div>
 
 <h3>Public Persona &amp; Palace Duties</h3>
-<p>Hermano Pascual is the Rottcodd of the High Alcázar. For fifty years, he has spent twelve hours a day on his hands and knees in the Grand Audience Chamber, buffing the three-inch transparent quartz flagstones of the Crystal Floor with pumice powder, lavender water, and lamb's wool. To the grandees, ministers, and foreign ambassadors who strut across the hall in feathered hats and gilded spurs, Pascual is simply a piece of moving furniture.</p>
-<p>Because he is treated as invisible, courtiers openly discuss treason, bribes, and assassination plots while standing directly over him. Pascual hears everything, says nothing, and continues buffing the glass with rhythmic circular strokes.</p>
+<p>Hermano Pasqualo is the Rottcodd of the High Alcázar. For fifty years, he has spent twelve hours a day on his hands and knees in the Grand Audience Chamber, buffing the three-inch transparent quartz flagstones of the Crystal Floor with pumice powder, lavender water, and lamb's wool. To the grandees, ministers, and foreign ambassadors who strut across the hall in feathered hats and gilded spurs, Pasqualo is simply a piece of moving furniture.</p>
+<p>Because he is treated as invisible, courtiers openly discuss treason, bribes, and assassination plots while standing directly over him. Pasqualo hears everything, says nothing, and continues buffing the glass with rhythmic circular strokes.</p>
 
 <div class="gm-callout">
   <div class="gm-badge">GM CONFIDENTIAL &bull; SECRET AGENDA &amp; HIDDEN LEVER</div>
-  <p>Pascual's true value lies in his extraordinary acoustic sensitivity. The Crystal Floor acts as a colossal acoustic diaphragm. By laying his temple against specific crystalline fault-lines, Pascual can listen to everything occurring two hundred feet below in <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>: he can hear republican cell meetings, the dragging footsteps of <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane's</a> zombie work-gangs, and the gnawing of subterranean horrors beneath the harbor. He quietly passes warnings to the Triumvirate by writing chalk symbols on the underside of their footstools.</p>
+  <p>Pasqualo's true value lies in his extraordinary acoustic sensitivity. The Crystal Floor acts as a colossal acoustic diaphragm. By laying his temple against specific crystalline fault-lines, Pasqualo can listen to everything occurring two hundred feet below in <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>: he can hear republican cell meetings, the dragging footsteps of <a href="#npcs/vane" class="wiki-link">Master Alchemist Vane's</a> zombie work-gangs, and the gnawing of subterranean horrors beneath the harbor. He quietly passes warnings to the Triumvirate by writing chalk symbols on the underside of their footstools.</p>
 </div>
 
 <h3>Faction Ties &amp; Palace Relationships</h3>
 <ul>
   <li><strong>The PC Triumvirate:</strong> Quiet reverence. He treats the young rulers with gentle, paternal care, horrified when arrogant grandees force the monarchs to sit upon a drafty throne.</li>
   <li><strong><a href="#npcs/vane" class="wiki-link">Master Alchemist Vane</a>:</strong> Deep apprehension. Vane's underground blasting and necromantic excavation in The Pit creates seismic vibrations that are producing hairline fractures in the ancient crystal floor.</li>
-  <li><strong><a href="#npcs/obregon" class="wiki-link">Lord Belisario de Obregon</a>:</strong> Mutual respect. Belisario protects Pascual's custodial budget from Sadoria's treasury cuts, recognizing that a clean crystal floor is essential to the dignity of royal audiences.</li>
+  <li><strong><a href="#npcs/obregon" class="wiki-link">Lord Belbroso de Obregor</a>:</strong> Mutual respect. Belbroso protects Pasqualo's custodial budget from Sadoria's treasury cuts, recognizing that a clean crystal floor is essential to the dignity of royal audiences.</li>
 </ul>
 
 <h3>Player-Led Plot Hooks</h3>
 
 <div class="hook-card info-card">
   <h4>Hook 1: The Scratch on the Crystal Dais</h4>
-  <p><strong>Premise:</strong> Following a stormy audience with the provincial grandees, Hermano Pascual frantically tugs at the sleeve of the PC Warrior. He shows the PCs a fresh three-foot hairline fissure radiating directly from the base of the throne dais, through which a thin ribbon of sulfurous black vapor is seeping upward from The Pit.</p>
+  <p><strong>Premise:</strong> Following a stormy audience with the provincial grandees, Hermano Pasqualo frantically tugs at the sleeve of the PC Warrior. He shows the PCs a fresh three-foot hairline fissure radiating directly from the base of the throne dais, through which a thin ribbon of sulfurous black vapor is seeping upward from The Pit.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must investigate whether the crack was caused by natural seismic settling, or if someone in The Pit is deliberately boring an explosive mine beneath the throne room to assassinate the entire court during the upcoming festival.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Wisdom check (roll 1d20 under Wis) or Dwarf Stonecunning to inspect the fracture; Intelligence check (roll 1d20 under Int) to analyze the chemical residue of the vapor.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If the fissure is ignored, the center quadrant of the crystal floor shatters during the next grand audience, plunging two grandees into the dark abyss of The Pit.</p>
@@ -892,8 +892,8 @@ def main():
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Acoustic Warning</h4>
-  <p><strong>Premise:</strong> At midnight, Pascual slips a folded note under the door of the royal bedchamber. Written in charcoal are three words: <em>"They dig tonight."</em> Pascual's tuning fork has detected military sappers tunneling through the old Thurian foundations directly toward the palace armory.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must follow Pascual into the narrow maintenance sub-basements beneath the crystal floor to confront the subterranean sappers before they breach the armory, choosing whether to execute them or recruit them against Sadoria.</p>
+  <p><strong>Premise:</strong> At midnight, Pasqualo slips a folded note under the door of the royal bedchamber. Written in charcoal are three words: <em>"They dig tonight."</em> Pasqualo's tuning fork has detected military sappers tunneling through the old Thurian foundations directly toward the palace armory.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must follow Pasqualo into the narrow maintenance sub-basements beneath the crystal floor to confront the subterranean sappers before they breach the armory, choosing whether to execute them or recruit them against Sadoria.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Fighter Attack roll vs. AC 5 in tight subterranean crawlspaces; Charisma check (or 2d6 Reaction Roll) to interrogate the surviving sappers.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> The sappers are carrying dwarven blasting pots; a stray blow or fire spell risks collapsing the sub-cellar ceiling, threatening the stability of the throne room above.</p>
 </div>
@@ -971,42 +971,42 @@ def main():
 
 <div class="info-card">
   <h4>Sector I: The Grand Throne Room of the Crystal Floor</h4>
-  <p>The ceremonial heart of Zingaran monarchy. A colossal vaulted hall supported by twelve fluted basalt columns. What makes the chamber legendary across the Hyborian world is its pavement: three hundred square yards of solid, transparent pre-Cataclysmic quartz crystal, three inches thick and polished to a flawless mirror sheen by <a href="#npcs/pascual" class="wiki-link">Hermano Pascual</a>. Sitting upon the Obsidian Dais, the young monarchs look down directly between their spurred boots into the terrible, murky abyss of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> two hundred feet below. Phosphorescent lichens, crumbling sunken colonnades, and the shambling shadows of working zombie thralls can be seen drifting through the green gloom beneath the monarchs' feet, instilling a sickening sense of vertigo in foreign ambassadors.</p>
+  <p>The ceremonial heart of Zingaran monarchy. A colossal vaulted hall supported by twelve fluted basalt columns. What makes the chamber legendary across the Hyborian world is its pavement: three hundred square yards of solid, transparent pre-Cataclysmic quartz crystal, three inches thick and polished to a flawless mirror sheen by <a href="#npcs/pascual" class="wiki-link">Hermano Pasqualo</a>. Sitting upon the Obsidian Dais, the young monarchs look down directly between their spurred boots into the terrible, murky abyss of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> two hundred feet below. Phosphorescent lichens, crumbling sunken colonnades, and the shambling shadows of working zombie thralls can be seen drifting through the green gloom beneath the monarchs' feet, instilling a sickening sense of vertigo in foreign ambassadors.</p>
 </div>
 
 <div class="info-card">
   <h4>Sector II: The Upper Spires &amp; The Gilded Cage</h4>
-  <p>Perched high in the western towers, where the sea spray lashes the leaded lancet windows, lie the private royal apartments of the Triumvirate. Sumptuous yet suffocating, these chambers are furnished with decaying velvet canopies, braziers burning scented pine oil to mask the salt damp, and portraits of stern ancestors who died violent deaths. The chambers are surrounded by <a href="#npcs/valenza" class="wiki-link">General Valenza's</a> royal army sentries. The only man with unconditional access to the sovereigns' bedchamber is the gaunt, clicking Lord Chamberlain, <a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a>.</p>
+  <p>Perched high in the western towers, where the sea spray lashes the leaded lancet windows, lie the private royal apartments of the Triumvirate. Sumptuous yet suffocating, these chambers are furnished with decaying velvet canopies, braziers burning scented pine oil to mask the salt damp, and portraits of stern ancestors who died violent deaths. The chambers are surrounded by <a href="#npcs/valenza" class="wiki-link">General Valenza's</a> royal army sentries. The only man with unconditional access to the sovereigns' bedchamber is the gaunt, clicking Lord Chamberlain, <a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a>.</p>
 </div>
 
 <div class="info-card">
   <h4>Sector III: The Cavernous Kitchens &amp; Roasting Pits</h4>
-  <p>Deep within the subterranean foundations, directly above the damp cellars of old Kordava, lies an infernal empire of grease, charcoal smoke, and roaring hearths ruled despotically by <a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo 'El Basto'</a>. Eighty kitchen boys, pastry apprentices, turnspits, and memory-retaining zombie scullions toil in 110-degree heat, preparing sixteen-course banquets of roasted boars, peacock pastries, and almond cream. Behind the walk-in chimneys are massive, counter-weighted dumbwaiter shafts that drop two hundred feet straight down into the black market tunnels of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>.</p>
+  <p>Deep within the subterranean foundations, directly above the damp cellars of old Kordava, lies an infernal empire of grease, charcoal smoke, and roaring hearths ruled despotically by <a href="#npcs/basto" class="wiki-link">Maestro Bartorzo 'The Cleaver'</a>. Eighty kitchen boys, pastry apprentices, turnspits, and memory-retaining zombie scullions toil in 110-degree heat, preparing sixteen-course banquets of roasted boars, peacock pastries, and almond cream. Behind the walk-in chimneys are massive, counter-weighted dumbwaiter shafts that drop two hundred feet straight down into the black market tunnels of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>.</p>
 </div>
 
 <div class="info-card">
   <h4>Sector IV: The Hall of Precedent, Ancient Archives &amp; Dust Galleries</h4>
-  <p>An endless labyrinth of dry, whispering rooms stacked floor-to-ceiling with thousands of iron-bound calfskin ledgers, royal decrees, heraldic scrolls, and genealogical charts dating back to King Ancillus I. Controlled with iron pedantry by the ancient Grand Seneschal, <a href="#npcs/obregon" class="wiki-link">Lord Belisario de Obregon</a>, here twenty desiccated heralds spend entire decades debating whether an envoy from Argos is entitled to four or five trumpet fanfares upon crossing the threshold.</p>
+  <p>An endless labyrinth of dry, whispering rooms stacked floor-to-ceiling with thousands of iron-bound calfskin ledgers, royal decrees, heraldic scrolls, and genealogical charts dating back to King Ancillus I. Controlled with iron pedantry by the ancient Grand Seneschal, <a href="#npcs/obregon" class="wiki-link">Lord Belbroso de Obregor</a>, here twenty desiccated heralds spend entire decades debating whether an envoy from Argos is entitled to four or five trumpet fanfares upon crossing the threshold.</p>
 </div>
 
 <div class="info-card">
   <h4>Sector V: The Hanging Aviary &amp; Solarium of the Falcons</h4>
-  <p>In the gale-swept topmost spires of the citadel, exposed to the open sky through grand Romanesque arches, resides the reclusive Dowager Infanta, <a href="#npcs/elvira" class="wiki-link">Doña Elvira de Ancillus-Moreno</a>. Draped in moth-eaten ermine and surrounded by forty pure-white Zingaran sea-falcons and dozens of fat temple cats, she looks down upon court politics with supreme imperial disdain. Her raptors patrol the coastal skies, hunting carrier pigeons and providing the only reliable aerial intelligence in the kingdom.</p>
+  <p>In the gale-swept topmost spires of the citadel, exposed to the open sky through grand Romanesque arches, resides the reclusive Dowager Infanta, <a href="#npcs/elvira" class="wiki-link">Doña Elvissa de Ancillus-Morando</a>. Draped in moth-eaten ermine and surrounded by forty pure-white Zingaran sea-falcons and dozens of fat temple cats, she looks down upon court politics with supreme imperial disdain. Her raptors patrol the coastal skies, hunting carrier pigeons and providing the only reliable aerial intelligence in the kingdom.</p>
 </div>
 
 <div class="info-card">
   <h4>Sector VI: The Sealed Solares &amp; Walled-Off Wings</h4>
-  <p>Following the bloody dynastic massacre known as the Black Solstice eighty years ago, King Daedalus's regents bricked up an entire western quarter of the palace. Untouched for nearly a century, these dust-choked galleries contain forgotten royal libraries, sealed treasury vaults, pre-Cataclysmic mechanical traps, and the desiccated, unburied remains of murdered courtiers. Only <a href="#npcs/silveira" class="wiki-link">Don Fernao</a> holds the master key to the iron doors, though the climbing scrivener <a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a> has discovered secret chimney shafts leading inside.</p>
+  <p>Following the bloody dynastic massacre known as the Black Solstice eighty years ago, King Daedalus's regents bricked up an entire western quarter of the palace. Untouched for nearly a century, these dust-choked galleries contain forgotten royal libraries, sealed treasury vaults, pre-Cataclysmic mechanical traps, and the desiccated, unburied remains of murdered courtiers. Only <a href="#npcs/silveira" class="wiki-link">Don Fernazo</a> holds the master key to the iron doors, though the climbing scrivener <a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a> has discovered secret chimney shafts leading inside.</p>
 </div>
 
 <h3>3. The Suffocating Court Protocol &amp; Daily Rituals</h3>
 <p>Life in the High Alcázar is governed not by practical reason, but by the immovable, ossified precedent of four centuries. The daily schedule of the PC Triumvirate is dictated by the <em>Libro de las Horas Reales</em>:</p>
 <ul>
-  <li><strong>The Ritual of the Dawn Salutation (6:00 AM):</strong> The sovereigns must be awakened by twenty bronze hand-bells, followed by kissing the salted sea-stone of Ancillus I presented on a silver salver by <a href="#npcs/obregon" class="wiki-link">Lord Belisario</a>.</li>
+  <li><strong>The Ritual of the Dawn Salutation (6:00 AM):</strong> The sovereigns must be awakened by twenty bronze hand-bells, followed by kissing the salted sea-stone of Ancillus I presented on a silver salver by <a href="#npcs/obregon" class="wiki-link">Lord Belbroso</a>.</li>
   <li><strong>The Adornment of the Sovereign (7:00 AM – 9:00 AM):</strong> A two-hour ritual in which eleven different hereditary officials dress the rulers: one ties the right garter; another fastens the 40-pound lead-weighted mantle; a third inspects the lace ruff with silver calipers.</li>
-  <li><strong>The Tasting of the Porridge (9:30 AM):</strong> <a href="#npcs/escovedo" class="wiki-link">Dr. Escovedo</a> drops silver needles into the royal broth to check for arsenic, while <a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo</a> glares from the doorway with his cleaver.</li>
+  <li><strong>The Tasting of the Porridge (9:30 AM):</strong> <a href="#npcs/escovedo" class="wiki-link">Dr. Escovador</a> drops silver needles into the royal broth to check for arsenic, while <a href="#npcs/basto" class="wiki-link">Maestro Bartorzo</a> glares from the doorway with his cleaver.</li>
   <li><strong>The Audience of the Void (11:00 AM – 2:00 PM):</strong> The monarchs sit on the Obsidian Dais above the Crystal Floor, receiving petitioners who must advance in rigid three-step waltzes, never turning their backs on the transparent floor lest they appear frightened by the abyss below.</li>
-  <li><strong>The Night Lockdown (10:00 PM):</strong> <a href="#npcs/silveira" class="wiki-link">Don Fernao</a> locks the three hundred interior doors with his iron chatelaine, extinguishing all torchieres except the consecrated tapers of the ancestors.</li>
+  <li><strong>The Night Lockdown (10:00 PM):</strong> <a href="#npcs/silveira" class="wiki-link">Don Fernazo</a> locks the three hundred interior doors with his iron chatelaine, extinguishing all torchieres except the consecrated tapers of the ancestors.</li>
 </ul>
 
 <h3>4. The Master Directory of Palace Household Staff</h3>
@@ -1022,43 +1022,43 @@ def main():
   </thead>
   <tbody>
     <tr>
-      <td><strong><a href="#npcs/obregon" class="wiki-link">Lord Belisario de Obregon</a></strong></td>
+      <td><strong><a href="#npcs/obregon" class="wiki-link">Lord Belbroso de Obregor</a></strong></td>
       <td>Grand Seneschal of Precedent</td>
       <td><span class="stat-class-level">Cleric 9 (Lawful)</span></td>
       <td>Hall of Precedent; controls court legitimacy &amp; holds the unredacted royal charter.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo 'El Basto'</a></strong></td>
+      <td><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartorzo 'The Cleaver'</a></strong></td>
       <td>Master Cook of the Kitchens</td>
       <td><span class="stat-class-level">Fighter 10 (Neutral)</span></td>
       <td>Subterranean Kitchens; controls food supply &amp; the dumbwaiters dropping into The Pit.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a></strong></td>
+      <td><strong><a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a></strong></td>
       <td>Lord of the Bedchamber</td>
       <td><span class="stat-class-level">Thief 10 (Lawful)</span></td>
       <td>Royal Bedchambers; master keys, nocturnal bodyguard, knows the sealed wing entrance.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/escovedo" class="wiki-link">Dr. Horatio Escovedo</a></strong></td>
+      <td><strong><a href="#npcs/escovedo" class="wiki-link">Dr. Horasto Escovador</a></strong></td>
       <td>Chief Court Chirurgeon</td>
       <td><span class="stat-class-level">Magic-User 10 (Neutral)</span></td>
       <td>Dissecting Tower &amp; Apothecary; detects poisons, brews antidotes, shields the PCs.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a></strong></td>
+      <td><strong><a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a></strong></td>
       <td>The Climbing Scrivener</td>
       <td><span class="stat-class-level">Thief 9 (Chaotic)</span></td>
       <td>Bureau of Receipts &amp; Flues; master climber, sells secrets to all factions.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/elvira" class="wiki-link">Doña Elvira de Ancillus-Moreno</a></strong></td>
+      <td><strong><a href="#npcs/elvira" class="wiki-link">Doña Elvissa de Ancillus-Morando</a></strong></td>
       <td>Dowager Infanta</td>
       <td><span class="stat-class-level">Magic-User 9 (Neutral)</span></td>
       <td>Hanging Aviaries; commands 40 white falcons that intercept courier ciphers.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/pascual" class="wiki-link">Hermano Pascual</a></strong></td>
+      <td><strong><a href="#npcs/pascual" class="wiki-link">Hermano Pasqualo</a></strong></td>
       <td>Custodian of the Crystal Floor</td>
       <td><span class="stat-class-level">Fighter 7 (Lawful)</span></td>
       <td>Grand Throne Room; hears vibrations from The Pit &amp; controls the dais light-lever.</td>
@@ -1069,10 +1069,10 @@ def main():
 
 <h3>5. Mechanical Secrets &amp; Hidden Passages</h3>
 <ul>
-  <li><strong>The Kitchen Dumbwaiter to The Pit:</strong> Located behind the third roasting hearth in Maestro Bartolomeo's kitchen. Capable of carrying four human-sized creatures in a counter-weighted iron cage, dropping 200 feet directly into the smuggler alleys of The Pit in less than two minutes.</li>
+  <li><strong>The Kitchen Dumbwaiter to The Pit:</strong> Located behind the third roasting hearth in Maestro Bartorzo's kitchen. Capable of carrying four human-sized creatures in a counter-weighted iron cage, dropping 200 feet directly into the smuggler alleys of The Pit in less than two minutes.</li>
   <li><strong>The Dais Light-Lever:</strong> Concealed beneath the third riser of the Obsidian Throne dais. Moving the bronze peg activates ancient Thurian refraction runes, polarizing the transparent crystal floor completely pitch-black or emitting a burst of blinding illumination.</li>
   <li><strong>The Acoustic Whispering Ducts:</strong> Pre-deluvial hollow bronze acoustic pipes run through the core masonry of the palace walls. The primary listening station terminates behind the grand tapestry of King Ancillus I in the Queen's Salon, allowing the listener to eavesdrop on Marquis Sadoria's private council chamber.</li>
-  <li><strong>The Flue Highway:</strong> A network of narrow vertical chimney flues and masonry ledges, accessible from the Bureau of Salt &amp; Wax Receipts, that leads to the exterior parapets and sea-cliffs. Used exclusively by <a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a>.</li>
+  <li><strong>The Flue Highway:</strong> A network of narrow vertical chimney flues and masonry ledges, accessible from the Bureau of Salt &amp; Wax Receipts, that leads to the exterior parapets and sea-cliffs. Used exclusively by <a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a>.</li>
 </ul>
 
 <h3>6. Player-Led Plot Hooks</h3>
@@ -1082,14 +1082,14 @@ def main():
   <p><strong>Premise:</strong> During the three-hour Evening Recessional, a hot-headed young grandee from the Eastern League deliberately steps on the train of a PC ruler's ceremonial mantle, sneering that the Triumvirate are "puppets in borrowed finery." In accordance with the strict laws of <em>pundonor</em>, the insult cannot be ignored without losing 2 Crown Sovereignty points.</p>
   <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must immediately fight a formal rapier duel to first blood upon the slick, polished crystal floor, navigating both their opponent's blade and the vertigo of looking down into The Pit beneath their boots.</p>
   <div class="dc-box"><strong>Basic D&D Challenge:</strong> Fighter Attack roll vs. AC 2; Dexterity check (roll 1d20 under Dex) to maintain footing on the crystal without slipping; Charisma check to maintain regal composure.</div>
-  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If blood falls upon the crystal, <a href="#npcs/pascual" class="wiki-link">Hermano Pascual</a> weeps aloud, and the sulfurous vapors below bubble violently, attracting subterranean ghouls to press against the glass.</p>
+  <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> If blood falls upon the crystal, <a href="#npcs/pascual" class="wiki-link">Hermano Pasqualo</a> weeps aloud, and the sulfurous vapors below bubble violently, attracting subterranean ghouls to press against the glass.</p>
 </div>
 
 <div class="hook-card info-card">
   <h4>Hook 2: The Midnight Heist of the Sealed Wing</h4>
-  <p><strong>Premise:</strong> Facing a total financial embargo by <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>, the PCs receive an offer from <a href="#npcs/silveira" class="wiki-link">Don Fernao</a>: he will unlock the iron portal to the Sealed Solares if the PCs accompany him inside to recover the lost coronation chalice of King Ancillus I before the Council can seize it.</p>
-  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must navigate the cobwebbed, trap-laden corridors of the abandoned wing, avoiding pre-deluvial spring-traps and spectral remnants, only to discover that <a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a> is already inside picking the lock of the royal strongbox.</p>
-  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Thief Find/Remove Traps or Dexterity check (roll 1d20 under Dex); Cleric Turn Undead vs. 4 HD Spectres; Charisma check to negotiate a split with Ignacio.</div>
+  <p><strong>Premise:</strong> Facing a total financial embargo by <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a>, the PCs receive an offer from <a href="#npcs/silveira" class="wiki-link">Don Fernazo</a>: he will unlock the iron portal to the Sealed Solares if the PCs accompany him inside to recover the lost coronation chalice of King Ancillus I before the Council can seize it.</p>
+  <p><strong>Core Conflict &amp; Player Choice:</strong> The PCs must navigate the cobwebbed, trap-laden corridors of the abandoned wing, avoiding pre-deluvial spring-traps and spectral remnants, only to discover that <a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a> is already inside picking the lock of the royal strongbox.</p>
+  <div class="dc-box"><strong>Basic D&D Challenge:</strong> Thief Find/Remove Traps or Dexterity check (roll 1d20 under Dex); Cleric Turn Undead vs. 4 HD Spectres; Charisma check to negotiate a split with Ignako.</div>
   <p class="escalation"><strong>Dynamic Escalation Trigger:</strong> An iron portcullis slams shut, trapping the PCs inside the sealed wing while toxic rot-gas begins venting from the floorboards.</p>
 </div>
 """
@@ -1149,7 +1149,7 @@ def main():
         if "The High Alcázar of Kordava" not in kordava_art["content"]:
             palace_highlight = """
 <h3>The High Alcázar of Kordava &amp; The Crystal Floor</h3>
-<p>Dominating the city's skyline atop the sheer western sea-cliffs stands <strong><a href="#gazetteer/palace-of-kordava" class="wiki-link">The High Alcázar of Kordava</a></strong>—the sprawling, labyrinthine palace citadel of the Zingaran monarchy. Perched directly above the subterranean abyss of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>, the Alcázar is famous for its <em>Grand Throne Room of the Crystal Floor</em>, where sovereigns sit on an obsidian dais suspended upon three inches of transparent quartz over the dark underworld. Within its draught-ridden stone spires, an eccentric household of hereditary staff—including <a href="#npcs/obregon" class="wiki-link">Lord Belisario</a>, <a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo</a>, <a href="#npcs/silveira" class="wiki-link">Don Fernao</a>, <a href="#npcs/escovedo" class="wiki-link">Dr. Escovedo</a>, <a href="#npcs/elvira" class="wiki-link">Doña Elvira</a>, <a href="#npcs/pascual" class="wiki-link">Hermano Pascual</a>, and the climbing scrivener <a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a>—enact centuries of suffocating ancestral etiquette.</p>
+<p>Dominating the city's skyline atop the sheer western sea-cliffs stands <strong><a href="#gazetteer/palace-of-kordava" class="wiki-link">The High Alcázar of Kordava</a></strong>—the sprawling, labyrinthine palace citadel of the Zingaran monarchy. Perched directly above the subterranean abyss of <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a>, the Alcázar is famous for its <em>Grand Throne Room of the Crystal Floor</em>, where sovereigns sit on an obsidian dais suspended upon three inches of transparent quartz over the dark underworld. Within its draught-ridden stone spires, an eccentric household of hereditary staff—including <a href="#npcs/obregon" class="wiki-link">Lord Belbroso</a>, <a href="#npcs/basto" class="wiki-link">Maestro Bartorzo</a>, <a href="#npcs/silveira" class="wiki-link">Don Fernazo</a>, <a href="#npcs/escovedo" class="wiki-link">Dr. Escovador</a>, <a href="#npcs/elvira" class="wiki-link">Doña Elvissa</a>, <a href="#npcs/pascual" class="wiki-link">Hermano Pasqualo</a>, and the climbing scrivener <a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a>—enact centuries of suffocating ancestral etiquette.</p>
 """
             # Insert before GM Callout
             gm_pos = kordava_art["content"].find('<div class="gm-callout">')
@@ -1174,18 +1174,18 @@ def main():
 <div class="info-card">
   <h4>Intramural Household Dynamics</h4>
   <ul>
-    <li><strong>The Bedchamber vs. The Kitchens:</strong> An ancient, vitriolic feud between <a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a> (the austere, clicking Lord Chamberlain) and <a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo</a> (the despotic kitchen butcher). Fernao considers the kitchens a nest of republican contraband; Bartolomeo routinely locks out the Chamberlain's footmen from hot water rations.</li>
-    <li><strong>The Scriptorium's Shield:</strong> While <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a> relies on subtle poisons, the eccentric court physician <a href="#npcs/escovedo" class="wiki-link">Dr. Horatio Escovedo</a> secretly supplies the PC Triumvirate with daily panaceas and broad-spectrum antidotes disguised as digestive cordials.</li>
-    <li><strong>The Spider of the Flues:</strong> The young scrivener <a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a> climbs the vertical chimney flues and masonry shafts at night, copying Sadoria's private letters and selling the leaks to <a href="#npcs/lucia" class="wiki-link">Lucia's republicans</a> and <a href="#npcs/vesper" class="wiki-link">Vesper</a>.</li>
-    <li><strong>The Falcon Eyrie:</strong> High above the palace in the windswept spires, the reclusive Dowager Infanta <a href="#npcs/elvira" class="wiki-link">Doña Elvira</a> uses her forty white sea-falcons to intercept carrier pigeons sent by foreign ambassadors and treacherous grandees, hoarding the ciphers in gilded birdcages.</li>
-    <li><strong>The Acoustic Watchdog:</strong> On his knees buffing the transparent quartz floor of the Throne Room, <a href="#npcs/pascual" class="wiki-link">Hermano Pascual</a> listens to vibrations from <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> two hundred feet below, quietly warning the sovereigns of underground incursions.</li>
+    <li><strong>The Bedchamber vs. The Kitchens:</strong> An ancient, vitriolic feud between <a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a> (the austere, clicking Lord Chamberlain) and <a href="#npcs/basto" class="wiki-link">Maestro Bartorzo</a> (the despotic kitchen butcher). Fernazo considers the kitchens a nest of republican contraband; Bartorzo routinely locks out the Chamberlain's footmen from hot water rations.</li>
+    <li><strong>The Scriptorium's Shield:</strong> While <a href="#npcs/sadoria" class="wiki-link">Marquis Sadoria</a> relies on subtle poisons, the eccentric court physician <a href="#npcs/escovedo" class="wiki-link">Dr. Horasto Escovador</a> secretly supplies the PC Triumvirate with daily panaceas and broad-spectrum antidotes disguised as digestive cordials.</li>
+    <li><strong>The Spider of the Flues:</strong> The young scrivener <a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a> climbs the vertical chimney flues and masonry shafts at night, copying Sadoria's private letters and selling the leaks to <a href="#npcs/lucia" class="wiki-link">Luzaia's republicans</a> and <a href="#npcs/vesper" class="wiki-link">Vesper</a>.</li>
+    <li><strong>The Falcon Eyrie:</strong> High above the palace in the windswept spires, the reclusive Dowager Infanta <a href="#npcs/elvira" class="wiki-link">Doña Elvissa</a> uses her forty white sea-falcons to intercept carrier pigeons sent by foreign ambassadors and treacherous grandees, hoarding the ciphers in gilded birdcages.</li>
+    <li><strong>The Acoustic Watchdog:</strong> On his knees buffing the transparent quartz floor of the Throne Room, <a href="#npcs/pascual" class="wiki-link">Hermano Pasqualo</a> listens to vibrations from <a href="#gazetteer/the-pit" class="wiki-link">The Pit</a> two hundred feet below, quietly warning the sovereigns of underground incursions.</li>
   </ul>
 </div>
 """
             # Also append rows to the Labyrinth Lord Hierarchy table if present
             palace_ll_rows = """
     <tr>
-      <td><strong><a href="#npcs/obregon" class="wiki-link">Lord Belisario de Obregon</a></strong><br><small>Grand Seneschal of Precedent</small></td>
+      <td><strong><a href="#npcs/obregon" class="wiki-link">Lord Belbroso de Obregor</a></strong><br><small>Grand Seneschal of Precedent</small></td>
       <td><span class="stat-class-level">Cleric 9</span></td>
       <td>Lawful</td>
       <td><strong>5 (14)</strong></td>
@@ -1195,17 +1195,17 @@ def main():
       <td>Frail physical combatant; commands 4 halberdiers; controls state legitimacy &amp; procedural vetoes.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartolomeo 'El Basto'</a></strong><br><small>Master Cook of the Kitchens</small></td>
+      <td><strong><a href="#npcs/basto" class="wiki-link">Maestro Bartorzo 'The Cleaver'</a></strong><br><small>Master Cook of the Kitchens</small></td>
       <td><span class="stat-class-level">Fighter 10</span></td>
       <td>Neutral</td>
       <td><strong>3 (16)</strong></td>
       <td><span style="color: #2ecc71; font-weight:700;">68</span></td>
       <td>12 (+11)</td>
       <td><em>El Verdugo</em> (+2 Cleaver), Boiling Tallow, <em>Girdle of the Iron Girth</em></td>
-      <td>STR 18 brute; hits as hard as Gonzalo; boiling fat cone; controls dumbwaiters to The Pit.</td>
+      <td>STR 18 brute; hits as hard as Gonzalgo; boiling fat cone; controls dumbwaiters to The Pit.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/silveira" class="wiki-link">Don Fernao de Silveira</a></strong><br><small>Lord of the Bedchamber</small></td>
+      <td><strong><a href="#npcs/silveira" class="wiki-link">Don Fernazo de Silvero</a></strong><br><small>Lord of the Bedchamber</small></td>
       <td><span class="stat-class-level">Thief 10</span></td>
       <td>Lawful</td>
       <td><strong>2 (17)</strong></td>
@@ -1215,7 +1215,7 @@ def main():
       <td>Master of locks &amp; spyholes; unbribable sovereign bodyguard; knows the sealed wing entrance.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/escovedo" class="wiki-link">Dr. Horatio Escovedo</a></strong><br><small>Chief Royal Chirurgeon</small></td>
+      <td><strong><a href="#npcs/escovedo" class="wiki-link">Dr. Horasto Escovador</a></strong><br><small>Chief Royal Chirurgeon</small></td>
       <td><span class="stat-class-level">Magic-User 10</span></td>
       <td>Neutral</td>
       <td><strong>4 (15)</strong></td>
@@ -1225,7 +1225,7 @@ def main():
       <td>Neutralizes Sadoria's poisons; INT 18 physician; casts <em>Feeblemind</em> and <em>Haste</em>.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/ignacio" class="wiki-link">Ignacio Mora</a></strong><br><small>The Climbing Scrivener</small></td>
+      <td><strong><a href="#npcs/ignacio" class="wiki-link">Ignako Morasto</a></strong><br><small>The Climbing Scrivener</small></td>
       <td><span class="stat-class-level">Thief 9</span></td>
       <td>Chaotic</td>
       <td><strong>1 (18)</strong></td>
@@ -1235,7 +1235,7 @@ def main():
       <td>DEX 18; 96% Climb Walls; runs the palace flues; master infiltrator &amp; blackmailer.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/elvira" class="wiki-link">Doña Elvira de Ancillus-Moreno</a></strong><br><small>Dowager Infanta</small></td>
+      <td><strong><a href="#npcs/elvira" class="wiki-link">Doña Elvissa de Ancillus-Morando</a></strong><br><small>Dowager Infanta</small></td>
       <td><span class="stat-class-level">Magic-User 9</span></td>
       <td>Neutral</td>
       <td><strong>5 (14)</strong></td>
@@ -1245,7 +1245,7 @@ def main():
       <td>Summons swarm of 20 white sea-falcons; untouchable royal status; intercepts courier birds.</td>
     </tr>
     <tr>
-      <td><strong><a href="#npcs/pascual" class="wiki-link">Hermano Pascual</a></strong><br><small>Custodian of the Crystal Floor</small></td>
+      <td><strong><a href="#npcs/pascual" class="wiki-link">Hermano Pasqualo</a></strong><br><small>Custodian of the Crystal Floor</small></td>
       <td><span class="stat-class-level">Fighter 7</span></td>
       <td>Lawful</td>
       <td><strong>6 (13)</strong></td>
