@@ -1104,37 +1104,9 @@
 
         let npcHtml = '';
         if (s.npcDispositions) {
-          npcHtml = `<div class="session-stats-grid">`;
-          for (const [npc, disp] of Object.entries(s.npcDispositions)) {
-            npcHtml += `<div><strong>${npc}:</strong> ${disp}</div>`;
-          }
-          npcHtml += `</div>`;
+          npcHtml = '<ul>' + Object.entries(s.npcDispositions).map(([name, disposition]) => `<li>${autoHyperlink(name, 'sessions')}: ${String(disposition).replace(/</g, "&lt;")}</li>`).join('') + '</ul>';
         }
-
-        sessionCardsHtml += `
-          <div class="session-card">
-            <div class="session-header">
-              <div>
-                <span class="session-num-badge">Session ${s.sessionNumber}</span>
-                <strong style="font-size: 1.15rem; color: var(--accent-gold);">${s.title}</strong>
-              </div>
-              <div class="session-dates">
-                <div>${s.realDate}</div>
-                <div style="font-style: italic; color: var(--text-muted);">${s.inGameDate}</div>
-              </div>
-            </div>
-
-            <p>${autoHyperlink(s.summary, 'sessions')}</p>
-
-            <div class="session-stats-grid">
-              <div><strong>Crown Sovereignty:</strong> ${s.sovereigntyPoints > 0 ? '+' : ''}${s.sovereigntyPoints}</div>
-              <div><strong>Pundonor Status:</strong> ${s.pundonorStatus || 'Unstained'}</div>
-            </div>
-
-            ${threadsHtml ? `<h4>Active Plot Leads</h4>${threadsHtml}` : ''}
-            ${npcHtml ? `<h4>Court NPC Dispositions</h4>${npcHtml}` : ''}
-          </div>
-        `;
+        sessionCardsHtml += `<div class="info-card"><h3>Session ${s.sessionNumber}: ${String(s.title || '').replace(/</g, '&lt;')}</h3><p>${autoHyperlink(s.summary || '', 'sessions')}</p>${threadsHtml}${npcHtml}</div>`;
       });
     }
 
@@ -1192,8 +1164,8 @@
     document.getElementById('modal-session-ingame').value = `Month of the Lion, Year 1 (Period VIII)`;
     document.getElementById('modal-session-title').value = '';
     document.getElementById('modal-session-summary').value = '';
-    document.getElementById('modal-session-sovereignty').value = 0;
-    document.getElementById('modal-session-pundonor').value = 'Unstained';
+
+
     document.getElementById('modal-session-threads').value = '';
 
     modal.style.display = 'flex';
@@ -1210,8 +1182,8 @@
     const inGameDate = document.getElementById('modal-session-ingame').value;
     const title = document.getElementById('modal-session-title').value || `Session ${num}`;
     const summary = document.getElementById('modal-session-summary').value;
-    const sovereignty = parseInt(document.getElementById('modal-session-sovereignty').value, 10) || 0;
-    const pundonor = document.getElementById('modal-session-pundonor').value;
+
+
     const threadsRaw = document.getElementById('modal-session-threads').value;
 
     const threads = threadsRaw.split('\n').map(t => t.trim()).filter(Boolean);
@@ -1222,8 +1194,8 @@
       realDate: realDate,
       inGameDate: inGameDate,
       summary: summary,
-      sovereigntyPoints: sovereignty,
-      pundonorStatus: pundonor,
+
+
       activeThreads: threads,
       npcDispositions: {}
     };
@@ -1250,7 +1222,7 @@
     sorted.forEach(s => {
       md += `## Session ${s.sessionNumber}: ${s.title}\n`;
       md += `**Date:** ${s.realDate} | **In-Game Date:** ${s.inGameDate}\n\n`;
-      md += `**Crown Sovereignty:** ${s.sovereigntyPoints} | **Pundonor:** ${s.pundonorStatus}\n\n`;
+
       md += `### Summary\n${s.summary}\n\n`;
       if (s.activeThreads && s.activeThreads.length > 0) {
         md += `### Active Plot Threads\n`;

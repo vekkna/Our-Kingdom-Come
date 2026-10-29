@@ -9,12 +9,10 @@ Built with pure vanilla **HTML5**, **CSS3**, and **JavaScript** (separate modula
 ## ⚡ Key Features for Live Play
 
 1. **Instant Client-Side Live Search (`/` or `Ctrl+K`):**
-   - Sub-millisecond fuzzy search across all 67 articles, NPC dossiers, skill check DCs, secret agendas, and historical periods.
    - Use the arrow keys, `Enter` to jump, or `Escape` to close.
 
 2. **Automatic Dynamic Hyperlinking & Side-Drawer Previews:**
    - Mentions of NPCs, factions, places, relics, and rules are automatically hyperlinked throughout every article.
-   - **Zero Context Loss:** Tapping any hyperlinked name opens a slide-out preview drawer on the right with the entity's quick card, court DCs, mannerisms, and secret levers—without losing your reading position on the main screen.
    - Tap *"Open Full Article"* in the drawer to navigate directly to the full entry.
 
 3. **GM Secrets Mode vs. Player Safe Mode:**
@@ -23,13 +21,11 @@ Built with pure vanilla **HTML5**, **CSS3**, and **JavaScript** (separate modula
 
 4. **Session Log & Campaign Tracker:**
    - Dedicated Session Log view to chronicle royal edicts, court intrigues, and session summaries.
-   - Tracks **Crown Sovereignty Points**, **Pundonor Status**, **Active Plot Leads**, and **NPC Dispositions**.
    - Auto-saves to browser `localStorage` during play.
    - Includes one-click **"Export JSON"** (to save directly into `data/sessions.json` and commit to Git) and **"Download Markdown"** (for sharing recaps).
 
 5. **Quick Table GM Tools:**
    - Built-in table dice roller (`d4`, `d6`, `d8`, `d10`, `d12`, `d20`, `d100` with critical hit and botch detection).
-   - Fast Pundonor & Command Friction rule summaries.
 
 6. **Tablet & Mobile Optimized:**
    - Large touch targets (minimum 44px) for rapid finger navigation.
@@ -60,7 +56,6 @@ To update your campaign records after a game session:
 
 ### Method A (Through the Web UI):
 1. Open the site and click **📖 Sessions** in the header.
-2. Click **+ Log New Session** and fill in your session recap, in-game calendar date, and sovereignty/pundonor shifts.
 3. Click **Export JSON** to download the updated `sessions.json` file.
 4. Replace the `data/sessions.json` file in this repository.
 5. Commit and push to Git:
@@ -93,3 +88,7 @@ Our Kingdom Come/
 ├── Zingara map.jpg            # High-resolution regional map of Zingara
 └── README.md                  # Documentation and hosting guide
 ```
+
+## Campaign editing
+
+The live wiki content is maintained in `js/data.js`. Legacy generation scripts predate the October 2026 editorial revision and must not be run over it without reconciling their content. Adventures describe unresolved NPC and faction activity. Judith’s attic ambush and departure are established events.
