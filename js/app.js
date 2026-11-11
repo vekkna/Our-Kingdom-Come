@@ -1088,6 +1088,7 @@
     const container = document.getElementById('content-area');
     if (!container) return;
 
+    const prep = getArticle('session-prep-palace-to-salt-road');
     let sessionCardsHtml = '';
 
     if (AppState.sessions.length === 0) {
@@ -1123,6 +1124,12 @@
           <h1 class="article-title">Campaign Session Logs</h1>
           <div class="article-subtitle">Chronicle of Royal Triumvirate Edicts, Court Intrigues, and Session Recaps</div>
         </div>
+
+        ${prep ? `
+          <p class="info-card">
+            <a href="#session-prep/session-prep-palace-to-salt-road">GM Session Prep &middot; From the Palace to the Salt Road</a>
+          </p>
+        ` : ''}
 
         <div class="session-controls">
           <button id="btn-add-session" class="btn-primary">+ Log New Session</button>

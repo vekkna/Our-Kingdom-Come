@@ -1104,7 +1104,7 @@ body.player-safe-mode .gm-callout .gm-badge {
   color: var(--text-dim);
 }
 
-/* Blur titles, headers, badges, paragraphs, and list items in confidential sections */
+/* Blur text and tables in confidential sections */
 body.player-safe-mode .gm-callout:not(.revealed) .gm-badge,
 body.player-safe-mode .gm-callout:not(.revealed) p,
 body.player-safe-mode .gm-callout:not(.revealed) h1,
@@ -1114,6 +1114,7 @@ body.player-safe-mode .gm-callout:not(.revealed) h4,
 body.player-safe-mode .gm-callout:not(.revealed) h5,
 body.player-safe-mode .gm-callout:not(.revealed) ul,
 body.player-safe-mode .gm-callout:not(.revealed) ol,
+body.player-safe-mode .gm-callout:not(.revealed) .wiki-table,
 body.player-safe-mode .gm-only-cell:not(.revealed) .gm-mask-text,
 body.player-safe-mode th.gm-only-header:not(.revealed),
 body.player-safe-mode .dc-box:not(.revealed),
